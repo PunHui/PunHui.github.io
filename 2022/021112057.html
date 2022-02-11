@@ -483,12 +483,12 @@ def jie_xi<span class="token punctuation">(</span><span class="token punctuation
         <span class="token keyword">return</span> f.read<span class="token punctuation">(</span><span class="token punctuation">)</span>
 
 
-JS <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">;</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+JS <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
 
 
 def if_true<span class="token punctuation">(</span>i, b<span class="token punctuation">)</span>:
     try:
-        JS<span class="token punctuation">[</span>b<span class="token punctuation">]</span> <span class="token operator">=</span> f<span class="token string">"{;JS[b]};{;i};"</span>
+        JS<span class="token punctuation">[</span>b<span class="token punctuation">]</span> <span class="token operator">=</span> f<span class="token string">"{JS[b]}{i}"</span>
     except KeyError:
         JS<span class="token punctuation">[</span>b<span class="token punctuation">]</span> <span class="token operator">=</span> i
 
