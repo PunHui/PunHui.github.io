@@ -488,7 +488,7 @@ JS <span class="token operator">=</span> <span class="token operator">&amp;</spa
 
 def if_true<span class="token punctuation">(</span>i, b<span class="token punctuation">)</span>:
     try:
-        JS<span class="token punctuation">[</span>b<span class="token punctuation">]</span> <span class="token operator">=</span> f<span class="token string">"&amp;#123;JS[b]&amp;#125;&amp;#123;i&amp;#125;"</span>
+        JS<span class="token punctuation">[</span>b<span class="token punctuation">]</span> <span class="token operator">=</span> f<span class="token string">"\&amp;#123;JS[b]\&amp;#125;\&amp;#123;i\&amp;#125;"</span>
     except KeyError:
         JS<span class="token punctuation">[</span>b<span class="token punctuation">]</span> <span class="token operator">=</span> i
 
