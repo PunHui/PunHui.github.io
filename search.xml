@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>GitHub 博客搭建中的异常解决方法</title>
+      <link href="/2022/021165054.html"/>
+      <url>/2022/021165054.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="搭建教程"><a href="#搭建教程" class="headerlink" title="搭建教程"></a>搭建教程</h2><p><a href="https://www.bilibili.com/video/BV1mU4y1j72n?spm_id_from=333.1007.top_right_bar_window_custom_collection.content.click">推荐b站视频1</a></p><p><a href="https://www.bilibili.com/video/BV1je41147Ma?spm_id_from=333.1007.top_right_bar_window_custom_collection.content.click">推荐b站视频2</a> 他的顺序有些乱，完成上面的<br>搭建过程后可以看这个视频搞主题</p><p><a href="https://blog.csdn.net/jspnetcn/article/details/104111651">主题搭建教程，主要看主题！！！</a></p><h2 id="异常解决方法"><a href="#异常解决方法" class="headerlink" title="异常解决方法"></a>异常解决方法</h2><h2 id="主题的一些功能配置"><a href="#主题的一些功能配置" class="headerlink" title="主题的一些功能配置"></a>主题的一些功能配置</h2><h3 id="代码高亮"><a href="#代码高亮" class="headerlink" title="代码高亮"></a>代码高亮</h3><p>由于 Hexo 自带的代码高亮主题显示不好看，所以主题中使用到了 hexo-prism-plugin 的 Hexo 插件来做代码高亮，在 Hexo 根目录下运行命令：</p><pre class=" language-bash"><code class="language-bash"><span class="token function">npm</span> i -S hexo-prism-plugin</code></pre><p>然后，修改 Hexo 根目录下 _config.yml 文件中 highlight.enable 的值为 false，并新增 prism 插件相关的配置，主要配置如下：</p><pre class=" language-bash"><code class="language-bash">highlight:  enable: <span class="token boolean">false</span>prism_plugin:  mode: <span class="token string">'preprocess'</span>    <span class="token comment" spellcheck="true"># realtime/preprocess</span>  theme: <span class="token string">'tomorrow'</span>  line_number: <span class="token boolean">false</span>    <span class="token comment" spellcheck="true"># default false</span>  custom_css:</code></pre><p>categories:</p><ul><li>网站搭建</li></ul>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>JSDuck分括号</title>
       <link href="/2022/021112057.html"/>
       <url>/2022/021112057.html</url>
