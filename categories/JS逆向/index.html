@@ -4,12 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="GitHub 博客搭建中的异常解决方法, Hui">
-    <meta name="description" content="搭建教程推荐b站视频1
-推荐b站视频2 他的顺序有些乱，完成上面的搭建过程后可以看这个视频搞主题
-主题搭建教程，主要看主题！！！
-异常解决方法上传文件后发现网站没有变化有时候需要等待两三分钟才有变化，如果迟迟没有变化就清理缓存
-hexo c">
+    <meta name="keywords" content="分类: JS逆向, Hui">
+    <meta name="description" content="Hui">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -21,7 +17,7 @@ hexo c">
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>GitHub 博客搭建中的异常解决方法 | Hui</title>
+    <title>分类: JS逆向 | Hui</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -309,538 +305,299 @@ hexo c">
 
 </header>
 
-    
+    <div class="bg-cover pd-header about-cover">
+    <div class="container">
+    <div class="row">
+    <div class="col s10 offset-s1 m8 offset-m2 l8 offset-l2">
+        <div class="brand">
+            <div class="title center-align">
+                
+                    subtitle
+                
+            </div>
 
-
-
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
-    <div class="container" style="right: 0px;left: 0px;">
-        <div class="row">
-            <div class="col s12 m12 l12">
-                <div class="brand">
-                    <h1 class="description center-align post-title">GitHub 博客搭建中的异常解决方法</h1>
-                </div>
+            <div class="description center-align">
+                
+                <span id="subtitle"></span>
+                <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
+                <script>
+                    var typed = new Typed("#subtitle", {
+                        strings: [ 
+                            
+                                "心之所向",
+                            
+                                "JS逆向爱好者",
+                            
+                        ],
+                        startDelay: 300,
+                        typeSpeed: 100,
+                        loop: true,
+                        backSpeed: 50,
+                        showCursor: true
+                    });
+                </script>
+                
             </div>
         </div>
     </div>
 </div>
 
 
+<script>
+    // 每天切换 banner 图.  Switch banner image every day.
+    var bannerUrl = "/medias/banner/" + new Date().getDay() + '.jpg';
+    $('.bg-cover').css('background-image', 'url(' + bannerUrl + ')');
+</script>
 
 
-<main class="post-container content">
+    </div>
+</div>
+
+<main class="content">
 
     
-    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
-<style>
-    #articleContent h1::before,
-    #articleContent h2::before,
-    #articleContent h3::before,
-    #articleContent h4::before,
-    #articleContent h5::before,
-    #articleContent h6::before {
-        display: block;
-        content: " ";
-        height: 100px;
-        margin-top: -100px;
-        visibility: hidden;
-    }
 
-    #articleContent :focus {
-        outline: none;
-    }
-
-    .toc-fixed {
-        position: fixed;
-        top: 64px;
-    }
-
-    .toc-widget {
-        width: 345px;
-        padding-left: 20px;
-    }
-
-    .toc-widget .toc-title {
-        padding: 35px 0 15px 17px;
-        font-size: 1.5rem;
-        font-weight: bold;
-        line-height: 1.5rem;
-    }
-
-    .toc-widget ol {
-        padding: 0;
-        list-style: none;
-    }
-
-    #toc-content {
-        padding-bottom: 30px;
-        overflow: auto;
-    }
-
-    #toc-content ol {
-        padding-left: 10px;
-    }
-
-    #toc-content ol li {
-        padding-left: 10px;
-    }
-
-    #toc-content .toc-link:hover {
-        color: #42b983;
-        font-weight: 700;
-        text-decoration: underline;
-    }
-
-    #toc-content .toc-link::before {
-        background-color: transparent;
-        max-height: 25px;
-
-        position: absolute;
-        right: 23.5vw;
-        display: block;
-    }
-
-    #toc-content .is-active-link {
-        color: #42b983;
-    }
-
-    #floating-toc-btn {
-        position: fixed;
-        right: 15px;
-        bottom: 76px;
-        padding-top: 15px;
-        margin-bottom: 0;
-        z-index: 998;
-    }
-
-    #floating-toc-btn .btn-floating {
-        width: 48px;
-        height: 48px;
-    }
-
-    #floating-toc-btn .btn-floating i {
-        line-height: 48px;
-        font-size: 1.4rem;
-    }
-</style>
-<div class="row">
-    <div id="main-content" class="col s12 m12 l9">
-        <!-- 文章内容详情 -->
-<div id="artDetail">
+<div id="category-cloud" class="container chip-container">
     <div class="card">
-        <div class="card-content article-info">
-            <div class="row tag-cate">
-                <div class="col s7">
-                    
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
-                    
-                </div>
-                <div class="col s5 right-align">
-                    
-                    <div class="post-cate">
-                        <i class="fas fa-bookmark fa-fw icon-category"></i>
-                        
-                            <a href="/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" class="post-category">
-                                博客搭建
-                            </a>
-                        
-                    </div>
-                    
-                </div>
+        <div class="card-content">
+            <div class="tag-title center-align">
+                <i class="fas fa-bookmark"></i>&nbsp;&nbsp;文章分类
             </div>
-
-            <div class="post-info">
+            <div class="tag-chips">
                 
-                <div class="post-date info-break-policy">
-                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-02-11
-                </div>
                 
-
                 
-
+                <a href="/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" title="博客搭建: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            style="background-color: #F9EBEA;">博客搭建
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
                 
-
                 
-
+                <a href="/categories/JS%E9%80%86%E5%90%91/" title="JS逆向: 4">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-active "
+                            style="background-color: #F5EEF8;">JS逆向
+                        <span class="tag-length">4</span>
+                    </span>
+                </a>
+                
                 
             </div>
         </div>
-        <hr class="clearfix">
-
-        
-
-        
-
-        <div class="card-content article-card-content">
-            <div id="articleContent">
-                <h2 id="搭建教程"><a href="#搭建教程" class="headerlink" title="搭建教程"></a>搭建教程</h2><p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1mU4y1j72n?spm_id_from=333.1007.top_right_bar_window_custom_collection.content.click">推荐b站视频1</a></p>
-<p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1je41147Ma?spm_id_from=333.1007.top_right_bar_window_custom_collection.content.click">推荐b站视频2</a> 他的顺序有些乱，完成上面的<br>搭建过程后可以看这个视频搞主题</p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/jspnetcn/article/details/104111651">主题搭建教程，主要看主题！！！</a></p>
-<h2 id="异常解决方法"><a href="#异常解决方法" class="headerlink" title="异常解决方法"></a>异常解决方法</h2><h3 id="上传文件后发现网站没有变化"><a href="#上传文件后发现网站没有变化" class="headerlink" title="上传文件后发现网站没有变化"></a>上传文件后发现网站没有变化</h3><p>有时候需要等待两三分钟才有变化，如果迟迟没有变化就清理缓存</p>
-<pre class=" language-bash"><code class="language-bash">hexo clean
-</code></pre>
-<p>清理缓存后再运行一下命令</p>
-<pre class=" language-bash"><code class="language-bash">hexo g
-hexo d
-</code></pre>
-<h3 id="文件上传不成功"><a href="#文件上传不成功" class="headerlink" title="文件上传不成功"></a>文件上传不成功</h3><pre class=" language-bash"><code class="language-bash">SL SSL_read: Connection was reset, errno 10054
-FATAL <span class="token punctuation">{</span>
-  err: Error: Spawn failed
-      at ChildProcess.<span class="token operator">&lt;</span>anonymous<span class="token operator">></span> <span class="token punctuation">(</span>D:/blog/node_modules/hexo-util/lib/spawn.js:51:21<span class="token punctuation">)</span>
-      at ChildProcess.emit <span class="token punctuation">(</span>node:events:390:28<span class="token punctuation">)</span>
-      at ChildProcess.cp.emit <span class="token punctuation">(</span>D:/blog/node_modules/cross-spawn/lib/enoent.js:34:29<span class="token punctuation">)</span>
-      at Process.ChildProcess._handle.onexit <span class="token punctuation">(</span>node:internal/child_process:290:12<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    code: 128
-  <span class="token punctuation">}</span>
-<span class="token punctuation">}</span> 
-</code></pre>
-<p>只是网络问题，重新来几次就行</p>
-<h3 id="代码块中大括号变成符号"><a href="#代码块中大括号变成符号" class="headerlink" title="代码块中大括号变成符号"></a>代码块中大括号变成符号</h3><p>需要手动修改文件，这里我用的是 hexo-prism-plugin 插件，先找到 hexo-prism-plugin 文件，比如我的路径</p>
-<pre class=" language-bash"><code class="language-bash">D:/blog/node_modules/hexo-prism-plugin
-</code></pre>
-<p>打开文件，找到 src 文件打开，修改 index.js<br>const map &#x3D; {<br>    ‘&#39;’: ‘&#x2F;‘’,<br>    ‘&amp;’: ‘&amp;’,<br>    ‘&gt;’: ‘&gt;’,<br>    ‘&lt;’: ‘&lt;’,<br>    ‘&quot;’: ‘“‘,<br>    ‘&amp;#123;’: ‘{‘,<br>    ‘&amp;#125;’: ‘}’<br>};<br>就 OK 了</p>
-<h2 id="主题的一些功能配置"><a href="#主题的一些功能配置" class="headerlink" title="主题的一些功能配置"></a>主题的一些功能配置</h2><h3 id="代码高亮"><a href="#代码高亮" class="headerlink" title="代码高亮"></a>代码高亮</h3><p>由于 Hexo 自带的代码高亮主题显示不好看，所以主题中使用到了 hexo-prism-plugin 的 Hexo 插件来做代码高亮，在 Hexo 根目录下运行命令：</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">npm</span> i -S hexo-prism-plugin
-</code></pre>
-<p>然后，修改 Hexo 根目录下 _config.yml 文件中 highlight.enable 的值为 false，并新增 prism 插件相关的配置，主要配置如下：</p>
-<pre class=" language-bash"><code class="language-bash">highlight:
-  enable: <span class="token boolean">false</span>
-
-prism_plugin:
-  mode: <span class="token string">'preprocess'</span>    <span class="token comment" spellcheck="true"># realtime/preprocess</span>
-  theme: <span class="token string">'tomorrow'</span>
-  line_number: <span class="token boolean">false</span>    <span class="token comment" spellcheck="true"># default false</span>
-  custom_css:
-</code></pre>
-
-                
-            </div>
-            <hr/>
-
-            
-
-    <div class="reprint" id="reprint-statement">
-        
-            <div class="reprint__author">
-                <span class="reprint-meta" style="font-weight: bold;">
-                    <i class="fas fa-user">
-                        文章作者:
-                    </i>
-                </span>
-                <span class="reprint-info">
-                    <a href="/about" rel="external nofollow noreferrer">Hui</a>
-                </span>
-            </div>
-            <div class="reprint__type">
-                <span class="reprint-meta" style="font-weight: bold;">
-                    <i class="fas fa-link">
-                        文章链接:
-                    </i>
-                </span>
-                <span class="reprint-info">
-                    <a href="http://PunHui.github.io/2022/021165054.html">http://PunHui.github.io/2022/021165054.html</a>
-                </span>
-            </div>
-            <div class="reprint__notice">
-                <span class="reprint-meta" style="font-weight: bold;">
-                    <i class="fas fa-copyright">
-                        版权声明:
-                    </i>
-                </span>
-                <span class="reprint-info">
-                    本博客所有文章除特別声明外，均采用
-                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
-                    许可协议。转载请注明来源
-                    <a href="/about" target="_blank">Hui</a>
-                    !
-                </span>
-            </div>
-        
     </div>
-
-    <script async defer>
-      document.addEventListener("copy", function (e) {
-        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
-        M.toast({html: toastHTML})
-      });
-
-      function navToReprintStatement() {
-        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
-      }
-    </script>
-
-
-
-            <div class="tag_share" style="display: block;">
-                <div class="post-meta__tag-list" style="display: inline-block;">
-                    
-                        <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                        </div>
-                    
-                </div>
-                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
-                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
-<div id="article-share">
-
-    
-    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
-    <script src="/libs/share/js/social-share.min.js"></script>
-    
-
-    
-
 </div>
 
-                </div>
-            </div>
+
+    
+
+    <article id="articles" class="container articles">
+        <div class="row tags-posts">
             
-        </div>
-    </div>
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-<article id="prenext-posts" class="prev-next articles">
-    <div class="row article-row">
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
-            <div class="card">
-                <a href="/2022/021340749.html">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="PyexecJS 的一些异常处理">
-                        
-                        <span class="card-title">PyexecJS 的一些异常处理</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
+            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2022/021335107.html">
+                        <div class="card-image tag-image">
                             
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-02-13
-                        </span>
-                        <span class="publish-author">
                             
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="PyexecJS 调用包">
                             
-                            <a href="/categories/JS%E9%80%86%E5%90%91/" class="post-category">
+                            <span class="card-title">PyexecJS 调用包</span>
+                        </div>
+                    </a>
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                NodeJS 下载的包在 Python 中无法使用在 python 中下载包npm install 自己需要的包
+
+将文件移到自己程序所在我文件夹里就 OK 了
+
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-02-13
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/JS%E9%80%86%E5%90%91/" class="post-category">
                                     JS逆向
                                 </a>
-                            
-                            
-                        </span>
+                                
+                                
+                            </span>
+                        </div>
                     </div>
-                </div>
-                
-                <div class="card-action article-tags">
+
                     
-                    <a href="/tags/%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/">
-                        <span class="chip bg-color">异常处理</span>
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/">
+                            <span class="chip bg-color">异常处理</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2022/02131510.html">
+                        <div class="card-image tag-image">
+                            
+                            
+                            <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="NodeJS 的一些异常">
+                            
+                            <span class="card-title">NodeJS 的一些异常</span>
+                        </div>
                     </a>
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                下载包的问题下载异常npm ERR! code EPERM
+npm ERR! syscall mkdir
+npm ERR! path D:\nodejs\node_cache\_cacache
+npm ERR! errno EPERM
+np
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-02-13
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/JS%E9%80%86%E5%90%91/" class="post-category">
+                                    JS逆向
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/">
+                            <span class="chip bg-color">异常处理</span>
+                        </a>
+                        
+                    </div>
                     
                 </div>
-                
             </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2022/021112057.html">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="JSDuck分括号">
-                        
-                        <span class="card-title">JSDuck分括号</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
+            
+            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2022/021340749.html">
+                        <div class="card-image tag-image">
                             
+                            
+                            <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="PyexecJS 的一些异常处理">
+                            
+                            <span class="card-title">PyexecJS 的一些异常处理</span>
+                        </div>
+                    </a>
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                GBK 编码问题解决办法打开 subprocess.py 文件，Ctrl + f 搜索 encoding 找到如下的格式的函数
+    def __init__(self, args, bufsize=-1, executable=None
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-02-13
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/JS%E9%80%86%E5%90%91/" class="post-category">
+                                    JS逆向
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/">
+                            <span class="chip bg-color">异常处理</span>
+                        </a>
                         
                     </div>
-                    <div class="publish-info">
+                    
+                </div>
+            </div>
+            
+            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2022/021112057.html">
+                        <div class="card-image tag-image">
+                            
+                            
+                            <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="JSDuck分括号">
+                            
+                            <span class="card-title">JSDuck分括号</span>
+                        </div>
+                    </a>
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                虽然在 PyCharm 里很方便的就能把括号里的混淆代码挖出来但是我就是懒，偏要写一个自动挖代码的工具
+源码"""
+JSFuck 加密
+将括号里的代码筛选出来
+"""
+
+
+def jie_xi():
+    with open('你的文件路
+                            
+                        </div>
+                        <div class="publish-info">
                             <span class="publish-date">
                                 <i class="far fa-clock fa-fw icon-date"></i>2022-02-11
                             </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/JS%E9%80%86%E5%90%91/" class="post-category">
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/JS%E9%80%86%E5%90%91/" class="post-category">
                                     JS逆向
                                 </a>
-                            
-                            
-                        </span>
+                                
+                                
+                            </span>
+                        </div>
                     </div>
-                </div>
-                
-                <div class="card-action article-tags">
+
                     
-                    <a href="/tags/%E5%B7%A5%E5%85%B7/">
-                        <span class="chip bg-color">工具</span>
-                    </a>
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/%E5%B7%A5%E5%85%B7/">
+                            <span class="chip bg-color">工具</span>
+                        </a>
+                        
+                    </div>
                     
                 </div>
-                
             </div>
+            
         </div>
-        
-    </div>
-</article>
-
-</div>
-
-
-
-<!-- 代码块功能依赖 -->
-<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
-
-<!-- 代码语言 -->
-
-<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
-
-
-<!-- 代码块复制 -->
-
-<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
-
-
-<!-- 代码块收缩 -->
-
-<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
-
-
-    </div>
-    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
-        <div class="toc-widget card" style="background-color: white;">
-            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
-            <div id="toc-content"></div>
-        </div>
-    </div>
-</div>
-
-<!-- TOC 悬浮按钮. -->
-
-<div id="floating-toc-btn" class="hide-on-med-and-down">
-    <a class="btn-floating btn-large bg-color">
-        <i class="fas fa-list-ul"></i>
-    </a>
-</div>
-
-
-<script src="/libs/tocbot/tocbot.min.js"></script>
-<script>
-    $(function () {
-        tocbot.init({
-            tocSelector: '#toc-content',
-            contentSelector: '#articleContent',
-            headingsOffset: -($(window).height() * 0.4 - 45),
-            collapseDepth: Number('0'),
-            headingSelector: 'h2, h3, h4'
-        });
-
-        // modify the toc link href to support Chinese.
-        let i = 0;
-        let tocHeading = 'toc-heading-';
-        $('#toc-content a').each(function () {
-            $(this).attr('href', '#' + tocHeading + (++i));
-        });
-
-        // modify the heading title id to support Chinese.
-        i = 0;
-        $('#articleContent').children('h2, h3, h4').each(function () {
-            $(this).attr('id', tocHeading + (++i));
-        });
-
-        // Set scroll toc fixed.
-        let tocHeight = parseInt($(window).height() * 0.4 - 64);
-        let $tocWidget = $('.toc-widget');
-        $(window).scroll(function () {
-            let scroll = $(window).scrollTop();
-            /* add post toc fixed. */
-            if (scroll > tocHeight) {
-                $tocWidget.addClass('toc-fixed');
-            } else {
-                $tocWidget.removeClass('toc-fixed');
-            }
-        });
-
-        
-        /* 修复文章卡片 div 的宽度. */
-        let fixPostCardWidth = function (srcId, targetId) {
-            let srcDiv = $('#' + srcId);
-            if (srcDiv.length === 0) {
-                return;
-            }
-
-            let w = srcDiv.width();
-            if (w >= 450) {
-                w = w + 21;
-            } else if (w >= 350 && w < 450) {
-                w = w + 18;
-            } else if (w >= 300 && w < 350) {
-                w = w + 16;
-            } else {
-                w = w + 14;
-            }
-            $('#' + targetId).width(w);
-        };
-
-        // 切换TOC目录展开收缩的相关操作.
-        const expandedClass = 'expanded';
-        let $tocAside = $('#toc-aside');
-        let $mainContent = $('#main-content');
-        $('#floating-toc-btn .btn-floating').click(function () {
-            if ($tocAside.hasClass(expandedClass)) {
-                $tocAside.removeClass(expandedClass).hide();
-                $mainContent.removeClass('l9');
-            } else {
-                $tocAside.addClass(expandedClass).show();
-                $mainContent.addClass('l9');
-            }
-            fixPostCardWidth('artDetail', 'prenext-posts');
-        });
-        
-    });
-</script>
-
-    
-
+    </article>
 </main>
 
 

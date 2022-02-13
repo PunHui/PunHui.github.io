@@ -4,6 +4,81 @@
   
     
     <entry>
+      <title>PyexecJS 调用包</title>
+      <link href="/2022/021335107.html"/>
+      <url>/2022/021335107.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="NodeJS-下载的包在-Python-中无法使用"><a href="#NodeJS-下载的包在-Python-中无法使用" class="headerlink" title="NodeJS 下载的包在 Python 中无法使用"></a>NodeJS 下载的包在 Python 中无法使用</h2><h3 id="在-python-中下载包"><a href="#在-python-中下载包" class="headerlink" title="在 python 中下载包"></a>在 python 中下载包</h3><pre class=" language-bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> 自己需要的包</code></pre><p>将文件移到自己程序所在我文件夹里就 OK 了</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> JS逆向 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 异常处理 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>NodeJS 的一些异常</title>
+      <link href="/2022/02131510.html"/>
+      <url>/2022/02131510.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="下载包的问题"><a href="#下载包的问题" class="headerlink" title="下载包的问题"></a>下载包的问题</h2><h3 id="下载异常"><a href="#下载异常" class="headerlink" title="下载异常"></a>下载异常</h3><pre class=" language-bash"><code class="language-bash"><span class="token function">npm</span> ERR<span class="token operator">!</span> code EPERM<span class="token function">npm</span> ERR<span class="token operator">!</span> syscall <span class="token function">mkdir</span><span class="token function">npm</span> ERR<span class="token operator">!</span> path D:\nodejs\node_cache\_cacache<span class="token function">npm</span> ERR<span class="token operator">!</span> errno EPERM<span class="token function">npm</span> ERR<span class="token operator">!</span> FetchError: Invalid response body <span class="token keyword">while</span> trying to fetch https://registry.npmjs.org/crypto-js: EPERM: operation not permitted, <span class="token function">mkdir</span> <span class="token string">'D:\nodejs\node_cache\_cacache'</span></code></pre><p>解决办法: 删除</p><pre class=" language-bash"><code class="language-bash">“C:/Users/用户名”目录下的.npmrc文件</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> JS逆向 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 异常处理 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>PyexecJS 的一些异常处理</title>
+      <link href="/2022/021340749.html"/>
+      <url>/2022/021340749.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="GBK-编码问题"><a href="#GBK-编码问题" class="headerlink" title="GBK 编码问题"></a>GBK 编码问题</h2><h3 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h3><p>打开 subprocess.py 文件，Ctrl + f 搜索 encoding 找到如下的格式的函数</p><pre class=" language-bash"><code class="language-bash">    def __init__<span class="token punctuation">(</span>self, args, bufsize<span class="token operator">=</span>-1, executable<span class="token operator">=</span>None,                 stdin<span class="token operator">=</span>None, stdout<span class="token operator">=</span>None, stderr<span class="token operator">=</span>None,                 preexec_fn<span class="token operator">=</span>None, close_fds<span class="token operator">=</span>True,                 shell<span class="token operator">=</span>False, cwd<span class="token operator">=</span>None, env<span class="token operator">=</span>None, universal_newlines<span class="token operator">=</span>None,                 startupinfo<span class="token operator">=</span>None, creationflags<span class="token operator">=</span>0,                 restore_signals<span class="token operator">=</span>True, start_new_session<span class="token operator">=</span>False,                 pass_fds<span class="token operator">=</span><span class="token punctuation">(</span><span class="token punctuation">)</span>, *, encoding<span class="token operator">=</span>None, errors<span class="token operator">=</span>None, text<span class="token operator">=</span>None<span class="token punctuation">)</span>:        <span class="token string">""</span><span class="token string">"Create new Popen instance."</span><span class="token string">""</span>        _cleanup<span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre><p>将 encoding 的值修改成 utf-8 即可</p><pre class=" language-bash"><code class="language-bash">    def __init__<span class="token punctuation">(</span>self, args, bufsize<span class="token operator">=</span>-1, executable<span class="token operator">=</span>None,                 stdin<span class="token operator">=</span>None, stdout<span class="token operator">=</span>None, stderr<span class="token operator">=</span>None,                 preexec_fn<span class="token operator">=</span>None, close_fds<span class="token operator">=</span>True,                 shell<span class="token operator">=</span>False, cwd<span class="token operator">=</span>None, env<span class="token operator">=</span>None, universal_newlines<span class="token operator">=</span>None,                 startupinfo<span class="token operator">=</span>None, creationflags<span class="token operator">=</span>0,                 restore_signals<span class="token operator">=</span>True, start_new_session<span class="token operator">=</span>False,                 pass_fds<span class="token operator">=</span><span class="token punctuation">(</span><span class="token punctuation">)</span>, *, encoding<span class="token operator">=</span><span class="token string">"utf-8"</span>, errors<span class="token operator">=</span>None, text<span class="token operator">=</span>None<span class="token punctuation">)</span>:        <span class="token string">""</span><span class="token string">"Create new Popen instance."</span><span class="token string">""</span>        _cleanup<span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> JS逆向 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 异常处理 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>GitHub 博客搭建中的异常解决方法</title>
       <link href="/2022/021165054.html"/>
       <url>/2022/021165054.html</url>
@@ -30,6 +105,18 @@
         <content type="html"><![CDATA[<p>虽然在 PyCharm 里很方便的就能把括号里的混淆代码挖出来<br>但是我就是懒，偏要写一个自动挖代码的工具</p><h3 id="源码"><a href="#源码" class="headerlink" title="源码"></a>源码</h3><pre class=" language-bash"><code class="language-bash"><span class="token string">""</span><span class="token string">"JSFuck 加密将括号里的代码筛选出来"</span><span class="token string">""</span>def jie_xi<span class="token punctuation">(</span><span class="token punctuation">)</span>:    with open<span class="token punctuation">(</span><span class="token string">'你的文件路径'</span>, <span class="token string">'r'</span><span class="token punctuation">)</span> as f:        <span class="token keyword">return</span> f.read<span class="token punctuation">(</span><span class="token punctuation">)</span>JS <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>def if_true<span class="token punctuation">(</span>i, b<span class="token punctuation">)</span>:    try:        JS<span class="token punctuation">[</span>b<span class="token punctuation">]</span> <span class="token operator">=</span> f<span class="token string">"{JS[b]}{i}"</span>    except KeyError:        JS<span class="token punctuation">[</span>b<span class="token punctuation">]</span> <span class="token operator">=</span> idef if_false<span class="token punctuation">(</span><span class="token punctuation">)</span>:    K <span class="token operator">=</span> 0    <span class="token keyword">for</span> k, <span class="token function">v</span> <span class="token keyword">in</span> JS.items<span class="token punctuation">(</span><span class="token punctuation">)</span>:        K <span class="token operator">=</span> int<span class="token punctuation">(</span>k<span class="token punctuation">)</span>    <span class="token keyword">return</span> K + 1def main<span class="token punctuation">(</span><span class="token punctuation">)</span>:    A <span class="token operator">=</span> 0    B <span class="token operator">=</span> 0    <span class="token keyword">for</span> i <span class="token keyword">in</span> jie_xi<span class="token punctuation">(</span><span class="token punctuation">)</span>:        <span class="token keyword">if</span> i <span class="token operator">==</span> <span class="token string">'('</span><span class="token keyword">:</span>            A +<span class="token operator">=</span> 1            if_true<span class="token punctuation">(</span>i, B<span class="token punctuation">)</span>        <span class="token keyword">elif</span> i <span class="token operator">==</span> <span class="token string">')'</span><span class="token keyword">:</span>            A -<span class="token operator">=</span> 1            if_true<span class="token punctuation">(</span>i, B<span class="token punctuation">)</span>            <span class="token keyword">if</span> A <span class="token operator">==</span> 0:                B <span class="token operator">=</span> if_false<span class="token punctuation">(</span><span class="token punctuation">)</span>        <span class="token keyword">elif</span> A <span class="token operator">!=</span> 0:            if_true<span class="token punctuation">(</span>i, B<span class="token punctuation">)</span>main<span class="token punctuation">(</span><span class="token punctuation">)</span>print<span class="token punctuation">(</span>JS<span class="token punctuation">[</span>17<span class="token punctuation">]</span><span class="token punctuation">)</span></code></pre>]]></content>
       
       
+      <categories>
+          
+          <category> JS逆向 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 工具 </tag>
+            
+        </tags>
       
     </entry>
     
