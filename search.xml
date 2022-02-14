@@ -4,11 +4,36 @@
   
     
     <entry>
+      <title>Node.js 环境变量</title>
+      <link href="/2022/021442812.html"/>
+      <url>/2022/021442812.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="在-nodejs-里创建两个文件夹"><a href="#在-nodejs-里创建两个文件夹" class="headerlink" title="在 nodejs 里创建两个文件夹"></a>在 nodejs 里创建两个文件夹</h2><pre class=" language-bash"><code class="language-bash">node_cachenode_global</code></pre><h2 id="打开-CMD-执行命令"><a href="#打开-CMD-执行命令" class="headerlink" title="打开 CMD 执行命令"></a>打开 CMD 执行命令</h2><pre class=" language-bash"><code class="language-bash"><span class="token function">npm</span> config <span class="token keyword">set</span> prefix <span class="token string">"node_global文件的路径"</span><span class="token function">npm</span> config <span class="token keyword">set</span> cache <span class="token string">"node_cache的文件路径"</span>例如：<span class="token function">npm</span> config <span class="token keyword">set</span> prefix <span class="token string">"D:\nodejs\node_global"</span><span class="token function">npm</span> config <span class="token keyword">set</span> cache <span class="token string">"D:\nodejs\node_cache"</span></code></pre><h2 id="配置环境变量"><a href="#配置环境变量" class="headerlink" title="配置环境变量"></a>配置环境变量</h2><h3 id="系统变量"><a href="#系统变量" class="headerlink" title="系统变量"></a>系统变量</h3><pre class=" language-bash"><code class="language-bash">创建一个名为 NODE_PATH 值为 D:\nodejs\node_global\node_modules 的变量</code></pre><h3 id="用户变量"><a href="#用户变量" class="headerlink" title="用户变量"></a>用户变量</h3><pre class=" language-bash"><code class="language-bash">Path 里新建一个 D:\nodejs\node_global\ 变量</code></pre><h2 id="最后将-nodejs-里的所有文件都放-node-global-里面"><a href="#最后将-nodejs-里的所有文件都放-node-global-里面" class="headerlink" title="最后将 nodejs 里的所有文件都放 node_global 里面"></a>最后将 nodejs 里的所有文件都放 node_global 里面</h2><pre class=" language-bash"><code class="language-bash"><span class="token function">import</span> execjsprint<span class="token punctuation">(</span>execjs.get<span class="token punctuation">(</span><span class="token punctuation">)</span>.name<span class="token punctuation">)</span></code></pre><p>输出结果就是</p><pre class=" language-bash"><code class="language-bash">Node.js <span class="token punctuation">(</span>V8<span class="token punctuation">)</span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> JS逆向 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 环境配置 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>PyexecJS 调用包</title>
       <link href="/2022/021335107.html"/>
       <url>/2022/021335107.html</url>
       
-        <content type="html"><![CDATA[<h2 id="NodeJS-下载的包在-Python-中无法使用"><a href="#NodeJS-下载的包在-Python-中无法使用" class="headerlink" title="NodeJS 下载的包在 Python 中无法使用"></a>NodeJS 下载的包在 Python 中无法使用</h2><h3 id="在-python-中下载包"><a href="#在-python-中下载包" class="headerlink" title="在 python 中下载包"></a>在 python 中下载包</h3><pre class=" language-bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> 自己需要的包</code></pre><p>将文件移到自己程序所在我文件夹里就 OK 了</p>]]></content>
+        <content type="html"><![CDATA[<h2 id="NodeJS-下载的包在-Python-中无法使用"><a href="#NodeJS-下载的包在-Python-中无法使用" class="headerlink" title="NodeJS 下载的包在 Python 中无法使用"></a>NodeJS 下载的包在 Python 中无法使用</h2><h3 id="在-Python-中下载包"><a href="#在-Python-中下载包" class="headerlink" title="在 Python 中下载包"></a>在 Python 中下载包</h3><pre class=" language-bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> 自己需要的包</code></pre><p>将文件移到自己程序所在的文件夹里就 OK 了</p>]]></content>
       
       
       <categories>
@@ -123,7 +148,7 @@
     
     
     <entry>
-      <title>Hello World</title>
+      <title>Hello Word</title>
       <link href="/2022/021016107.html"/>
       <url>/2022/021016107.html</url>
       
