@@ -4,6 +4,81 @@
   
     
     <entry>
+      <title>PyExeJS 的使用</title>
+      <link href="/2022/022051354.html"/>
+      <url>/2022/022051354.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="改良"><a href="#改良" class="headerlink" title="改良"></a>改良</h2><h3 id="崔庆才在书上写的"><a href="#崔庆才在书上写的" class="headerlink" title="崔庆才在书上写的"></a>崔庆才在书上写的</h3><pre class=" language-bash"><code class="language-bash"><span class="token function">import</span> execjs<span class="token function">import</span> jsonprint<span class="token punctuation">(</span>execjs.get<span class="token punctuation">(</span><span class="token punctuation">)</span>.name<span class="token punctuation">)</span>node <span class="token operator">=</span> execjs.get<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token function">file</span> <span class="token operator">=</span> <span class="token string">'1.js'</span>ctx <span class="token operator">=</span> node.compile<span class="token punctuation">(</span>open<span class="token punctuation">(</span>file<span class="token punctuation">)</span>.read<span class="token punctuation">(</span><span class="token punctuation">))</span>item <span class="token operator">=</span> <span class="token punctuation">{</span>    <span class="token string">'name'</span><span class="token keyword">:</span> <span class="token string">'凯文-杜兰特'</span>,    <span class="token string">'image'</span><span class="token keyword">:</span> <span class="token string">'durant.png'</span>,    <span class="token string">'birthday'</span><span class="token keyword">:</span> <span class="token string">'1988-09-29'</span>,    <span class="token string">'height'</span><span class="token keyword">:</span> <span class="token string">'208cm'</span>,    <span class="token string">'weight'</span><span class="token keyword">:</span> <span class="token string">'108.9KG'</span><span class="token punctuation">}</span>js <span class="token operator">=</span> f<span class="token string">"getToken({json.dumps(item, ensure_ascii=False)})"</span>print<span class="token punctuation">(</span>js<span class="token punctuation">)</span>result <span class="token operator">=</span> ctx.eval<span class="token punctuation">(</span>js<span class="token punctuation">)</span>print<span class="token punctuation">(</span>result<span class="token punctuation">)</span></code></pre><h3 id="我写的代码"><a href="#我写的代码" class="headerlink" title="我写的代码"></a>我写的代码</h3><pre class=" language-bash"><code class="language-bash"><span class="token function">import</span> execjsplayer <span class="token operator">=</span> <span class="token punctuation">{</span>    <span class="token string">'name'</span><span class="token keyword">:</span> <span class="token string">'克里斯-保罗'</span>,    <span class="token string">'image'</span><span class="token keyword">:</span> <span class="token string">'paul.png'</span>,    <span class="token string">'birthday'</span><span class="token keyword">:</span> <span class="token string">'1985-05-06'</span>,    <span class="token string">'height'</span><span class="token keyword">:</span> <span class="token string">'185cm'</span>,    <span class="token string">'weight'</span><span class="token keyword">:</span> <span class="token string">'79.4KG'</span><span class="token punctuation">}</span>with open<span class="token punctuation">(</span><span class="token string">'main.js'</span>, <span class="token string">'r'</span>, encoding<span class="token operator">=</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span> as f:    get <span class="token operator">=</span> execjs.compile<span class="token punctuation">(</span>f.read<span class="token punctuation">(</span><span class="token punctuation">))</span>    js <span class="token operator">=</span> <span class="token string">'getToken'</span>    demo <span class="token operator">=</span> get.call<span class="token punctuation">(</span>js, player<span class="token punctuation">)</span>    print<span class="token punctuation">(</span>demo<span class="token punctuation">)</span></code></pre><h2 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h2><p>其实区别并不大，我只说一下我认为最重要的区别</p><p>前面的代码效果差不多，我主要讲一下一下两个代码的区别和特点</p><pre class=" language-bash"><code class="language-bash">js <span class="token operator">=</span> f<span class="token string">"getToken({json.dumps(item, ensure_ascii=False)})"</span>result <span class="token operator">=</span> ctx.eval<span class="token punctuation">(</span>js<span class="token punctuation">)</span>js <span class="token operator">=</span> <span class="token string">'getToken'</span>demo <span class="token operator">=</span> get.call<span class="token punctuation">(</span>js, player<span class="token punctuation">)</span></code></pre><p>eval 和 call 方法的区别</p><h3 id="1"><a href="#1" class="headerlink" title="1"></a>1</h3><p>eval 它参数传入的字符串需要 函数名 + 括号 + 括号里的参数</p><pre class=" language-bash"><code class="language-bash">js <span class="token operator">=</span> f<span class="token string">"getToken({json.dumps(item, ensure_ascii=False)})"</span>result <span class="token operator">=</span> ctx.eval<span class="token punctuation">(</span>js<span class="token punctuation">)</span></code></pre><p>call 只需要函数名，参数可以写在 call 方法的第二个参数</p><pre class=" language-bash"><code class="language-bash">js <span class="token operator">=</span> <span class="token string">'getToken'</span>demo <span class="token operator">=</span> get.call<span class="token punctuation">(</span>js, player<span class="token punctuation">)</span></code></pre><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>也就是说 call 简单一些</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 模块使用 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 教程 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>崔庆才案例网站 spa7 逆向</title>
+      <link href="/2022/022031293.html"/>
+      <url>/2022/022031293.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>这个在书上已经说了，我这次研究出了新的方法</p><h2 id="新方法"><a href="#新方法" class="headerlink" title="新方法"></a>新方法</h2><p>在书上 crypto-js-min.js 文件需要修改，我今天决定自己完成，不看书上的，结果在这里翻了车，最后看书操作，还是不行，跑不起来，我去复制崔庆才的源码，他的源码就可以跑起来，说明这里的修改不只是书上写的那些，还有一些需要修改</p><p>而我这个人很懒，不想一个一个的去比较哪里不一样，所以决定用浏览器调用的方式来调用这个库</p><h3 id="第一步"><a href="#第一步" class="headerlink" title="第一步"></a>第一步</h3><p>把 crypto-js-min.js 里的代码全部复制下来，不用做任何修改，创建一个文件，把它粘贴进去</p><h3 id="第二步"><a href="#第二步" class="headerlink" title="第二步"></a>第二步</h3><p>把 main.js 的代码按书上的进行修改，在第一行加上一下代码</p><pre class=" language-bash"><code class="language-bash">CryptoJS <span class="token operator">=</span> require<span class="token punctuation">(</span><span class="token string">'./crypto-js.min.js'</span><span class="token punctuation">)</span></code></pre><p>意思是把我们的 crypto-js.min.js 导入</p><h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>这样比修改代码更简单，也更不容易出错</p><h2 id="源码"><a href="#源码" class="headerlink" title="源码"></a>源码</h2><h3 id="crypto-js-min-js-自己复制，我就不写了"><a href="#crypto-js-min-js-自己复制，我就不写了" class="headerlink" title="crypto-js.min.js 自己复制，我就不写了"></a>crypto-js.min.js 自己复制，我就不写了</h3><h3 id="main-js"><a href="#main-js" class="headerlink" title="main.js"></a>main.js</h3><pre class=" language-bash"><code class="language-bash">CryptoJS <span class="token operator">=</span> require<span class="token punctuation">(</span><span class="token string">'./crypto-js.min.js'</span><span class="token punctuation">)</span><span class="token keyword">function</span> getToken<span class="token punctuation">(</span>player<span class="token punctuation">)</span> <span class="token punctuation">{</span>    <span class="token keyword">let</span> key <span class="token operator">=</span> CryptoJS.enc.Utf8.parse<span class="token punctuation">(</span><span class="token string">'fipFfVsZsTda94hJNKJfLoaqyqMZFFimwLt'</span><span class="token punctuation">)</span>    const <span class="token punctuation">{</span> name, birthday, height, weight <span class="token punctuation">}</span> <span class="token operator">=</span> player    <span class="token keyword">let</span> base64Name <span class="token operator">=</span> CryptoJS.enc.Base64.stringify<span class="token punctuation">(</span>CryptoJS.enc.Utf8.parse<span class="token punctuation">(</span>name<span class="token punctuation">))</span>    <span class="token keyword">let</span> encrypted <span class="token operator">=</span> CryptoJS.DES.encrypt<span class="token punctuation">(</span><span class="token variable"><span class="token variable">`</span>$<span class="token punctuation">{</span>base64Name<span class="token punctuation">}</span>$<span class="token punctuation">{</span>birthday<span class="token punctuation">}</span>$<span class="token punctuation">{</span>height<span class="token punctuation">}</span>$<span class="token punctuation">{</span>weight<span class="token punctuation">}</span><span class="token variable">`</span></span>, key, <span class="token punctuation">{</span>        mode: CryptoJS.mode.ECB,        padding: CryptoJS.pad.Pkcs7    <span class="token punctuation">}</span><span class="token punctuation">)</span>    <span class="token keyword">return</span> encrypted.toString<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">}</span></code></pre><h3 id="demo"><a href="#demo" class="headerlink" title="demo"></a>demo</h3><pre class=" language-bash"><code class="language-bash"><span class="token function">import</span> execjsplayer <span class="token operator">=</span> <span class="token punctuation">{</span>    <span class="token string">'name'</span><span class="token keyword">:</span> <span class="token string">'克里斯-保罗'</span>,    <span class="token string">'image'</span><span class="token keyword">:</span> <span class="token string">'paul.png'</span>,    <span class="token string">'birthday'</span><span class="token keyword">:</span> <span class="token string">'1985-05-06'</span>,    <span class="token string">'height'</span><span class="token keyword">:</span> <span class="token string">'185cm'</span>,    <span class="token string">'weight'</span><span class="token keyword">:</span> <span class="token string">'79.4KG'</span><span class="token punctuation">}</span>with open<span class="token punctuation">(</span><span class="token string">'main.js'</span>, <span class="token string">'r'</span>, encoding<span class="token operator">=</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span> as f:    get <span class="token operator">=</span> execjs.compile<span class="token punctuation">(</span>f.read<span class="token punctuation">(</span><span class="token punctuation">))</span>    js <span class="token operator">=</span> <span class="token string">'getToken'</span>    demo <span class="token operator">=</span> get.call<span class="token punctuation">(</span>js, player<span class="token punctuation">)</span>    print<span class="token punctuation">(</span>demo<span class="token punctuation">)</span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> JS逆向 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 逆向分析 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>curl 转换工具</title>
+      <link href="/2022/021910060.html"/>
+      <url>/2022/021910060.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="源码"><a href="#源码" class="headerlink" title="源码"></a>源码</h2><pre class=" language-bash"><code class="language-bash"><span class="token function">import</span> redef parse<span class="token punctuation">(</span>name<span class="token punctuation">)</span>:    headers <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>    demo <span class="token operator">=</span> re.findall<span class="token punctuation">(</span><span class="token string">"-H\s'(.*?):\s(.*?)'"</span>, name, re.S<span class="token punctuation">)</span>    <span class="token keyword">for</span> i <span class="token keyword">in</span> demo:        headers<span class="token punctuation">[</span>f<span class="token string">'{i[0]}'</span><span class="token punctuation">]</span> <span class="token operator">=</span> i<span class="token punctuation">[</span>1<span class="token punctuation">]</span>    <span class="token keyword">return</span> headers</code></pre><p><strong>这个是模块，可以直接使用</strong></p><h2 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h2><pre class=" language-bash"><code class="language-bash"><span class="token function">import</span> parse_curldemo <span class="token operator">=</span> <span class="token string">""</span><span class="token string">"curl '****' \  -H 'authority: ****' \  -H 'cache-control: max-age=0' \  -H 'sec-ch-ua: "</span> Not A<span class="token punctuation">;</span>Brand<span class="token string">";v="</span>99<span class="token string">", "</span>Chromium<span class="token string">";v="</span>98<span class="token string">", "</span>Microsoft Edge<span class="token string">";v="</span>98<span class="token string">"' \  -H 'sec-ch-ua-mobile: ?0' \  -H 'sec-ch-ua-platform: "</span>Windows<span class="token string">"' \  -H 'upgrade-insecure-requests: 1' \  -H 'user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36 Edg/98.0.1108.55' \  -H 'accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9' \  -H 'sec-fetch-site: same-origin' \  -H 'sec-fetch-mode: navigate' \  -H 'sec-fetch-user: ?1' \  -H 'sec-fetch-dest: document' \  -H 'referer: ****' \  -H 'accept-language: zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6' \  -H 'cookie: ***' \  -H 'if-modified-since: Mon, 27 Dec 2021 07:45:03 GMT' \  --compressed"</span><span class="token string">""</span>headers <span class="token operator">=</span> parse_curl.parse<span class="token punctuation">(</span>demo<span class="token punctuation">)</span></code></pre><p><strong>可以直接返回字典</strong><br><strong>用这个模块就不用再去网站解析了</strong></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> JS逆向 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 工具 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>崔庆才案例网站 spa6 逆向分析</title>
       <link href="/2022/021532651.html"/>
       <url>/2022/021532651.html</url>
