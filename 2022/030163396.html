@@ -509,7 +509,7 @@ KXsVFljZts/UB3L4koCMJi182/cF5mfA1pjcLUrhRSzTC16hyG/wvmMNFW0SJWj9P509ssPhFg5xZb5o
 encSecKey: 3fe84741e57f7b68bd41527fb4995ec86e87f6885838bd778a10810412e897c55c11f582ade7542ae403164343277aafa030a0736a041ad40b1a6eca32e66e506a017086c7615d8b22430ab3ffa7498e99fafc660625aa0c89ee4bcb7c5e409555205ea2715c940ce258b54ff9a20d42d71d04933b24c33dcd1a92bb6435e578
 </code></pre>
 <p><strong>可以知道 params 和 encSecKey 参数被加了密</strong></p>
-<h2 id="在哪加的密"><a href="#在哪加的密" class="headerlink" title="在哪加的密?"></a>在哪加的密?</h2><p>设置 HXR 断点，根据调用堆栈一个一个的找，最后在 tOx.beOx 发现可能是没有加密的参数</p>
+<h2 id="在哪加的密"><a href="#在哪加的密" class="headerlink" title="在哪加的密?"></a>在哪加的密?</h2><p>设置 XHR 断点，根据调用堆栈一个一个的找，最后在 tOx.beOx 发现可能是没有加密的参数</p>
 <pre class=" language-bash"><code class="language-bash">i0x:
     csrf_token: <span class="token string">""</span>
     cursor: <span class="token string">"-1"</span>
