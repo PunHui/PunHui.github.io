@@ -4,17 +4,13 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="PyExeJS 的使用, Hui">
-    <meta name="description" content="改良崔庆才在书上写的import execjs
-import json
+    <meta name="keywords" content="某云音乐评论逆向思路, Hui">
+    <meta name="description" content="分析含有评论数据的 url
+url https://music.163.com/weapi/comment/resource/comments/get?csrf_token=
 
-print(execjs.get().name)
-
-node = execjs.get()
-
-
-file = &#39;1.js&#39;
-ctx = node.compile(op">
+参数
+params: 
+KXsVFljZts/UB3L4koC">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -26,7 +22,7 @@ ctx = node.compile(op">
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>PyExeJS 的使用 | Hui</title>
+    <title>某云音乐评论逆向思路 | Hui</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -331,12 +327,12 @@ ctx = node.compile(op">
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/15.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">PyExeJS 的使用</h1>
+                    <h1 class="description center-align post-title">某云音乐评论逆向思路</h1>
                 </div>
             </div>
         </div>
@@ -452,8 +448,8 @@ ctx = node.compile(op">
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E6%95%99%E7%A8%8B/">
-                                <span class="chip bg-color">教程</span>
+                            <a href="/tags/%E9%80%86%E5%90%91%E5%88%86%E6%9E%90/">
+                                <span class="chip bg-color">逆向分析</span>
                             </a>
                         
                     </div>
@@ -464,8 +460,8 @@ ctx = node.compile(op">
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E6%A8%A1%E5%9D%97%E4%BD%BF%E7%94%A8/" class="post-category">
-                                模块使用
+                            <a href="/categories/JS%E9%80%86%E5%90%91/" class="post-category">
+                                JS逆向
                             </a>
                         
                     </div>
@@ -477,7 +473,7 @@ ctx = node.compile(op">
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-02-20
+                    2022-03-01
                 </div>
                 
 
@@ -503,65 +499,215 @@ ctx = node.compile(op">
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="改良"><a href="#改良" class="headerlink" title="改良"></a>改良</h2><h3 id="崔庆才在书上写的"><a href="#崔庆才在书上写的" class="headerlink" title="崔庆才在书上写的"></a>崔庆才在书上写的</h3><pre class=" language-bash"><code class="language-bash"><span class="token function">import</span> execjs
-<span class="token function">import</span> json
+                <h2 id="分析含有评论数据的-url"><a href="#分析含有评论数据的-url" class="headerlink" title="分析含有评论数据的 url"></a>分析含有评论数据的 url</h2><blockquote>
+<p>url <a target="_blank" rel="noopener" href="https://music.163.com/weapi/comment/resource/comments/get?csrf_token=">https://music.163.com/weapi/comment/resource/comments/get?csrf_token=</a></p>
+</blockquote>
+<p><strong>参数</strong></p>
+<pre class=" language-bash"><code class="language-bash">params: 
+KXsVFljZts/UB3L4koCMJi182/cF5mfA1pjcLUrhRSzTC16hyG/wvmMNFW0SJWj9P509ssPhFg5xZb5oxXwWALH5MKJk4k8RR0esI294Z86rdDycim1ifY9TByErM07sr9QmSIkFmTOiV4ak6C4KEwLBybyWoPq90n7YRufNIi47TMHDiDuSRDgZWFJ1scevA52/uDXpTBZLHKqoB4cl3zrxvT1GXSpJtLnUn/V1J63dFoxYD9GoKvsIalrYbM3WanaaTtDSZEgDvd7VgNrWcDlGDGv+N/D/Yyuv5x1afpE<span class="token operator">=</span>
 
-print<span class="token punctuation">(</span>execjs.get<span class="token punctuation">(</span><span class="token punctuation">)</span>.name<span class="token punctuation">)</span>
-
-node <span class="token operator">=</span> execjs.get<span class="token punctuation">(</span><span class="token punctuation">)</span>
-
-
-<span class="token function">file</span> <span class="token operator">=</span> <span class="token string">'1.js'</span>
-ctx <span class="token operator">=</span> node.compile<span class="token punctuation">(</span>open<span class="token punctuation">(</span>file<span class="token punctuation">)</span>.read<span class="token punctuation">(</span><span class="token punctuation">))</span>
-
-item <span class="token operator">=</span> <span class="token punctuation">{</span>
-    <span class="token string">'name'</span><span class="token keyword">:</span> <span class="token string">'凯文-杜兰特'</span>,
-    <span class="token string">'image'</span><span class="token keyword">:</span> <span class="token string">'durant.png'</span>,
-    <span class="token string">'birthday'</span><span class="token keyword">:</span> <span class="token string">'1988-09-29'</span>,
-    <span class="token string">'height'</span><span class="token keyword">:</span> <span class="token string">'208cm'</span>,
-    <span class="token string">'weight'</span><span class="token keyword">:</span> <span class="token string">'108.9KG'</span>
+encSecKey: 3fe84741e57f7b68bd41527fb4995ec86e87f6885838bd778a10810412e897c55c11f582ade7542ae403164343277aafa030a0736a041ad40b1a6eca32e66e506a017086c7615d8b22430ab3ffa7498e99fafc660625aa0c89ee4bcb7c5e409555205ea2715c940ce258b54ff9a20d42d71d04933b24c33dcd1a92bb6435e578
+</code></pre>
+<p><strong>可以知道 params 和 encSecKey 参数被加了密</strong></p>
+<h2 id="在哪加的密"><a href="#在哪加的密" class="headerlink" title="在哪加的密?"></a>在哪加的密?</h2><p>设置 HXR 断点，根据调用堆栈一个一个的找，最后在 tOx.beOx 发现可能是没有加密的参数</p>
+<pre class=" language-bash"><code class="language-bash">i0x:
+    csrf_token: <span class="token string">""</span>
+    cursor: <span class="token string">"-1"</span>
+    offset: <span class="token string">"0"</span>
+    orderType: <span class="token string">"1"</span>
+    pageNo: <span class="token string">"1"</span>
+    pageSize: <span class="token string">"20"</span>
+    rid: <span class="token string">"R_SO_4_492390949"</span>
+    threadId: <span class="token string">"R_SO_4_492390949"</span>
+    <span class="token punctuation">[</span><span class="token punctuation">[</span>Prototype<span class="token punctuation">]</span><span class="token punctuation">]</span>: Object
+    mx4B: -1
+</code></pre>
+<p>加密的参数在 bVj0x 里，直接搜索 bVj0x，将看到4个结果，都看一遍过去后找到 bVj0x 的加密过程</p>
+<pre class=" language-bash"><code class="language-bash">var bVj0x <span class="token operator">=</span> window.asrsea<span class="token punctuation">(</span>JSON.stringify<span class="token punctuation">(</span>i0x<span class="token punctuation">)</span>, bsR5W<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">"流泪"</span>, <span class="token string">"强"</span><span class="token punctuation">]</span><span class="token punctuation">)</span>, bsR5W<span class="token punctuation">(</span>Xp7i.md<span class="token punctuation">)</span>, bsR5W<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">"爱心"</span>, <span class="token string">"女孩"</span>, <span class="token string">"惊恐"</span>, <span class="token string">"大笑"</span><span class="token punctuation">]</span><span class="token punctuation">))</span><span class="token punctuation">;</span>
+</code></pre>
+<p><strong>基本可以断定这里就是加密的地方</strong></p>
+<h2 id="分析加密的参数"><a href="#分析加密的参数" class="headerlink" title="分析加密的参数"></a>分析加密的参数</h2><h3 id="1"><a href="#1" class="headerlink" title="1"></a>1</h3><pre class=" language-bash"><code class="language-bash">JSON.stringify<span class="token punctuation">(</span>i0x<span class="token punctuation">)</span>
+</code></pre>
+<p>我们可以在控制台上输出 JSON.stringify(i0x) 看看,其结果就是刚才在作用域里看到的结果</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token string">'{"rid":"R_SO_4_492390949","threadId":"R_SO_4_492390949","pageNo":"1","pageSize":"20","cursor":"-1","offset":"0","orderType":"1","csrf_token":""}'</span>
+</code></pre>
+<p>JSON.stringify 方法将 JavaScript 对象转换为字符串<br>其参数和刚才在作用域里看到的一样</p>
+<blockquote>
+<p>注意，这是字符串类型</p>
+</blockquote>
+<h3 id="2"><a href="#2" class="headerlink" title="2"></a>2</h3><pre class=" language-bash"><code class="language-bash">bsR5W<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">"流泪"</span>, <span class="token string">"强"</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+</code></pre>
+<p>直接搜索 流泪或者强<br>可以看到一个字典</p>
+<pre class=" language-bash"><code class="language-bash">    Xp7i.emj <span class="token operator">=</span> <span class="token punctuation">{</span>
+        <span class="token string">"色"</span><span class="token keyword">:</span> <span class="token string">"00e0b"</span>,
+        <span class="token string">"流感"</span><span class="token keyword">:</span> <span class="token string">"509f6"</span>,
+        <span class="token string">"这边"</span><span class="token keyword">:</span> <span class="token string">"259df"</span>,
+        <span class="token string">"弱"</span><span class="token keyword">:</span> <span class="token string">"8642d"</span>,
+        <span class="token string">"嘴唇"</span><span class="token keyword">:</span> <span class="token string">"bc356"</span>,
+        <span class="token punctuation">..</span>.
+        <span class="token string">"流泪"</span><span class="token keyword">:</span> <span class="token string">"01000"</span>,
+        <span class="token string">"强"</span><span class="token keyword">:</span> <span class="token string">"1"</span>,
+        <span class="token punctuation">..</span>.
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre>
+<p><strong>那么 bsR5W 的参数极有可能是其对应的值，也就是: 01000 和 1</strong></p>
+<h3 id="3"><a href="#3" class="headerlink" title="3"></a>3</h3><pre class=" language-bash"><code class="language-bash">bsR5W<span class="token punctuation">(</span>Xp7i.md<span class="token punctuation">)</span>
+</code></pre>
+<p>老样子，搜索 Xp7i.md，结果会看到</p>
+<pre class=" language-bash"><code class="language-bash">Xp7i.md <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"色"</span>, <span class="token string">"流感"</span>, <span class="token string">"这边"</span>, <span class="token string">"弱"</span>, <span class="token string">"嘴唇"</span>, <span class="token string">"亲"</span>, <span class="token string">"开心"</span>, <span class="token string">"呲牙"</span>,  <span class="token punctuation">..</span>.<span class="token punctuation">]</span>
+</code></pre>
+<h3 id="4"><a href="#4" class="headerlink" title="4"></a>4</h3><pre class=" language-bash"><code class="language-bash">bsR5W<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">"爱心"</span>, <span class="token string">"女孩"</span>, <span class="token string">"惊恐"</span>, <span class="token string">"大笑"</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+</code></pre>
+<ol>
+<li>可以看到，它们使用的都是一个函数 bsR5W</li>
+<li>而且值还是固定的</li>
+</ol>
+<p><strong>结论: 这3个参数很可能都是固定的值</strong></p>
+<blockquote>
+<p>可以自己在 window.asrsea 函数中打上断点，刷新几个页面，查看后面3个参数是否固定</p>
+</blockquote>
+<h2 id="分析-window-asrsea-函数"><a href="#分析-window-asrsea-函数" class="headerlink" title="分析 window.asrsea 函数"></a>分析 window.asrsea 函数</h2><pre class=" language-bash"><code class="language-bash"><span class="token keyword">function</span> d<span class="token punctuation">(</span>d, e, f, g<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    var h <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+      , i <span class="token operator">=</span> a<span class="token punctuation">(</span>16<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> h.encText <span class="token operator">=</span> b<span class="token punctuation">(</span>d, g<span class="token punctuation">)</span>,
+    h.encText <span class="token operator">=</span> b<span class="token punctuation">(</span>h.encText, i<span class="token punctuation">)</span>,
+    h.encSecKey <span class="token operator">=</span> c<span class="token punctuation">(</span>i, e, f<span class="token punctuation">)</span>,
+    h
 <span class="token punctuation">}</span>
-
-js <span class="token operator">=</span> f<span class="token string">"getToken({json.dumps(item, ensure_ascii=False)})"</span>
-print<span class="token punctuation">(</span>js<span class="token punctuation">)</span>
-result <span class="token operator">=</span> ctx.eval<span class="token punctuation">(</span>js<span class="token punctuation">)</span>
-print<span class="token punctuation">(</span>result<span class="token punctuation">)</span>
 </code></pre>
-<h3 id="我写的代码"><a href="#我写的代码" class="headerlink" title="我写的代码"></a>我写的代码</h3><pre class=" language-bash"><code class="language-bash"><span class="token function">import</span> execjs
+<p>点进来后变成了 d 函数，看也看不懂，也意味着开始扣代码了!!!</p>
+<p><strong>我们先把 e, f, g, 的值写在 js 文件中，然后开始专心的抠 d 函数</strong></p>
+<h2 id="小技巧"><a href="#小技巧" class="headerlink" title="小技巧"></a>小技巧</h2><p><strong>一下是作者重新回顾时所遇到的所以问题以及解决方法</strong></p>
+<h3 id="缺啥补啥"><a href="#缺啥补啥" class="headerlink" title="缺啥补啥"></a>缺啥补啥</h3><pre class=" language-bash"><code class="language-bash">d:\Visual Studio Code\文件1\JS实验\4.js:3
+        i <span class="token operator">=</span> a<span class="token punctuation">(</span>16<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            ^
 
-player <span class="token operator">=</span> <span class="token punctuation">{</span>
-    <span class="token string">'name'</span><span class="token keyword">:</span> <span class="token string">'克里斯-保罗'</span>,
-    <span class="token string">'image'</span><span class="token keyword">:</span> <span class="token string">'paul.png'</span>,
-    <span class="token string">'birthday'</span><span class="token keyword">:</span> <span class="token string">'1985-05-06'</span>,
-    <span class="token string">'height'</span><span class="token keyword">:</span> <span class="token string">'185cm'</span>,
-    <span class="token string">'weight'</span><span class="token keyword">:</span> <span class="token string">'79.4KG'</span>
+TypeError: a is not a <span class="token keyword">function</span>
+</code></pre>
+<p>在 VS Code 中运行代码会出现以上的错误提示你没有 a 函数<br>我们直接在浏览器里搜索 a 函数后点进去</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token keyword">function</span> a<span class="token punctuation">(</span>a<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    var d, e, b <span class="token operator">=</span> <span class="token string">"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"</span>, c <span class="token operator">=</span> <span class="token string">""</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span>d <span class="token operator">=</span> 0<span class="token punctuation">;</span> a <span class="token operator">></span> d<span class="token punctuation">;</span> d +<span class="token operator">=</span> 1<span class="token punctuation">)</span>
+        e <span class="token operator">=</span> Math.random<span class="token punctuation">(</span><span class="token punctuation">)</span> * b.length,
+        e <span class="token operator">=</span> Math.floor<span class="token punctuation">(</span>e<span class="token punctuation">)</span>,
+        c +<span class="token operator">=</span> b.charAt<span class="token punctuation">(</span>e<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> c
 <span class="token punctuation">}</span>
+</code></pre>
+<p>直接将代码复制进来，然后重复以上操作，直到不报错为止</p>
+<h3 id="下载库"><a href="#下载库" class="headerlink" title="下载库"></a>下载库</h3><blockquote>
+<p>在终端，VS Code 在 VS Code 的终端运行一下代码</p>
+</blockquote>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> crypto-js
+</code></pre>
+<p>crypto-js 需要什么就下什么，当然，这次就是需要 crypto-js 库</p>
+<p>下载好后在 js 文件中添加一下代码</p>
+<pre class=" language-bash"><code class="language-bash">var CryptoJS <span class="token operator">=</span> require<span class="token punctuation">(</span><span class="token string">'crypto-js'</span><span class="token punctuation">)</span>
+</code></pre>
+<p><strong>require 的意思是导入</strong></p>
+<h3 id="搜索结果很多"><a href="#搜索结果很多" class="headerlink" title="搜索结果很多"></a>搜索结果很多</h3><p>可以尝试添加关键字，比如搜索 c 会有 18590 个结果<br>如果我们添加了 function 会怎么样?</p>
+<blockquote>
+<p>当然，添加关键字也得保持语句的规范，比如这个例子: function c</p>
+</blockquote>
+<p>会发现只有 25 个结果，大大缩少了范围</p>
+<h3 id="NodeJS-没有-window-对象"><a href="#NodeJS-没有-window-对象" class="headerlink" title="NodeJS 没有 window 对象"></a>NodeJS 没有 window 对象</h3><p>可以添加一下代码</p>
+<pre class=" language-bash"><code class="language-bash">var window <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre>
+<p>以后遇到什么无法运行对象都可以这样做</p>
+<h3 id="搜索函数名结果没有函数"><a href="#搜索函数名结果没有函数" class="headerlink" title="搜索函数名结果没有函数"></a>搜索函数名结果没有函数</h3><p>比如:</p>
+<pre class=" language-bash"><code class="language-bash">ReferenceError: bitsPerDigit is not defined
+</code></pre>
+<p>搜索后没有发现函数，也就是说它不是函数，我们可以看看其他的值，最后会发现以下代码</p>
+<pre class=" language-bash"><code class="language-bash">var maxDigits,
+     ZERO_ARRAY, 
+     bigZero, 
+     bigOne, 
+     dpl10, 
+     lr10, 
+     hexatrigesimalToChar, 
+     hexToChar, 
+     highBitMasks, 
+     lowBitMasks,
+     biRadixBase <span class="token operator">=</span> 2, 
+     biRadixBits <span class="token operator">=</span> 16, 
+     bitsPerDigit <span class="token operator">=</span> biRadixBits, 
+     biRadix <span class="token operator">=</span> 65536, 
+     biHalfRadix <span class="token operator">=</span> biRadix <span class="token operator">>></span><span class="token operator">></span> 1, 
+     biRadixSquared <span class="token operator">=</span> biRadix * biRadix, 
+     maxDigitVal <span class="token operator">=</span> biRadix - 1, 
+     maxInteger <span class="token operator">=</span> 9999999999999998<span class="token punctuation">;</span>
 
-with open<span class="token punctuation">(</span><span class="token string">'main.js'</span>, <span class="token string">'r'</span>, encoding<span class="token operator">=</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span> as f:
-    get <span class="token operator">=</span> execjs.compile<span class="token punctuation">(</span>f.read<span class="token punctuation">(</span><span class="token punctuation">))</span>
-    js <span class="token operator">=</span> <span class="token string">'getToken'</span>
-    demo <span class="token operator">=</span> get.call<span class="token punctuation">(</span>js, player<span class="token punctuation">)</span>
-    print<span class="token punctuation">(</span>demo<span class="token punctuation">)</span>
-</code></pre>
-<h2 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h2><p>其实区别并不大，我只说一下我认为最重要的区别</p>
-<p>前面的代码效果差不多，我主要讲一下一下两个代码的区别和特点</p>
-<pre class=" language-bash"><code class="language-bash">js <span class="token operator">=</span> f<span class="token string">"getToken({json.dumps(item, ensure_ascii=False)})"</span>
-result <span class="token operator">=</span> ctx.eval<span class="token punctuation">(</span>js<span class="token punctuation">)</span>
+setMaxDigits<span class="token punctuation">(</span>20<span class="token punctuation">)</span>,
 
+dpl10 <span class="token operator">=</span> 15,
 
-js <span class="token operator">=</span> <span class="token string">'getToken'</span>
-demo <span class="token operator">=</span> get.call<span class="token punctuation">(</span>js, player<span class="token punctuation">)</span>
+lr10 <span class="token operator">=</span> biFromNumber<span class="token punctuation">(</span>1e15<span class="token punctuation">)</span>,
+
+hexatrigesimalToChar <span class="token operator">=</span> new Array<span class="token punctuation">(</span><span class="token string">"0"</span>,<span class="token string">"1"</span>,<span class="token string">"2"</span>,<span class="token string">"3"</span>,<span class="token string">"4"</span>,<span class="token string">"5"</span>,<span class="token string">"6"</span>,<span class="token string">"7"</span>,<span class="token string">"8"</span>,<span class="token string">"9"</span>,<span class="token string">"a"</span>,<span class="token string">"b"</span>,<span class="token string">"c"</span>,<span class="token string">"d"</span>,<span class="token string">"e"</span>,<span class="token string">"f"</span>,<span class="token string">"g"</span>,<span class="token string">"h"</span>,<span class="token string">"i"</span>,<span class="token string">"j"</span>,<span class="token string">"k"</span>,<span class="token string">"l"</span>,<span class="token string">"m"</span>,<span class="token string">"n"</span>,<span class="token string">"o"</span>,<span class="token string">"p"</span>,<span class="token string">"q"</span>,<span class="token string">"r"</span>,<span class="token string">"s"</span>,<span class="token string">"t"</span>,<span class="token string">"u"</span>,<span class="token string">"v"</span>,<span class="token string">"w"</span>,<span class="token string">"x"</span>,<span class="token string">"y"</span>,<span class="token string">"z"</span><span class="token punctuation">)</span>,
+
+hexToChar <span class="token operator">=</span> new Array<span class="token punctuation">(</span><span class="token string">"0"</span>,<span class="token string">"1"</span>,<span class="token string">"2"</span>,<span class="token string">"3"</span>,<span class="token string">"4"</span>,<span class="token string">"5"</span>,<span class="token string">"6"</span>,<span class="token string">"7"</span>,<span class="token string">"8"</span>,<span class="token string">"9"</span>,<span class="token string">"a"</span>,<span class="token string">"b"</span>,<span class="token string">"c"</span>,<span class="token string">"d"</span>,<span class="token string">"e"</span>,<span class="token string">"f"</span><span class="token punctuation">)</span>,
+
+highBitMasks <span class="token operator">=</span> new Array<span class="token punctuation">(</span>0,32768,49152,57344,61440,63488,64512,65024,65280,65408,65472,65504,65520,65528,65532,65534,65535<span class="token punctuation">)</span>,
+
+lowBitMasks <span class="token operator">=</span> new Array<span class="token punctuation">(</span>0,1,3,7,15,31,63,127,255,511,1023,2047,4095,8191,16383,32767,65535<span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
-<p>eval 和 call 方法的区别</p>
-<h3 id="1"><a href="#1" class="headerlink" title="1"></a>1</h3><p>eval 它参数传入的字符串需要 函数名 + 括号 + 括号里的参数</p>
-<pre class=" language-bash"><code class="language-bash">js <span class="token operator">=</span> f<span class="token string">"getToken({json.dumps(item, ensure_ascii=False)})"</span>
-result <span class="token operator">=</span> ctx.eval<span class="token punctuation">(</span>js<span class="token punctuation">)</span>
+<p>像这种赋值语句我推荐全部复制下来</p>
+<h2 id="最后工作"><a href="#最后工作" class="headerlink" title="最后工作"></a>最后工作</h2><p>在最后添加一下代码</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token keyword">function</span> token<span class="token punctuation">(</span>d, e, f, g<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    d <span class="token operator">=</span> JSON.stringify<span class="token punctuation">(</span>d<span class="token punctuation">)</span>
+    var tokens <span class="token operator">=</span> doc<span class="token punctuation">(</span>d, e, f, g<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> tokens<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 </code></pre>
-<p>call 只需要函数名，参数可以写在 call 方法的第二个参数</p>
-<pre class=" language-bash"><code class="language-bash">js <span class="token operator">=</span> <span class="token string">'getToken'</span>
-demo <span class="token operator">=</span> get.call<span class="token punctuation">(</span>js, player<span class="token punctuation">)</span>
+<blockquote>
+<p>doc 函数就是 d 函数，我修改了函数名，避免冲突</p>
+</blockquote>
+<p><strong>e, f, g 虽然是固定值，但是写在 Python 里会更加好，以便以后修改</strong><br><strong>注意 d 参数是不固定的!!!</strong></p>
+<blockquote>
+<p>d &#x3D; JSON.stringify(d) 添上这个函数我们直接在 Python 里写好字典即可，以便修改</p>
+</blockquote>
+<h2 id="最后放上一部分源码"><a href="#最后放上一部分源码" class="headerlink" title="最后放上一部分源码"></a>最后放上一部分源码</h2><h3 id="Python"><a href="#Python" class="headerlink" title="Python"></a>Python</h3><pre class=" language-bash"><code class="language-bash">def encryption<span class="token punctuation">(</span>d<span class="token punctuation">)</span>:
+    <span class="token string">""</span><span class="token string">"加密"</span><span class="token string">""</span>
+    e <span class="token operator">=</span> <span class="token string">'010001'</span>  <span class="token comment" spellcheck="true"># 固定值</span>
+    <span class="token comment" spellcheck="true"># 固定值</span>
+    fs <span class="token operator">=</span> <span class="token string">'00e0b509f6259df8642dbc35662901477df22677ec152b5ff68ace615bb7b725152b3ab17a876aea8a5aa76d2e417629ec4ee341f56135fccf695280104e0312ecbda92557c93870114af6c9d05c4f7f0c3685b7a46bee255932575cce10b424d813cfe4875d3e82047b97ddef52741d546b8e289dc6935b3ece0462db0a22b8e7'</span>
+    g <span class="token operator">=</span> <span class="token string">'0CoJUm6Qyw8W8jud'</span>  <span class="token comment" spellcheck="true"># 固定值</span>
+
+    with open<span class="token punctuation">(</span><span class="token string">'你自己js文件名.js'</span>, <span class="token string">'r'</span>, encoding<span class="token operator">=</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span> as f:
+        get <span class="token operator">=</span> execjs.compile<span class="token punctuation">(</span>f.read<span class="token punctuation">(</span><span class="token punctuation">))</span>
+        js <span class="token operator">=</span> <span class="token string">'token'</span>
+        demo <span class="token operator">=</span> get.call<span class="token punctuation">(</span>js, d, e, fs, g<span class="token punctuation">)</span>
+
+    data <span class="token operator">=</span> <span class="token punctuation">{</span>
+        <span class="token string">'params'</span><span class="token keyword">:</span> demo<span class="token punctuation">[</span><span class="token string">'encText'</span><span class="token punctuation">]</span>,
+        <span class="token string">'encSecKey'</span><span class="token keyword">:</span> demo<span class="token punctuation">[</span><span class="token string">'encSecKey'</span><span class="token punctuation">]</span>,
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">return</span> data
 </code></pre>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>也就是说 call 简单一些</p>
+<h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><blockquote>
+<p>这是爬取评论的参数，而且还只是网站首页歌单的参数，不能用于爬取其他信息</p>
+</blockquote>
+<pre class=" language-bash"><code class="language-bash">d <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token string">"rid"</span><span class="token keyword">:</span> <span class="token string">"A_PL_0_6727687679"</span>,
+    <span class="token string">"threadId"</span><span class="token keyword">:</span> <span class="token string">"A_PL_0_6727687679"</span>,
+    <span class="token string">"pageNo"</span><span class="token keyword">:</span> <span class="token string">"1"</span>,
+    <span class="token string">"pageSize"</span><span class="token keyword">:</span> <span class="token string">"40"</span>,
+    <span class="token string">"cursor"</span><span class="token keyword">:</span> <span class="token string">"-1"</span>,
+    <span class="token string">"offset"</span><span class="token keyword">:</span> <span class="token string">"0"</span>,
+    <span class="token string">"orderType"</span><span class="token keyword">:</span> <span class="token string">"1"</span>,
+    <span class="token string">"csrf_token"</span><span class="token keyword">:</span> <span class="token string">""</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h3 id="其参数还有其他变化，具体自己去摸索，我放上一些有关信息"><a href="#其参数还有其他变化，具体自己去摸索，我放上一些有关信息" class="headerlink" title="其参数还有其他变化，具体自己去摸索，我放上一些有关信息"></a>其参数还有其他变化，具体自己去摸索，我放上一些有关信息</h3><pre class=" language-bash"><code class="language-bash"><span class="token string">'playlist'</span><span class="token keyword">:</span> <span class="token string">"A_PL_0_"</span>,  <span class="token comment" spellcheck="true"># 歌单</span>
+<span class="token string">'dj'</span><span class="token keyword">:</span> <span class="token string">"A_DJ_1_"</span>,  <span class="token comment" spellcheck="true"># 电台节目</span>
+<span class="token string">'program'</span><span class="token keyword">:</span> <span class="token string">"A_DJ_1_"</span>,
+<span class="token string">'album'</span><span class="token keyword">:</span> <span class="token string">"R_AL_3_"</span>,  <span class="token comment" spellcheck="true"># 专辑</span>
+<span class="token string">'song'</span><span class="token keyword">:</span> <span class="token string">"R_SO_4_"</span>  <span class="token comment" spellcheck="true"># 歌曲</span>
+</code></pre>
+<blockquote>
+<p>具体如果使用各位自己琢磨吧!</p>
+</blockquote>
 
                 
             </div>
@@ -588,7 +734,7 @@ demo <span class="token operator">=</span> get.call<span class="token punctuatio
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://PunHui.github.io/2022/022051354.html">http://PunHui.github.io/2022/022051354.html</a>
+                    <a href="http://PunHui.github.io/2022/030163396.html">http://PunHui.github.io/2022/030163396.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -626,8 +772,8 @@ demo <span class="token operator">=</span> get.call<span class="token punctuatio
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E6%95%99%E7%A8%8B/">
-                                    <span class="chip bg-color">教程</span>
+                                <a href="/tags/%E9%80%86%E5%90%91%E5%88%86%E6%9E%90/">
+                                    <span class="chip bg-color">逆向分析</span>
                                 </a>
                             
                         </div>
@@ -675,9 +821,10 @@ demo <span class="token operator">=</span> get.call<span class="token punctuatio
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2022/030163396.html">
                     <div class="card-image">
@@ -695,9 +842,9 @@ demo <span class="token operator">=</span> get.call<span class="token punctuatio
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-03-01
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-01
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -710,6 +857,7 @@ demo <span class="token operator">=</span> get.call<span class="token punctuatio
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -728,13 +876,13 @@ demo <span class="token operator">=</span> get.call<span class="token punctuatio
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/022031293.html">
+                <a href="/2022/022051354.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="崔庆才案例网站 spa7 逆向">
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="PyExeJS 的使用">
                         
-                        <span class="card-title">崔庆才案例网站 spa7 逆向</span>
+                        <span class="card-title">PyExeJS 的使用</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -751,8 +899,8 @@ demo <span class="token operator">=</span> get.call<span class="token punctuatio
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/JS%E9%80%86%E5%90%91/" class="post-category">
-                                    JS逆向
+                            <a href="/categories/%E6%A8%A1%E5%9D%97%E4%BD%BF%E7%94%A8/" class="post-category">
+                                    模块使用
                                 </a>
                             
                             
@@ -762,8 +910,8 @@ demo <span class="token operator">=</span> get.call<span class="token punctuatio
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E9%80%86%E5%90%91%E5%88%86%E6%9E%90/">
-                        <span class="chip bg-color">逆向分析</span>
+                    <a href="/tags/%E6%95%99%E7%A8%8B/">
+                        <span class="chip bg-color">教程</span>
                     </a>
                     
                 </div>
