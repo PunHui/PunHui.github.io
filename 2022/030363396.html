@@ -5,12 +5,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="某云音乐评论逆向思路, Hui">
-    <meta name="description" content="分析含有评论数据的 url
-url https://music.163.com/weapi/comment/resource/comments/get?csrf_token=post 请求
-
-参数
-params: 
-KXsVFljZts/U">
+    <meta name="description" content="技术无罪技术无罪，关键是怎么利用技术，本文只供参考学习!!!
+分析含有评论数据的 url
+url https://music.163.com/weapi/comment/resource/comments/get?csrf_token=po">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -473,7 +470,7 @@ KXsVFljZts/U">
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-03-01
+                    2022-03-03
                 </div>
                 
 
@@ -499,7 +496,8 @@ KXsVFljZts/U">
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="分析含有评论数据的-url"><a href="#分析含有评论数据的-url" class="headerlink" title="分析含有评论数据的 url"></a>分析含有评论数据的 url</h2><blockquote>
+                <h2 id="技术无罪"><a href="#技术无罪" class="headerlink" title="技术无罪"></a>技术无罪</h2><p><strong>技术无罪，关键是怎么利用技术，本文只供参考学习!!!</strong></p>
+<h2 id="分析含有评论数据的-url"><a href="#分析含有评论数据的-url" class="headerlink" title="分析含有评论数据的 url"></a>分析含有评论数据的 url</h2><blockquote>
 <p>url <a target="_blank" rel="noopener" href="https://music.163.com/weapi/comment/resource/comments/get?csrf_token=">https://music.163.com/weapi/comment/resource/comments/get?csrf_token=</a><br>post 请求</p>
 </blockquote>
 <p><strong>参数</strong></p>
@@ -666,45 +664,6 @@ lowBitMasks <span class="token operator">=</span> new Array<span class="token pu
 <blockquote>
 <p>d &#x3D; JSON.stringify(d) 添上这个函数我们直接在 Python 里写好字典即可，不用自己将字典修改成字符串类型</p>
 </blockquote>
-<h2 id="最后放上一部分源码"><a href="#最后放上一部分源码" class="headerlink" title="最后放上一部分源码"></a>最后放上一部分源码</h2><h3 id="Python"><a href="#Python" class="headerlink" title="Python"></a>Python</h3><pre class=" language-bash"><code class="language-bash">def encryption<span class="token punctuation">(</span>d<span class="token punctuation">)</span>:
-    <span class="token string">""</span><span class="token string">"加密"</span><span class="token string">""</span>
-    e <span class="token operator">=</span> <span class="token string">'010001'</span>  <span class="token comment" spellcheck="true"># 固定值</span>
-    <span class="token comment" spellcheck="true"># 固定值</span>
-    fs <span class="token operator">=</span> <span class="token string">'00e0b509f6259df8642dbc35662901477df22677ec152b5ff68ace615bb7b725152b3ab17a876aea8a5aa76d2e417629ec4ee341f56135fccf695280104e0312ecbda92557c93870114af6c9d05c4f7f0c3685b7a46bee255932575cce10b424d813cfe4875d3e82047b97ddef52741d546b8e289dc6935b3ece0462db0a22b8e7'</span>
-    g <span class="token operator">=</span> <span class="token string">'0CoJUm6Qyw8W8jud'</span>  <span class="token comment" spellcheck="true"># 固定值</span>
-
-    with open<span class="token punctuation">(</span><span class="token string">'你自己js文件名.js'</span>, <span class="token string">'r'</span>, encoding<span class="token operator">=</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span> as f:
-        get <span class="token operator">=</span> execjs.compile<span class="token punctuation">(</span>f.read<span class="token punctuation">(</span><span class="token punctuation">))</span>
-        js <span class="token operator">=</span> <span class="token string">'token'</span>
-        demo <span class="token operator">=</span> get.call<span class="token punctuation">(</span>js, d, e, fs, g<span class="token punctuation">)</span>
-
-    data <span class="token operator">=</span> <span class="token punctuation">{</span>
-        <span class="token string">'params'</span><span class="token keyword">:</span> demo<span class="token punctuation">[</span><span class="token string">'encText'</span><span class="token punctuation">]</span>,
-        <span class="token string">'encSecKey'</span><span class="token keyword">:</span> demo<span class="token punctuation">[</span><span class="token string">'encSecKey'</span><span class="token punctuation">]</span>,
-    <span class="token punctuation">}</span>
-
-    <span class="token keyword">return</span> data
-</code></pre>
-<h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><blockquote>
-<p>这是爬取评论的参数，而且还只是网站首页歌单的参数，不能用于爬取其他信息</p>
-</blockquote>
-<pre class=" language-bash"><code class="language-bash">d <span class="token operator">=</span> <span class="token punctuation">{</span>
-    <span class="token string">"rid"</span><span class="token keyword">:</span> <span class="token string">"A_PL_0_6727687679"</span>,
-    <span class="token string">"threadId"</span><span class="token keyword">:</span> <span class="token string">"A_PL_0_6727687679"</span>,
-    <span class="token string">"pageNo"</span><span class="token keyword">:</span> <span class="token string">"1"</span>,
-    <span class="token string">"pageSize"</span><span class="token keyword">:</span> <span class="token string">"40"</span>,
-    <span class="token string">"cursor"</span><span class="token keyword">:</span> <span class="token string">"-1"</span>,
-    <span class="token string">"offset"</span><span class="token keyword">:</span> <span class="token string">"0"</span>,
-    <span class="token string">"orderType"</span><span class="token keyword">:</span> <span class="token string">"1"</span>,
-    <span class="token string">"csrf_token"</span><span class="token keyword">:</span> <span class="token string">""</span>
-<span class="token punctuation">}</span>
-</code></pre>
-<h3 id="其参数还有其他变化，具体自己去摸索，我放上一些有关信息"><a href="#其参数还有其他变化，具体自己去摸索，我放上一些有关信息" class="headerlink" title="其参数还有其他变化，具体自己去摸索，我放上一些有关信息"></a>其参数还有其他变化，具体自己去摸索，我放上一些有关信息</h3><pre class=" language-bash"><code class="language-bash"><span class="token string">'playlist'</span><span class="token keyword">:</span> <span class="token string">"A_PL_0_"</span>,  <span class="token comment" spellcheck="true"># 歌单</span>
-<span class="token string">'dj'</span><span class="token keyword">:</span> <span class="token string">"A_DJ_1_"</span>,  <span class="token comment" spellcheck="true"># 电台节目</span>
-<span class="token string">'program'</span><span class="token keyword">:</span> <span class="token string">"A_DJ_1_"</span>,
-<span class="token string">'album'</span><span class="token keyword">:</span> <span class="token string">"R_AL_3_"</span>,  <span class="token comment" spellcheck="true"># 专辑</span>
-<span class="token string">'song'</span><span class="token keyword">:</span> <span class="token string">"R_SO_4_"</span>  <span class="token comment" spellcheck="true"># 歌曲</span>
-</code></pre>
 <blockquote>
 <p>具体如何使用各位自己琢磨吧!</p>
 </blockquote>
@@ -734,7 +693,7 @@ lowBitMasks <span class="token operator">=</span> new Array<span class="token pu
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://PunHui.github.io/2022/030163396.html">http://PunHui.github.io/2022/030163396.html</a>
+                    <a href="http://PunHui.github.io/2022/030363396.html">http://PunHui.github.io/2022/030363396.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -826,7 +785,7 @@ lowBitMasks <span class="token operator">=</span> new Array<span class="token pu
                 <i class="far fa-dot-circle"></i>&nbsp;本篇
             </div>
             <div class="card">
-                <a href="/2022/030163396.html">
+                <a href="/2022/030363396.html">
                     <div class="card-image">
                         
                         
@@ -843,7 +802,7 @@ lowBitMasks <span class="token operator">=</span> new Array<span class="token pu
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-01
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-03
                             </span>
                         <span class="publish-author">
                             
@@ -876,13 +835,13 @@ lowBitMasks <span class="token operator">=</span> new Array<span class="token pu
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/022051354.html">
+                <a href="/2022/030114471.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="PyExeJS 的使用">
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="某云音乐评论逆向思路(密)">
                         
-                        <span class="card-title">PyExeJS 的使用</span>
+                        <span class="card-title">某云音乐评论逆向思路(密)</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -893,14 +852,14 @@ lowBitMasks <span class="token operator">=</span> new Array<span class="token pu
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-02-20
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-01
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%A8%A1%E5%9D%97%E4%BD%BF%E7%94%A8/" class="post-category">
-                                    模块使用
+                            <a href="/categories/JS%E9%80%86%E5%90%91/" class="post-category">
+                                    JS逆向
                                 </a>
                             
                             
@@ -910,8 +869,8 @@ lowBitMasks <span class="token operator">=</span> new Array<span class="token pu
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%95%99%E7%A8%8B/">
-                        <span class="chip bg-color">教程</span>
+                    <a href="/tags/%E9%80%86%E5%90%91%E5%88%86%E6%9E%90/">
+                        <span class="chip bg-color">逆向分析</span>
                     </a>
                     
                 </div>
