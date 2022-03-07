@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>parse_curl 模块</title>
+      <link href="/2022/03073265.html"/>
+      <url>/2022/03073265.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="源码"><a href="#源码" class="headerlink" title="源码"></a>源码</h2><pre class=" language-bash"><code class="language-bash"><span class="token function">import</span> redef parse<span class="token punctuation">(</span>name<span class="token punctuation">)</span>:    headers <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>    demo <span class="token operator">=</span> re.findall<span class="token punctuation">(</span><span class="token string">"-H\s'(.*?):\s(.*?)'"</span>, name, re.S<span class="token punctuation">)</span>    <span class="token keyword">for</span> i <span class="token keyword">in</span> demo:        headers<span class="token punctuation">[</span>f<span class="token string">'{i[0]}'</span><span class="token punctuation">]</span> <span class="token operator">=</span> i<span class="token punctuation">[</span>1<span class="token punctuation">]</span>    <span class="token keyword">return</span> headers</code></pre><h2 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h2><pre class=" language-bash"><code class="language-bash"><span class="token function">import</span> parse_curldemo <span class="token operator">=</span> <span class="token string">""</span><span class="token string">"curl '****' \  -H 'authority: ****' \  -H 'cache-control: max-age=0' \  -H 'sec-ch-ua: "</span> Not A<span class="token punctuation">;</span>Brand<span class="token string">";v="</span>99<span class="token string">", "</span>Chromium<span class="token string">";v="</span>98<span class="token string">", "</span>Microsoft Edge<span class="token string">";v="</span>98<span class="token string">"' \  -H 'sec-ch-ua-mobile: ?0' \  -H 'sec-ch-ua-platform: "</span>Windows<span class="token string">"' \  -H 'upgrade-insecure-requests: 1' \  -H 'user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36 Edg/98.0.1108.55' \  -H 'accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9' \  -H 'sec-fetch-site: same-origin' \  -H 'sec-fetch-mode: navigate' \  -H 'sec-fetch-user: ?1' \  -H 'sec-fetch-dest: document' \  -H 'referer: ****' \  -H 'accept-language: zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6' \  -H 'cookie: ***' \  -H 'if-modified-since: Mon, 27 Dec 2021 07:45:03 GMT' \  --compressed"</span><span class="token string">""</span>headers <span class="token operator">=</span> parse_curl.parse<span class="token punctuation">(</span>demo<span class="token punctuation">)</span></code></pre><h2 id="直接返回字典类型"><a href="#直接返回字典类型" class="headerlink" title="直接返回字典类型"></a>直接返回字典类型</h2>]]></content>
+      
+      
+      <categories>
+          
+          <category> 工具 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 工具 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>某云音乐评论逆向思路</title>
       <link href="/2022/030363396.html"/>
       <url>/2022/030363396.html</url>
