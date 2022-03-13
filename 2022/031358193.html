@@ -4,14 +4,14 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="parse_curl 模块, Hui">
-    <meta name="description" content="源码import re
-
-def parse(name):
-    headers = {}
-
-    demo = re.findall(&#34;-H\s&#39;(.*?):\s(.*?)&#39;&#34;, name, re.S)
-    for i in de">
+    <meta name="keywords" content="猿人学 3 题, Hui">
+    <meta name="description" content="这道题太骚了headers 的顺序不能错，curl 都不是正确顺序
+推荐下载一个抓包工具 fiddler阿里云盘下载
+具体怎么使用自己在网上找
+汉化版教程
+汉化补丁
+把抓包工具里的 headers 复制，修改一下以为这样就大功告成了？
+被 ">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -23,7 +23,7 @@ def parse(name):
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>parse_curl 模块 | Hui</title>
+    <title>猿人学 3 题 | Hui</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -328,12 +328,12 @@ def parse(name):
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">parse_curl 模块</h1>
+                    <h1 class="description center-align post-title">猿人学 3 题</h1>
                 </div>
             </div>
         </div>
@@ -449,8 +449,8 @@ def parse(name):
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E5%B7%A5%E5%85%B7/">
-                                <span class="chip bg-color">工具</span>
+                            <a href="/tags/%E5%A6%88%E7%9A%84%E5%A4%AA%E9%AA%9A%E4%BA%86/">
+                                <span class="chip bg-color">妈的太骚了</span>
                             </a>
                         
                     </div>
@@ -461,8 +461,8 @@ def parse(name):
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E5%B7%A5%E5%85%B7/" class="post-category">
-                                工具
+                            <a href="/categories/JS%E9%80%86%E5%90%91/" class="post-category">
+                                JS逆向
                             </a>
                         
                     </div>
@@ -474,7 +474,7 @@ def parse(name):
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-03-07
+                    2022-03-13
                 </div>
                 
 
@@ -500,43 +500,89 @@ def parse(name):
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="源码"><a href="#源码" class="headerlink" title="源码"></a>源码</h2><pre class=" language-bash"><code class="language-bash"><span class="token function">import</span> re
-
-def parse<span class="token punctuation">(</span>name<span class="token punctuation">)</span>:
-    headers <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
-
-    demo <span class="token operator">=</span> re.findall<span class="token punctuation">(</span><span class="token string">"-H\s'(.*?):\s(.*?)'"</span>, name, re.S<span class="token punctuation">)</span>
-    <span class="token keyword">for</span> i <span class="token keyword">in</span> demo:
-        headers<span class="token punctuation">[</span>f<span class="token string">'{i[0]}'</span><span class="token punctuation">]</span> <span class="token operator">=</span> i<span class="token punctuation">[</span>1<span class="token punctuation">]</span>
-
-    <span class="token keyword">return</span> headers
+                <h2 id="这道题太骚了"><a href="#这道题太骚了" class="headerlink" title="这道题太骚了"></a>这道题太骚了</h2><p>headers 的顺序不能错，curl 都不是正确顺序</p>
+<h2 id="推荐下载一个抓包工具-fiddler"><a href="#推荐下载一个抓包工具-fiddler" class="headerlink" title="推荐下载一个抓包工具 fiddler"></a>推荐下载一个抓包工具 fiddler</h2><p><a target="_blank" rel="noopener" href="https://www.aliyundrive.com/s/dfNiFAbKdtL">阿里云盘下载</a></p>
+<p>具体怎么使用自己在网上找</p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/465463269">汉化版教程</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.aliyundrive.com/s/wvbch3j6QUZ">汉化补丁</a></p>
+<h2 id="把抓包工具里的-headers-复制，修改一下"><a href="#把抓包工具里的-headers-复制，修改一下" class="headerlink" title="把抓包工具里的 headers 复制，修改一下"></a>把抓包工具里的 headers 复制，修改一下</h2><p>以为这样就大功告成了？</p>
+<h2 id="被-requests-背刺了"><a href="#被-requests-背刺了" class="headerlink" title="被 requests 背刺了"></a>被 requests 背刺了</h2><p>requests 会打乱 headers 顺序，我们需要手动修改</p>
+<pre class=" language-bash"><code class="language-bash">session <span class="token operator">=</span> requests.session<span class="token punctuation">(</span><span class="token punctuation">)</span>
+session.headers.clear<span class="token punctuation">(</span><span class="token punctuation">)</span>
+session.headers.update<span class="token punctuation">(</span>headers<span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 构造完成，发送请求</span>
+session.get<span class="token punctuation">(</span>url, verify<span class="token operator">=</span>False<span class="token punctuation">)</span>
 </code></pre>
-<h2 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h2><pre class=" language-bash"><code class="language-bash"><span class="token function">import</span> parse_curl
+<p>妈的，我怎么也想不到 requests 会背刺我</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_38631327/article/details/107293360">参考资料</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_39461487/article/details/81132922">报错解决办法</a></p>
+<h2 id="好了，可以返回-Cookie-了"><a href="#好了，可以返回-Cookie-了" class="headerlink" title="好了，可以返回 Cookie 了"></a>好了，可以返回 Cookie 了</h2><h2 id="源码"><a href="#源码" class="headerlink" title="源码"></a>源码</h2><pre class=" language-bash"><code class="language-bash"><span class="token function">import</span> requests
+<span class="token function">import</span> urllib3
 
-demo <span class="token operator">=</span> <span class="token string">""</span><span class="token string">"
-curl '****' \
-  -H 'authority: ****' \
-  -H 'cache-control: max-age=0' \
-  -H 'sec-ch-ua: "</span> Not A<span class="token punctuation">;</span>Brand<span class="token string">";v="</span>99<span class="token string">", "</span>Chromium<span class="token string">";v="</span>98<span class="token string">", "</span>Microsoft Edge<span class="token string">";v="</span>98<span class="token string">"' \
-  -H 'sec-ch-ua-mobile: ?0' \
-  -H 'sec-ch-ua-platform: "</span>Windows<span class="token string">"' \
-  -H 'upgrade-insecure-requests: 1' \
-  -H 'user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36 Edg/98.0.1108.55' \
-  -H 'accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9' \
-  -H 'sec-fetch-site: same-origin' \
-  -H 'sec-fetch-mode: navigate' \
-  -H 'sec-fetch-user: ?1' \
-  -H 'sec-fetch-dest: document' \
-  -H 'referer: ****' \
-  -H 'accept-language: zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6' \
-  -H 'cookie: ***' \
-  -H 'if-modified-since: Mon, 27 Dec 2021 07:45:03 GMT' \
-  --compressed
-"</span><span class="token string">""</span>
+urllib3.disable_warnings<span class="token punctuation">(</span><span class="token punctuation">)</span>
 
-headers <span class="token operator">=</span> parse_curl.parse<span class="token punctuation">(</span>demo<span class="token punctuation">)</span>
+
+def pa_json<span class="token punctuation">(</span><span class="token punctuation">)</span>:
+    <span class="token string">""</span><span class="token string">"爬取json数据"</span><span class="token string">""</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span>1, 6<span class="token punctuation">)</span>:
+        url <span class="token operator">=</span> <span class="token string">'https://match.yuanrenxue.com/jssm'</span>
+
+        headers <span class="token operator">=</span> <span class="token punctuation">{</span>
+            <span class="token string">'Host'</span><span class="token keyword">:</span> <span class="token string">'match.yuanrenxue.com'</span>,
+            <span class="token string">'Connection'</span><span class="token keyword">:</span> <span class="token string">'keep-alive'</span>,
+            <span class="token string">'Content-Length'</span><span class="token keyword">:</span> <span class="token string">'0'</span>,
+            <span class="token string">'sec-ch-ua'</span><span class="token keyword">:</span> <span class="token string">'" Not A;Brand";v="99", "Chromium";v="99", "Microsoft Edge";v="99"'</span>,
+            <span class="token string">'sec-ch-ua-mobile'</span><span class="token keyword">:</span> <span class="token string">'?0'</span>,
+            <span class="token string">'User-Agent'</span><span class="token keyword">:</span> <span class="token string">'yuanrenxue.project'</span>,
+            <span class="token string">'sec-ch-ua-platform'</span><span class="token keyword">:</span> <span class="token string">'Windows'</span>,
+            <span class="token string">'Accept'</span><span class="token keyword">:</span> <span class="token string">'*/*'</span>,
+            <span class="token string">'Origin'</span><span class="token keyword">:</span> <span class="token string">'https://match.yuanrenxue.com'</span>,
+            <span class="token string">'Sec-Fetch-Site'</span><span class="token keyword">:</span> <span class="token string">'same-origin'</span>,
+            <span class="token string">'Sec-Fetch-Mode'</span><span class="token keyword">:</span> <span class="token string">'cors'</span>,
+            <span class="token string">'Sec-Fetch-Dest'</span><span class="token keyword">:</span> <span class="token string">'empty'</span>,
+            <span class="token string">'Referer'</span><span class="token keyword">:</span> <span class="token string">'https://match.yuanrenxue.com/match/3'</span>,
+            <span class="token string">'Accept-Encoding'</span><span class="token keyword">:</span> <span class="token string">'gzip, deflate, br'</span>,
+            <span class="token string">'Accept-Language'</span><span class="token keyword">:</span> <span class="token string">'zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6'</span>,
+            <span class="token string">'Cookie'</span><span class="token keyword">:</span> <span class="token string">'你自己的 Cookie'</span>,
+        <span class="token punctuation">}</span>
+
+        session <span class="token operator">=</span> requests.session<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        session.headers.clear<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        session.headers.update<span class="token punctuation">(</span>headers<span class="token punctuation">)</span>
+        <span class="token comment" spellcheck="true"># 构造完成，发送请求</span>
+        session.get<span class="token punctuation">(</span>url, verify<span class="token operator">=</span>False<span class="token punctuation">)</span>
+
+        URL <span class="token operator">=</span> f<span class="token string">'https://match.yuanrenxue.com/api/match/3?page={i}'</span>
+
+        k <span class="token operator">=</span> session.get<span class="token punctuation">(</span>URL<span class="token punctuation">)</span>.json<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        yield k<span class="token punctuation">[</span><span class="token string">'data'</span><span class="token punctuation">]</span>
+
+
+def parse<span class="token punctuation">(</span><span class="token punctuation">)</span>:
+    <span class="token string">""</span><span class="token string">"
+    解析json数据并筛选出频率最高的数
+    :return:
+    "</span><span class="token string">""</span>
+    name <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> pa_json<span class="token punctuation">(</span><span class="token punctuation">)</span>:
+        <span class="token keyword">for</span> k <span class="token keyword">in</span> i:
+            <span class="token keyword">if</span> str<span class="token punctuation">(</span>k<span class="token punctuation">[</span><span class="token string">'value'</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token keyword">in</span> name:
+                name<span class="token punctuation">[</span>str<span class="token punctuation">(</span>k<span class="token punctuation">[</span><span class="token string">'value'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">]</span> +<span class="token operator">=</span> 1
+            else:
+                name<span class="token punctuation">[</span>str<span class="token punctuation">(</span>k<span class="token punctuation">[</span><span class="token string">'value'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">]</span> <span class="token operator">=</span> 0
+
+    demo <span class="token operator">=</span> <span class="token punctuation">[</span>0, 0<span class="token punctuation">]</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> name:  <span class="token comment" spellcheck="true"># 筛选出出现频率最多的数</span>
+        <span class="token keyword">if</span> name<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">></span> demo<span class="token punctuation">[</span>1<span class="token punctuation">]</span>:
+            demo<span class="token punctuation">[</span>0<span class="token punctuation">]</span> <span class="token operator">=</span> i
+            demo<span class="token punctuation">[</span>1<span class="token punctuation">]</span> <span class="token operator">=</span> name<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
+
+    print<span class="token punctuation">(</span>f<span class="token string">'出现频率最多的数： {demo[0]}\n出现次数： {demo[1]}'</span><span class="token punctuation">)</span>
+
+parse<span class="token punctuation">(</span><span class="token punctuation">)</span>
 </code></pre>
-<h2 id="直接返回字典类型"><a href="#直接返回字典类型" class="headerlink" title="直接返回字典类型"></a>直接返回字典类型</h2>
+
                 
             </div>
             <hr/>
@@ -562,7 +608,7 @@ headers <span class="token operator">=</span> parse_curl.parse<span class="token
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://PunHui.github.io/2022/03073265.html">http://PunHui.github.io/2022/03073265.html</a>
+                    <a href="http://PunHui.github.io/2022/031358193.html">http://PunHui.github.io/2022/031358193.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -600,8 +646,8 @@ headers <span class="token operator">=</span> parse_curl.parse<span class="token
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E5%B7%A5%E5%85%B7/">
-                                    <span class="chip bg-color">工具</span>
+                                <a href="/tags/%E5%A6%88%E7%9A%84%E5%A4%AA%E9%AA%9A%E4%BA%86/">
+                                    <span class="chip bg-color">妈的太骚了</span>
                                 </a>
                             
                         </div>
@@ -649,66 +695,18 @@ headers <span class="token operator">=</span> parse_curl.parse<span class="token
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2022/031014598.html">
+                <a href="/2022/031358193.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="AST 安装库异常处理">
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="猿人学 3 题">
                         
-                        <span class="card-title">AST 安装库异常处理</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-03-10
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/JS%E9%80%86%E5%90%91/" class="post-category">
-                                    JS逆向
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/">
-                        <span class="chip bg-color">异常处理</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2022/030363396.html">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="某云音乐评论逆向思路">
-                        
-                        <span class="card-title">某云音乐评论逆向思路</span>
+                        <span class="card-title">猿人学 3 题</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -719,7 +717,7 @@ headers <span class="token operator">=</span> parse_curl.parse<span class="token
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-03
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-13
                             </span>
                         <span class="publish-author">
                             
@@ -733,13 +731,55 @@ headers <span class="token operator">=</span> parse_curl.parse<span class="token
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E9%80%86%E5%90%91%E5%88%86%E6%9E%90/">
-                        <span class="chip bg-color">逆向分析</span>
+                    <a href="/tags/%E5%A6%88%E7%9A%84%E5%A4%AA%E9%AA%9A%E4%BA%86/">
+                        <span class="chip bg-color">妈的太骚了</span>
                     </a>
                     
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2022/031235895.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="中国和美国的真实差距">
+                        
+                        <span class="card-title">中国和美国的真实差距</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-12
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%96%B0%E9%97%BB/" class="post-category">
+                                    新闻
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
                 </div>
                 
             </div>

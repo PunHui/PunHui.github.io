@@ -1,0 +1,1247 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="猿人学 1 题, Hui">
+    <meta name="description" content="首先处理一下无限 debugXHR 提取断点https://match.yuanrenxue.com/api/match/1
+
+堆栈跟踪跟踪到 request
+发现是 Obfuscator 混淆(以下简称 ob )，大大的减少了可读性，不要">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>猿人学 1 题 | Hui</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
+
+<meta name="generator" content="Hexo 6.0.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">Hui</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">Hui</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/PunHui/PunHui.github.io" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/PunHui/PunHui.github.io" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">猿人学 1 题</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E9%80%86%E5%90%91%E5%88%86%E6%9E%90/">
+                                <span class="chip bg-color">逆向分析</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/JS%E9%80%86%E5%90%91/" class="post-category">
+                                JS逆向
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2022-03-10
+                </div>
+                
+
+                
+
+                
+
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h2 id="首先处理一下无限-debug"><a href="#首先处理一下无限-debug" class="headerlink" title="首先处理一下无限 debug"></a>首先处理一下无限 debug</h2><h2 id="XHR-提取断点"><a href="#XHR-提取断点" class="headerlink" title="XHR 提取断点"></a>XHR 提取断点</h2><pre class=" language-bash"><code class="language-bash">https://match.yuanrenxue.com/api/match/1
+</code></pre>
+<h2 id="堆栈跟踪"><a href="#堆栈跟踪" class="headerlink" title="堆栈跟踪"></a>堆栈跟踪</h2><p>跟踪到 request</p>
+<p>发现是 Obfuscator 混淆(以下简称 ob )，大大的减少了可读性，不要格式化这里的代码，因为格式化后的更难看</p>
+<h2 id="将所有代码复制"><a href="#将所有代码复制" class="headerlink" title="将所有代码复制"></a>将所有代码复制</h2><p>复制后用 Python 写入一个 js 文件里</p>
+<pre class=" language-bash"><code class="language-bash">a <span class="token operator">=</span> <span class="token string">""</span><span class="token string">"..."</span><span class="token string">""</span>
+
+with open<span class="token punctuation">(</span><span class="token string">'你自己的文件.js'</span>, <span class="token string">'w'</span>, encoding<span class="token operator">=</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span> as f:
+    f.write<span class="token punctuation">(</span>a<span class="token punctuation">)</span>
+</code></pre>
+<h2 id="开始分析"><a href="#开始分析" class="headerlink" title="开始分析"></a>开始分析</h2><p>简单的分析过程可以看以前的文章，我直接分析重要部分了</p>
+<pre class=" language-bash"><code class="language-bash">_0x57feae <span class="token operator">=</span> oo0O0<span class="token punctuation">(</span>_0x2268f9<span class="token punctuation">[</span><span class="token string">'toStr'</span> + <span class="token string">'ing'</span><span class="token punctuation">]</span><span class="token punctuation">(</span><span class="token punctuation">))</span> + window<span class="token punctuation">[</span><span class="token string">'f'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+</code></pre>
+<p>我们已经知道 _0x2268f9 是时间戳，而且还是个特殊的时间戳</p>
+<pre class=" language-bash"><code class="language-bash">var _0x2268f9 <span class="token operator">=</span> Date<span class="token punctuation">[</span><span class="token string">'parse'</span><span class="token punctuation">]</span><span class="token punctuation">(</span>new Date<span class="token punctuation">(</span><span class="token punctuation">))</span> + <span class="token punctuation">(</span>16798545 + -72936737 + 156138192<span class="token punctuation">)</span>
+</code></pre>
+<p><strong>时间戳后面还加了 100000000，待会 Python 模拟时需要注意</strong></p>
+<p>刷新几次页面可以知道</p>
+<pre class=" language-bash"><code class="language-bash">_0x57feae <span class="token operator">=</span> window<span class="token punctuation">[</span><span class="token string">'f'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+</code></pre>
+<h2 id="而-window-‘f’-是怎么来的？"><a href="#而-window-‘f’-是怎么来的？" class="headerlink" title="而 window[‘f’] 是怎么来的？"></a>而 window[‘f’] 是怎么来的？</h2><p>我们先看看 oo0O0 函数吧，可能 window[‘f’] 在函数里被赋值了</p>
+<p>点进去一看，好家伙，全部在一行代码里，无比的长，还格式化不了</p>
+<h2 id="利用工具网站格式化"><a href="#利用工具网站格式化" class="headerlink" title="利用工具网站格式化"></a>利用工具网站格式化</h2><p><a target="_blank" rel="noopener" href="https://spidertools.cn/#/formatHTML">爬虫工具库</a></p>
+<p>利用 HTML 格式化工具，将代码复制出来，再用 Python 写入文件里，保留 oo0O0 函数以上的所有内容，注意，不是叫你把 oo0O0 函数内的代码删掉</p>
+<p>把 HTML 标签代码和 $(‘.’) w(); dd(); 都删掉，剩下的便是 oo0O0 函数</p>
+<h2 id="接下来便是补环境"><a href="#接下来便是补环境" class="headerlink" title="接下来便是补环境"></a>接下来便是补环境</h2><p>不会的看我逆向某云音乐的文章</p>
+<h3 id="window-a-看不懂？"><a href="#window-a-看不懂？" class="headerlink" title="window.a 看不懂？"></a>window.a 看不懂？</h3><p>报错</p>
+<pre class=" language-bash"><code class="language-bash">len <span class="token operator">=</span> window.a.length<span class="token punctuation">;</span> i <span class="token operator">&lt;</span> len<span class="token punctuation">;</span> i++<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                           ^
+TypeError: Cannot <span class="token function">read</span> properties of undefined <span class="token punctuation">(</span>reading <span class="token string">'length'</span><span class="token punctuation">)</span>
+</code></pre>
+<p>在控制台输出 window.a 发现很长，而且复制在代码中会是乱码，当自己费劲心思得到的值和别人文章中的值不一样，他的有空格，而你的没有？</p>
+<p><strong>为什么一定要值呢，我们直接在控制台上输出 window.a.length 得到长度为 6612</strong></p>
+<p>我们直接将值赋给 len</p>
+<pre class=" language-bahs"><code class="language-bahs">len = 6612; i < len; i++
+</code></pre>
+<p>顺便把 console.log 语句删掉</p>
+<h3 id="这不就-OK-了"><a href="#这不就-OK-了" class="headerlink" title="这不就 OK 了"></a>这不就 OK 了</h3><h2 id="结果发现多此一举"><a href="#结果发现多此一举" class="headerlink" title="结果发现多此一举"></a>结果发现多此一举</h2><p><strong>这个 for 循环的目的是给 window.b 赋值，那么我们直接输出 window.b 不是更好？</strong></p>
+<p>直接在控制台输出，会看到很长的字符串，我们就需要这个，将其复制下来赋值给 window.b，将 for 语句删掉</p>
+<h2 id="最后修改一下代码即可"><a href="#最后修改一下代码即可" class="headerlink" title="最后修改一下代码即可"></a>最后修改一下代码即可</h2><h3 id="JS-源码"><a href="#JS-源码" class="headerlink" title="JS 源码"></a>JS 源码</h3><pre class=" language-bash"><code class="language-bash">var document <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>,
+    window <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+document.e <span class="token operator">=</span> <span class="token string">'fromC'</span><span class="token punctuation">;</span>
+document.f <span class="token operator">=</span> <span class="token string">'charCo'</span><span class="token punctuation">;</span>
+document.g <span class="token operator">=</span> <span class="token string">'harCode'</span><span class="token punctuation">;</span>
+document.h <span class="token operator">=</span> <span class="token string">'deAt'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">function</span> oo0O0<span class="token punctuation">(</span>mw<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    window.b <span class="token operator">=</span> <span class="token string">'dmFyIGhleGNhc2U9MDt2YXIgYjY0cGFkPSIiO3ZhciBjaHJzej0xNjtmdW5jdGlvbiBoZXhfbWQ1KGEpe3JldHVybiBiaW5sMmhleChjb3JlX21kNShzdHIyYmlubChhKSxhLmxlbmd0aCpjaHJzeikpfWZ1bmN0aW9uIGI2NF9tZDUoYSl7cmV0dXJuIGJpbmwyYjY0KGNvcmVfbWQ1KHN0cjJiaW5sKGEpLGEubGVuZ3RoKmNocnN6KSl9ZnVuY3Rpb24gc3RyX21kNShhKXtyZXR1cm4gYmlubDJzdHIoY29yZV9tZDUoc3RyMmJpbmwoYSksYS5sZW5ndGgqY2hyc3opKX1mdW5jdGlvbiBoZXhfaG1hY19tZDUoYSxiKXtyZXR1cm4gYmlubDJoZXgoY29yZV9obWFjX21kNShhLGIpKX1mdW5jdGlvbiBiNjRfaG1hY19tZDUoYSxiKXtyZXR1cm4gYmlubDJiNjQoY29yZV9obWFjX21kNShhLGIpKX1mdW5jdGlvbiBzdHJfaG1hY19tZDUoYSxiKXtyZXR1cm4gYmlubDJzdHIoY29yZV9obWFjX21kNShhLGIpKX1mdW5jdGlvbiBtZDVfdm1fdGVzdCgpe3JldHVybiBoZXhfbWQ1KCJhYmMiKT09IjkwMDE1MDk4M2NkMjRmYjBkNjk2M2Y3ZDI4ZTE3ZjcyIn1mdW5jdGlvbiBjb3JlX21kNShwLGspe3Bbaz4+NV18PTEyODw8KChrKSUzMik7cFsoKChrKzY0KT4+PjkpPDw0KSsxNF09azt2YXIgbz0xNzMyNTg0MTkzO3ZhciBuPS0yNzE3MzM4Nzk7dmFyIG09LTE3MzI1ODQxOTQ7dmFyIGw9MjcxNzMzODc4O2Zvcih2YXIgZz0wO2c8cC5sZW5ndGg7Zys9MTYpe3ZhciBqPW87dmFyIGg9bjt2YXIgZj1tO3ZhciBlPWw7bz1tZDVfZmYobyxuLG0sbCxwW2crMF0sNywtNjgwOTc2OTM2KTtsPW1kNV9mZihsLG8sbixtLHBbZysxXSwxMiwtMzg5NTY0NTg2KTttPW1kNV9mZihtLGwsbyxuLHBbZysyXSwxNyw2MDYxMDU4MTkpO249bWQ1X2ZmKG4sbSxsLG8scFtnKzNdLDIyLC0xMDQ0NTI1MzMwKTtvPW1kNV9mZihvLG4sbSxsLHBbZys0XSw3LC0xNzY0MTg4OTcpO2w9bWQ1X2ZmKGwsbyxuLG0scFtnKzVdLDEyLDEyMDAwODA0MjYpO209bWQ1X2ZmKG0sbCxvLG4scFtnKzZdLDE3LC0xNDczMjMxMzQxKTtuPW1kNV9mZihuLG0sbCxvLHBbZys3XSwyMiwtNDU3MDU5ODMpO289bWQ1X2ZmKG8sbixtLGwscFtnKzhdLDcsMTc3MDAzNTQxNik7bD1tZDVfZmYobCxvLG4sbSxwW2crOV0sMTIsLTE5NTg0MTQ0MTcpO209bWQ1X2ZmKG0sbCxvLG4scFtnKzEwXSwxNywtNDIwNjMpO249bWQ1X2ZmKG4sbSxsLG8scFtnKzExXSwyMiwtMTk5MDQwNDE2Mik7bz1tZDVfZmYobyxuLG0sbCxwW2crMTJdLDcsMTgwNDY2MDY4Mik7bD1tZDVfZmYobCxvLG4sbSxwW2crMTNdLDEyLC00MDM0MTEwMSk7bT1tZDVfZmYobSxsLG8sbixwW2crMTRdLDE3LC0xNTAyMDAyMjkwKTtuPW1kNV9mZihuLG0sbCxvLHBbZysxNV0sMjIsMTIzNjUzNTMyOSk7bz1tZDVfZ2cobyxuLG0sbCxwW2crMV0sNSwtMTY1Nzk2NTEwKTtsPW1kNV9nZyhsLG8sbixtLHBbZys2XSw5LC0xMDY5NTAxNjMyKTttPW1kNV9nZyhtLGwsbyxuLHBbZysxMV0sMTQsNjQzNzE3NzEzKTtuPW1kNV9nZyhuLG0sbCxvLHBbZyswXSwyMCwtMzczODk3MzAyKTtvPW1kNV9nZyhvLG4sbSxsLHBbZys1XSw1LC03MDE1NTg2OTEpO2w9bWQ1X2dnKGwsbyxuLG0scFtnKzEwXSw5LDM4MDE2MDgzKTttPW1kNV9nZyhtLGwsbyxuLHBbZysxNV0sMTQsLTY2MDQ3ODMzNSk7bj1tZDVfZ2cobixtLGwsbyxwW2crNF0sMjAsLTQwNTUzNzg0OCk7bz1tZDVfZ2cobyxuLG0sbCxwW2crOV0sNSw1Njg0NDY0MzgpO2w9bWQ1X2dnKGwsbyxuLG0scFtnKzE0XSw5LC0xMDE5ODAzNjkwKTttPW1kNV9nZyhtLGwsbyxuLHBbZyszXSwxNCwtMTg3MzYzOTYxKTtuPW1kNV9nZyhuLG0sbCxvLHBbZys4XSwyMCwxMTYzNTMxNTAxKTtvPW1kNV9nZyhvLG4sbSxsLHBbZysxM10sNSwtMTQ0NDY4MTQ2Nyk7bD1tZDVfZ2cobCxvLG4sbSxwW2crMl0sOSwtNTE0MDM3ODQpO209bWQ1X2dnKG0sbCxvLG4scFtnKzddLDE0LDE3MzUzMjg0NzMpO249bWQ1X2dnKG4sbSxsLG8scFtnKzEyXSwyMCwtMTkyMTIwNzczNCk7bz1tZDVfaGgobyxuLG0sbCxwW2crNV0sNCwtMzc4NTU4KTtsPW1kNV9oaChsLG8sbixtLHBbZys4XSwxMSwtMjAyMjU3NDQ2Myk7bT1tZDVfaGgobSxsLG8sbixwW2crMTFdLDE2LDE4MzkwMzA1NjIpO249bWQ1X2hoKG4sbSxsLG8scFtnKzE0XSwyMywtMzUzMDk1NTYpO289bWQ1X2hoKG8sbixtLGwscFtnKzFdLDQsLTE1MzA5OTIwNjApO2w9bWQ1X2hoKGwsbyxuLG0scFtnKzRdLDExLDEyNzI4OTMzNTMpO209bWQ1X2hoKG0sbCxvLG4scFtnKzddLDE2LC0xNTU0OTc2MzIpO249bWQ1X2hoKG4sbSxsLG8scFtnKzEwXSwyMywtMTA5NDczMDY0MCk7bz1tZDVfaGgobyxuLG0sbCxwW2crMTNdLDQsNjgxMjc5MTc0KTtsPW1kNV9oaChsLG8sbixtLHBbZyswXSwxMSwtMzU4NTM3MjIyKTttPW1kNV9oaChtLGwsbyxuLHBbZyszXSwxNiwtNzIyODgxOTc5KTtuPW1kNV9oaChuLG0sbCxvLHBbZys2XSwyMyw3NjAyOTE4OSk7bz1tZDVfaGgobyxuLG0sbCxwW2crOV0sNCwtNjQwMzY0NDg3KTtsPW1kNV9oaChsLG8sbixtLHBbZysxMl0sMTEsLTQyMTgxNTgzNSk7bT1tZDVfaGgobSxsLG8sbixwW2crMTVdLDE2LDUzMDc0MjUyMCk7bj1tZDVfaGgobixtLGwsbyxwW2crMl0sMjMsLTk5NTMzODY1MSk7bz1tZDVfaWkobyxuLG0sbCxwW2crMF0sNiwtMTk4NjMwODQ0KTtsPW1kNV9paShsLG8sbixtLHBbZys3XSwxMCwxMTI2MTE2MTQxNSk7bT1tZDVfaWkobSxsLG8sbixwW2crMTRdLDE1LC0xNDE2MzU0OTA1KTtuPW1kNV9paShuLG0sbCxvLHBbZys1XSwyMSwtNTc0MzQwNTUpO289bWQ1X2lpKG8sbixtLGwscFtnKzEyXSw2LDE3MDA0ODU1NzEpO2w9bWQ1X2lpKGwsbyxuLG0scFtnKzNdLDEwLC0xODk0NDQ2NjA2KTttPW1kNV9paShtLGwsbyxuLHBbZysxMF0sMTUsLTEwNTE1MjMpO249bWQ1X2lpKG4sbSxsLG8scFtnKzFdLDIxLC0yMDU0OTIyNzk5KTtvPW1kNV9paShvLG4sbSxsLHBbZys4XSw2LDE4NzMzMTMzNTkpO2w9bWQ1X2lpKGwsbyxuLG0scFtnKzE1XSwxMCwtMzA2MTE3NDQpO209bWQ1X2lpKG0sbCxvLG4scFtnKzZdLDE1LC0xNTYwMTk4MzgwKTtuPW1kNV9paShuLG0sbCxvLHBbZysxM10sMjEsMTMwOTE1MTY0OSk7bz1tZDVfaWkobyxuLG0sbCxwW2crNF0sNiwtMTQ1NTIzMDcwKTtsPW1kNV9paShsLG8sbixtLHBbZysxMV0sMTAsLTExMjAyMTAzNzkpO209bWQ1X2lpKG0sbCxvLG4scFtnKzJdLDE1LDcxODc4NzI1OSk7bj1tZDVfaWkobixtLGwsbyxwW2crOV0sMjEsLTM0MzQ4NTU1MSk7bz1zYWZlX2FkZChvLGopO249c2FmZV9hZGQobixoKTttPXNhZmVfYWRkKG0sZik7bD1zYWZlX2FkZChsLGUpfXJldHVybiBBcnJheShvLG4sbSxsKX1mdW5jdGlvbiBtZDVfY21uKGgsZSxkLGMsZyxmKXtyZXR1cm4gc2FmZV9hZGQoYml0X3JvbChzYWZlX2FkZChzYWZlX2FkZChlLGgpLHNhZmVfYWRkKGMsZikpLGcpLGQpfWZ1bmN0aW9uIG1kNV9mZihnLGYsayxqLGUsaSxoKXtyZXR1cm4gbWQ1X2NtbigoZiZrKXwoKH5mKSZqKSxnLGYsZSxpLGgpfWZ1bmN0aW9uIG1kNV9nZyhnLGYsayxqLGUsaSxoKXtyZXR1cm4gbWQ1X2NtbigoZiZqKXwoayYofmopKSxnLGYsZSxpLGgpfWZ1bmN0aW9uIG1kNV9oaChnLGYsayxqLGUsaSxoKXtyZXR1cm4gbWQ1X2NtbihmXmteaixnLGYsZSxpLGgpfWZ1bmN0aW9uIG1kNV9paShnLGYsayxqLGUsaSxoKXtyZXR1cm4gbWQ1X2NtbihrXihmfCh+aikpLGcsZixlLGksaCl9ZnVuY3Rpb24gY29yZV9obWFjX21kNShjLGYpe3ZhciBlPXN0cjJiaW5sKGMpO2lmKGUubGVuZ3RoPjE2KXtlPWNvcmVfbWQ1KGUsYy5sZW5ndGgqY2hyc3opfXZhciBhPUFycmF5KDE2KSxkPUFycmF5KDE2KTtmb3IodmFyIGI9MDtiPDE2O2IrKyl7YVtiXT1lW2JdXjkwOTUyMjQ4NjtkW2JdPWVbYl1eMTU0OTU1NjgyOH12YXIgZz1jb3JlX21kNShhLmNvbmNhdChzdHIyYmlubChmKSksNTEyK2YubGVuZ3RoKmNocnN6KTtyZXR1cm4gY29yZV9tZDUoZC5jb25jYXQoZyksNTEyKzEyOCl9ZnVuY3Rpb24gc2FmZV9hZGQoYSxkKXt2YXIgYz0oYSY2NTUzNSkrKGQmNjU1MzUpO3ZhciBiPShhPj4xNikrKGQ+PjE2KSsoYz4+MTYpO3JldHVybihiPDwxNil8KGMmNjU1MzUpfWZ1bmN0aW9uIGJpdF9yb2woYSxiKXtyZXR1cm4oYTw8Yil8KGE+Pj4oMzItYikpfWZ1bmN0aW9uIHN0cjJiaW5sKGQpe3ZhciBjPUFycmF5KCk7dmFyIGE9KDE8PGNocnN6KS0xO2Zvcih2YXIgYj0wO2I8ZC5sZW5ndGgqY2hyc3o7Yis9Y2hyc3ope2NbYj4+NV18PShkLmNoYXJDb2RlQXQoYi9jaHJzeikmYSk8PChiJTMyKX1yZXR1cm4gY31mdW5jdGlvbiBiaW5sMnN0cihjKXt2YXIgZD0iIjt2YXIgYT0oMTw8Y2hyc3opLTE7Zm9yKHZhciBiPTA7YjxjLmxlbmd0aCozMjtiKz1jaHJzeil7ZCs9U3RyaW5nLmZyb21DaGFyQ29kZSgoY1tiPj41XT4+PihiJTMyKSkmYSl9cmV0dXJuIGR9ZnVuY3Rpb24gYmlubDJoZXgoYyl7dmFyIGI9aGV4Y2FzZT8iMDEyMzQ1Njc4OUFCQ0RFRiI6IjAxMjM0NTY3ODlhYmNkZWYiO3ZhciBkPSIiO2Zvcih2YXIgYT0wO2E8Yy5sZW5ndGgqNDthKyspe2QrPWIuY2hhckF0KChjW2E+PjJdPj4oKGElNCkqOCs0KSkmMTUpK2IuY2hhckF0KChjW2E+PjJdPj4oKGElNCkqOCkpJjE1KX1yZXR1cm4gZH1mdW5jdGlvbiBiaW5sMmI2NChkKXt2YXIgYz0iQUJDREVGR0hJSktMTU5PUFFSU1RVVldYWVphYmNkZWZnaGlqa2xtbm9wcXJzdHV2d3h5ejAxMjM0NTY3ODkrLyI7dmFyIGY9IiI7Zm9yKHZhciBiPTA7YjxkLmxlbmd0aCo0O2IrPTMpe3ZhciBlPSgoKGRbYj4+Ml0+PjgqKGIlNCkpJjI1NSk8PDE2KXwoKChkW2IrMT4+Ml0+PjgqKChiKzEpJTQpKSYyNTUpPDw4KXwoKGRbYisyPj4yXT4+OCooKGIrMiklNCkpJjI1NSk7Zm9yKHZhciBhPTA7YTw0O2ErKyl7aWYoYio4K2EqNj5kLmxlbmd0aCozMil7Zis9YjY0cGFkfWVsc2V7Zis9Yy5jaGFyQXQoKGU+PjYqKDMtYSkpJjYzKX19fXJldHVybiBmfTt3aW5kb3cuZiA9IGhleF9tZDUobXdxcXBweik='</span><span class="token punctuation">;</span>
+    var U <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'W5r5W6VdIHZcT8kU'</span>, <span class="token string">'WQ8CWRaxWQirAW=='</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    var J <span class="token operator">=</span> function<span class="token punctuation">(</span>o, E<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        o <span class="token operator">=</span> o - 0x0<span class="token punctuation">;</span>
+        var N <span class="token operator">=</span> U<span class="token punctuation">[</span>o<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>J<span class="token punctuation">[</span><span class="token string">'bSSGte'</span><span class="token punctuation">]</span> <span class="token operator">==</span><span class="token operator">=</span> undefined<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            var Y <span class="token operator">=</span> function<span class="token punctuation">(</span>w<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                var m <span class="token operator">=</span> <span class="token string">'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789+/='</span>,
+                    T <span class="token operator">=</span> String<span class="token punctuation">(</span>w<span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token string">'replace'</span><span class="token punctuation">]</span><span class="token punctuation">(</span>/<span class="token operator">=</span>+$/, <span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                var A <span class="token operator">=</span> <span class="token string">''</span><span class="token punctuation">;</span>
+                <span class="token keyword">for</span> <span class="token punctuation">(</span>var C <span class="token operator">=</span> 0x0,
+                        b, W, l <span class="token operator">=</span> 0x0<span class="token punctuation">;</span> W <span class="token operator">=</span> T<span class="token punctuation">[</span><span class="token string">'charAt'</span><span class="token punctuation">]</span><span class="token punctuation">(</span>l++<span class="token punctuation">)</span><span class="token punctuation">;</span> ~W <span class="token operator">&amp;&amp;</span> <span class="token punctuation">(</span>b <span class="token operator">=</span> C % 0x4 ? b * 0x40 + W <span class="token keyword">:</span> W, C++ % 0x4<span class="token punctuation">)</span> ? A +<span class="token operator">=</span> String<span class="token punctuation">[</span><span class="token string">'fromCharCode'</span><span class="token punctuation">]</span><span class="token punctuation">(</span>0xff <span class="token operator">&amp;</span> b <span class="token operator">>></span> <span class="token punctuation">(</span>-0x2 * C <span class="token operator">&amp;</span> 0x6<span class="token punctuation">))</span> <span class="token keyword">:</span> 0x0<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    W <span class="token operator">=</span> m<span class="token punctuation">[</span><span class="token string">'indexOf'</span><span class="token punctuation">]</span><span class="token punctuation">(</span>W<span class="token punctuation">)</span>
+                <span class="token punctuation">}</span>
+                <span class="token keyword">return</span> A
+            <span class="token punctuation">}</span><span class="token punctuation">;</span>
+            var t <span class="token operator">=</span> function<span class="token punctuation">(</span>w, m<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                var T <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>,
+                    A <span class="token operator">=</span> 0x0,
+                    C,
+                    b <span class="token operator">=</span> <span class="token string">''</span>,
+                    W <span class="token operator">=</span> <span class="token string">''</span><span class="token punctuation">;</span>
+                w <span class="token operator">=</span> Y<span class="token punctuation">(</span>w<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token keyword">for</span> <span class="token punctuation">(</span>var R <span class="token operator">=</span> 0x0,
+                        <span class="token function">v</span> <span class="token operator">=</span> w<span class="token punctuation">[</span><span class="token string">'length'</span><span class="token punctuation">]</span><span class="token punctuation">;</span> R <span class="token operator">&lt;</span> <span class="token function">v</span><span class="token punctuation">;</span> R++<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    W +<span class="token operator">=</span> <span class="token string">'%'</span> + <span class="token punctuation">(</span><span class="token string">'00'</span> + w<span class="token punctuation">[</span><span class="token string">'charCodeAt'</span><span class="token punctuation">]</span><span class="token punctuation">(</span>R<span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token string">'toString'</span><span class="token punctuation">]</span><span class="token punctuation">(</span>0x10<span class="token punctuation">))</span><span class="token punctuation">[</span><span class="token string">'slice'</span><span class="token punctuation">]</span><span class="token punctuation">(</span>-0x2<span class="token punctuation">)</span>
+                <span class="token punctuation">}</span>
+                w <span class="token operator">=</span> decodeURIComponent<span class="token punctuation">(</span>W<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                var l<span class="token punctuation">;</span>
+                <span class="token keyword">for</span> <span class="token punctuation">(</span>l <span class="token operator">=</span> 0x0<span class="token punctuation">;</span> l <span class="token operator">&lt;</span> 0x100<span class="token punctuation">;</span> l++<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    T<span class="token punctuation">[</span>l<span class="token punctuation">]</span> <span class="token operator">=</span> l
+                <span class="token punctuation">}</span>
+                <span class="token keyword">for</span> <span class="token punctuation">(</span>l <span class="token operator">=</span> 0x0<span class="token punctuation">;</span> l <span class="token operator">&lt;</span> 0x100<span class="token punctuation">;</span> l++<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    A <span class="token operator">=</span> <span class="token punctuation">(</span>A + T<span class="token punctuation">[</span>l<span class="token punctuation">]</span> + m<span class="token punctuation">[</span><span class="token string">'charCodeAt'</span><span class="token punctuation">]</span><span class="token punctuation">(</span>l % m<span class="token punctuation">[</span><span class="token string">'length'</span><span class="token punctuation">]</span><span class="token punctuation">))</span> % 0x100,
+                        C <span class="token operator">=</span> T<span class="token punctuation">[</span>l<span class="token punctuation">]</span>,
+                        T<span class="token punctuation">[</span>l<span class="token punctuation">]</span> <span class="token operator">=</span> T<span class="token punctuation">[</span>A<span class="token punctuation">]</span>,
+                        T<span class="token punctuation">[</span>A<span class="token punctuation">]</span> <span class="token operator">=</span> C
+                <span class="token punctuation">}</span>
+                l <span class="token operator">=</span> 0x0,
+                    A <span class="token operator">=</span> 0x0<span class="token punctuation">;</span>
+                <span class="token keyword">for</span> <span class="token punctuation">(</span>var L <span class="token operator">=</span> 0x0<span class="token punctuation">;</span> L <span class="token operator">&lt;</span> w<span class="token punctuation">[</span><span class="token string">'length'</span><span class="token punctuation">]</span><span class="token punctuation">;</span> L++<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    l <span class="token operator">=</span> <span class="token punctuation">(</span>l + 0x1<span class="token punctuation">)</span> % 0x100,
+                        A <span class="token operator">=</span> <span class="token punctuation">(</span>A + T<span class="token punctuation">[</span>l<span class="token punctuation">]</span><span class="token punctuation">)</span> % 0x100,
+                        C <span class="token operator">=</span> T<span class="token punctuation">[</span>l<span class="token punctuation">]</span>,
+                        T<span class="token punctuation">[</span>l<span class="token punctuation">]</span> <span class="token operator">=</span> T<span class="token punctuation">[</span>A<span class="token punctuation">]</span>,
+                        T<span class="token punctuation">[</span>A<span class="token punctuation">]</span> <span class="token operator">=</span> C,
+                        b +<span class="token operator">=</span> String<span class="token punctuation">[</span><span class="token string">'fromCharCode'</span><span class="token punctuation">]</span><span class="token punctuation">(</span>w<span class="token punctuation">[</span><span class="token string">'charCodeAt'</span><span class="token punctuation">]</span><span class="token punctuation">(</span>L<span class="token punctuation">)</span> ^ T<span class="token punctuation">[</span><span class="token punctuation">(</span>T<span class="token punctuation">[</span>l<span class="token punctuation">]</span> + T<span class="token punctuation">[</span>A<span class="token punctuation">]</span><span class="token punctuation">)</span> % 0x100<span class="token punctuation">]</span><span class="token punctuation">)</span>
+                <span class="token punctuation">}</span>
+                <span class="token keyword">return</span> b
+            <span class="token punctuation">}</span><span class="token punctuation">;</span>
+            J<span class="token punctuation">[</span><span class="token string">'luAabU'</span><span class="token punctuation">]</span> <span class="token operator">=</span> t,
+                J<span class="token punctuation">[</span><span class="token string">'qlVPZg'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>,
+                J<span class="token punctuation">[</span><span class="token string">'bSSGte'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token operator">!</span><span class="token operator">!</span><span class="token punctuation">[</span><span class="token punctuation">]</span>
+        <span class="token punctuation">}</span>
+        var H <span class="token operator">=</span> J<span class="token punctuation">[</span><span class="token string">'qlVPZg'</span><span class="token punctuation">]</span><span class="token punctuation">[</span>o<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> H <span class="token operator">==</span><span class="token operator">=</span> undefined ? <span class="token punctuation">(</span>J<span class="token punctuation">[</span><span class="token string">'TUDBIJ'</span><span class="token punctuation">]</span> <span class="token operator">==</span><span class="token operator">=</span> undefined <span class="token operator">&amp;&amp;</span> <span class="token punctuation">(</span>J<span class="token punctuation">[</span><span class="token string">'TUDBIJ'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token operator">!</span><span class="token operator">!</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span>, N <span class="token operator">=</span> J<span class="token punctuation">[</span><span class="token string">'luAabU'</span><span class="token punctuation">]</span><span class="token punctuation">(</span>N, E<span class="token punctuation">)</span>, J<span class="token punctuation">[</span><span class="token string">'qlVPZg'</span><span class="token punctuation">]</span><span class="token punctuation">[</span>o<span class="token punctuation">]</span> <span class="token operator">=</span> N<span class="token punctuation">)</span> <span class="token keyword">:</span> N <span class="token operator">=</span> H,
+            N
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+    eval<span class="token punctuation">(</span>atob<span class="token punctuation">(</span>window<span class="token punctuation">[</span><span class="token string">'b'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">[</span>J<span class="token punctuation">(</span><span class="token string">'0x0'</span>, <span class="token string">']dQW'</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">(</span>J<span class="token punctuation">(</span><span class="token string">'0x1'</span>, <span class="token string">'GTu!'</span><span class="token punctuation">)</span>, <span class="token string">'\x27'</span> + mw + <span class="token string">'\x27'</span><span class="token punctuation">))</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> window.f
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> token<span class="token punctuation">(</span>times<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">times</span> +<span class="token operator">=</span> <span class="token string">""</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> oo0O0<span class="token punctuation">(</span>times<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre>
+<h2 id="需要注意"><a href="#需要注意" class="headerlink" title="需要注意"></a>需要注意</h2><h3 id="时间戳需要注意，m-值中间的符号推荐复制浏览器代码里的"><a href="#时间戳需要注意，m-值中间的符号推荐复制浏览器代码里的" class="headerlink" title="时间戳需要注意，m 值中间的符号推荐复制浏览器代码里的"></a>时间戳需要注意，m 值中间的符号推荐复制浏览器代码里的</h3><h2 id="Python-源码"><a href="#Python-源码" class="headerlink" title="Python 源码"></a>Python 源码</h2><pre class=" language-bash"><code class="language-bash"><span class="token function">import</span> requests
+<span class="token function">import</span> execjs
+<span class="token function">import</span> <span class="token function">time</span>
+
+def encryption<span class="token punctuation">(</span>times<span class="token punctuation">)</span>:
+    <span class="token string">""</span><span class="token string">"加密"</span><span class="token string">""</span>
+    with open<span class="token punctuation">(</span><span class="token string">'你自己的文件名.js'</span>, <span class="token string">'r'</span>, encoding<span class="token operator">=</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span> as f:
+        get <span class="token operator">=</span> execjs.compile<span class="token punctuation">(</span>f.read<span class="token punctuation">(</span><span class="token punctuation">))</span>
+        js <span class="token operator">=</span> <span class="token string">'token'</span>
+        demo <span class="token operator">=</span> get.call<span class="token punctuation">(</span>js, times<span class="token punctuation">)</span>
+        <span class="token keyword">return</span> demo
+
+
+def time_13<span class="token punctuation">(</span><span class="token punctuation">)</span>:
+    <span class="token string">""</span><span class="token string">"
+    得到时间戳
+    "</span><span class="token string">""</span>
+    millis <span class="token operator">=</span> <span class="token punctuation">(</span>int<span class="token punctuation">(</span>time.time<span class="token punctuation">(</span><span class="token punctuation">))</span> * 1000<span class="token punctuation">)</span> + 100000000
+    <span class="token keyword">return</span> millis
+
+
+def pa_json<span class="token punctuation">(</span><span class="token punctuation">)</span>:
+    <span class="token string">""</span><span class="token string">"爬取json数据"</span><span class="token string">""</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span>1, 6<span class="token punctuation">)</span>:
+        headers <span class="token operator">=</span> <span class="token punctuation">{</span>
+            <span class="token string">'Cookie'</span><span class="token keyword">:</span> <span class="token string">"你自己的 Cookie"</span>,
+        <span class="token punctuation">}</span>
+
+        <span class="token function">times</span> <span class="token operator">=</span> time_13<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+        m <span class="token operator">=</span> encryption<span class="token punctuation">(</span>times<span class="token punctuation">)</span>
+
+        m <span class="token operator">=</span> f<span class="token string">'{m}丨{int(times / 1000)}'</span>
+
+        url <span class="token operator">=</span> f<span class="token string">'https://match.yuanrenxue.com/api/match/1?page={i}&amp;m={m}'</span>
+
+        r <span class="token operator">=</span> requests.get<span class="token punctuation">(</span>url, headers<span class="token operator">=</span>headers<span class="token punctuation">)</span>.json<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        yield r<span class="token punctuation">[</span><span class="token string">'data'</span><span class="token punctuation">]</span>
+
+
+def parse_json<span class="token punctuation">(</span><span class="token punctuation">)</span>:
+    <span class="token string">""</span><span class="token string">"解析json数据"</span><span class="token string">""</span>
+    a <span class="token operator">=</span> 0
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> pa_json<span class="token punctuation">(</span><span class="token punctuation">)</span>:
+        <span class="token keyword">for</span> k <span class="token keyword">in</span> i:
+            a +<span class="token operator">=</span> k<span class="token punctuation">[</span><span class="token string">'value'</span><span class="token punctuation">]</span>
+
+    print<span class="token punctuation">(</span>int<span class="token punctuation">(</span>a / 50<span class="token punctuation">))</span>
+
+
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token keyword">:</span>
+    parse_json<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre>
+<h3 id="网上还有一些步骤我还没搞，但是我也可以得到数据，感兴趣的可以自己完善"><a href="#网上还有一些步骤我还没搞，但是我也可以得到数据，感兴趣的可以自己完善" class="headerlink" title="网上还有一些步骤我还没搞，但是我也可以得到数据，感兴趣的可以自己完善"></a>网上还有一些步骤我还没搞，但是我也可以得到数据，感兴趣的可以自己完善</h3><h2 id="收工"><a href="#收工" class="headerlink" title="收工"></a>收工</h2>
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">Hui</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://PunHui.github.io/2022/0310384.html">http://PunHui.github.io/2022/0310384.html</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">Hui</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/%E9%80%86%E5%90%91%E5%88%86%E6%9E%90/">
+                                    <span class="chip bg-color">逆向分析</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2022/0310633.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="控制？架空？这些都是什么意思！">
+                        
+                        <span class="card-title">控制？架空？这些都是什么意思！</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-03-10
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E8%B5%84%E6%9C%AC%E6%89%8B%E6%AE%B5/" class="post-category">
+                                    资本手段
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E4%BA%BA%E6%80%A7/">
+                        <span class="chip bg-color">人性</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%84%9F%E6%82%9F/">
+                        <span class="chip bg-color">感悟</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2022/031058193.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="猿人学 15 题">
+                        
+                        <span class="card-title">猿人学 15 题</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-10
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/JS%E9%80%86%E5%90%91/" class="post-category">
+                                    JS逆向
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E9%80%86%E5%90%91%E5%88%86%E6%9E%90/">
+                        <span class="chip bg-color">逆向分析</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+
+    <div class="container row center-align"
+         style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2022</span>
+            
+            <a href="/about" target="_blank">Hui</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            
+            
+                
+            
+            
+                <span id="busuanzi_container_site_pv">
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;
+                    <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+                <span id="busuanzi_container_site_uv">
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;
+                    <span id="busuanzi_value_site_uv" class="white-color"></span>
+            </span>
+            
+            <br>
+
+            <!-- 运行天数提醒. -->
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/PunHui" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    
+
+    
+
+    <!-- 雪花特效 -->
+    
+
+    <!-- 鼠标星星特效 -->
+    
+
+     
+        <script src="https://ssl.captcha.qq.com/TCaptcha.js"></script>
+        <script src="/libs/others/TencentCaptcha.js"></script>
+        <button id="TencentCaptcha" data-appid="xxxxxxxxxx" data-cbfn="callback" type="button" hidden></button>
+    
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>

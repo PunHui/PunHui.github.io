@@ -4,14 +4,14 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="parse_curl 模块, Hui">
-    <meta name="description" content="源码import re
+    <meta name="keywords" content="AST 安装库异常处理, Hui">
+    <meta name="description" content="安装教程1在 VS Code 终端里输入
+npm install @babel/node
 
-def parse(name):
-    headers = {}
+不按照书上全局安装，安装完后会在文件夹里添加三个文件
+我们不需要初始化！！！2在文件夹里创建一个 .babelrc 文件，内容如下
 
-    demo = re.findall(&#34;-H\s&#39;(.*?):\s(.*?)&#39;&#34;, name, re.S)
-    for i in de">
+是根文件夹里创">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -23,7 +23,7 @@ def parse(name):
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>parse_curl 模块 | Hui</title>
+    <title>AST 安装库异常处理 | Hui</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -328,12 +328,12 @@ def parse(name):
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/15.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">parse_curl 模块</h1>
+                    <h1 class="description center-align post-title">AST 安装库异常处理</h1>
                 </div>
             </div>
         </div>
@@ -449,8 +449,8 @@ def parse(name):
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E5%B7%A5%E5%85%B7/">
-                                <span class="chip bg-color">工具</span>
+                            <a href="/tags/%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/">
+                                <span class="chip bg-color">异常处理</span>
                             </a>
                         
                     </div>
@@ -461,8 +461,8 @@ def parse(name):
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E5%B7%A5%E5%85%B7/" class="post-category">
-                                工具
+                            <a href="/categories/JS%E9%80%86%E5%90%91/" class="post-category">
+                                JS逆向
                             </a>
                         
                     </div>
@@ -474,7 +474,7 @@ def parse(name):
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-03-07
+                    2022-03-10
                 </div>
                 
 
@@ -500,43 +500,58 @@ def parse(name):
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="源码"><a href="#源码" class="headerlink" title="源码"></a>源码</h2><pre class=" language-bash"><code class="language-bash"><span class="token function">import</span> re
-
-def parse<span class="token punctuation">(</span>name<span class="token punctuation">)</span>:
-    headers <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
-
-    demo <span class="token operator">=</span> re.findall<span class="token punctuation">(</span><span class="token string">"-H\s'(.*?):\s(.*?)'"</span>, name, re.S<span class="token punctuation">)</span>
-    <span class="token keyword">for</span> i <span class="token keyword">in</span> demo:
-        headers<span class="token punctuation">[</span>f<span class="token string">'{i[0]}'</span><span class="token punctuation">]</span> <span class="token operator">=</span> i<span class="token punctuation">[</span>1<span class="token punctuation">]</span>
-
-    <span class="token keyword">return</span> headers
+                <h2 id="安装教程"><a href="#安装教程" class="headerlink" title="安装教程"></a>安装教程</h2><h3 id="1"><a href="#1" class="headerlink" title="1"></a>1</h3><p>在 VS Code 终端里输入</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> @babel/node
 </code></pre>
-<h2 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h2><pre class=" language-bash"><code class="language-bash"><span class="token function">import</span> parse_curl
-
-demo <span class="token operator">=</span> <span class="token string">""</span><span class="token string">"
-curl '****' \
-  -H 'authority: ****' \
-  -H 'cache-control: max-age=0' \
-  -H 'sec-ch-ua: "</span> Not A<span class="token punctuation">;</span>Brand<span class="token string">";v="</span>99<span class="token string">", "</span>Chromium<span class="token string">";v="</span>98<span class="token string">", "</span>Microsoft Edge<span class="token string">";v="</span>98<span class="token string">"' \
-  -H 'sec-ch-ua-mobile: ?0' \
-  -H 'sec-ch-ua-platform: "</span>Windows<span class="token string">"' \
-  -H 'upgrade-insecure-requests: 1' \
-  -H 'user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36 Edg/98.0.1108.55' \
-  -H 'accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9' \
-  -H 'sec-fetch-site: same-origin' \
-  -H 'sec-fetch-mode: navigate' \
-  -H 'sec-fetch-user: ?1' \
-  -H 'sec-fetch-dest: document' \
-  -H 'referer: ****' \
-  -H 'accept-language: zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6' \
-  -H 'cookie: ***' \
-  -H 'if-modified-since: Mon, 27 Dec 2021 07:45:03 GMT' \
-  --compressed
-"</span><span class="token string">""</span>
-
-headers <span class="token operator">=</span> parse_curl.parse<span class="token punctuation">(</span>demo<span class="token punctuation">)</span>
+<p><strong>不按照书上全局安装，安装完后会在文件夹里添加三个文件</strong></p>
+<h3 id="我们不需要初始化！！！"><a href="#我们不需要初始化！！！" class="headerlink" title="我们不需要初始化！！！"></a>我们不需要初始化！！！</h3><h3 id="2"><a href="#2" class="headerlink" title="2"></a>2</h3><p>在文件夹里创建一个 .babelrc 文件，内容如下</p>
+<blockquote>
+<p>是根文件夹里创建，而不是在 node_modules 里创建</p>
+</blockquote>
+<pre class=" language-bash"><code class="language-bash"><span class="token punctuation">{</span>
+  <span class="token string">"presets"</span><span class="token keyword">:</span> <span class="token punctuation">[</span>
+    <span class="token string">"@babel/preset-env"</span>
+  <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
 </code></pre>
-<h2 id="直接返回字典类型"><a href="#直接返回字典类型" class="headerlink" title="直接返回字典类型"></a>直接返回字典类型</h2>
+<h2 id="import-导入库异常"><a href="#import-导入库异常" class="headerlink" title="import 导入库异常"></a>import 导入库异常</h2><pre class=" language-bash"><code class="language-bash"><span class="token punctuation">(</span>node:14028<span class="token punctuation">)</span> Warning: To load an ES module, <span class="token keyword">set</span> <span class="token string">"type"</span><span class="token keyword">:</span> <span class="token string">"module"</span> <span class="token keyword">in</span> the package.json or use the .mjs extension.
+<span class="token punctuation">(</span>Use <span class="token variable"><span class="token variable">`</span>node --trace-warnings <span class="token punctuation">..</span>.<span class="token variable">`</span></span> to show where the warning was created<span class="token punctuation">)</span>
+d:\Visual Studio Code\ast\1\1.js:1
+<span class="token function">import</span> <span class="token punctuation">{</span> parse <span class="token punctuation">}</span> from <span class="token string">"@babel/parser"</span><span class="token punctuation">;</span>
+^^^^^^
+
+SyntaxError: Cannot use <span class="token function">import</span> statement outside a module
+</code></pre>
+<h3 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h3><p> <a target="_blank" rel="noopener" href="https://blog.csdn.net/sinat_36521655/article/details/109863364">参考链接</a></p>
+<h4 id="1-初始化"><a href="#1-初始化" class="headerlink" title="1 初始化"></a>1 初始化</h4><p>在终端里输入</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">npm</span> init -y
+</code></pre>
+<h4 id="2-设置-package-json-文件"><a href="#2-设置-package-json-文件" class="headerlink" title="2 设置 package.json 文件"></a>2 设置 package.json 文件</h4><p>在 package.json 文件里添加以下代码</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token string">"type"</span><span class="token keyword">:</span> <span class="token string">"module"</span>
+</code></pre>
+<blockquote>
+<p>添加到 name 下面</p>
+</blockquote>
+<p>这是我的文件内容</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token punctuation">{</span>
+  <span class="token string">"dependencies"</span><span class="token keyword">:</span> <span class="token punctuation">{</span>
+    <span class="token string">"@babel/node"</span><span class="token keyword">:</span> <span class="token string">"^7.16.8"</span>
+  <span class="token punctuation">}</span>,
+  <span class="token string">"name"</span><span class="token keyword">:</span> <span class="token string">"ast"</span>,
+  <span class="token string">"version"</span><span class="token keyword">:</span> <span class="token string">"1.0.0"</span>,
+  <span class="token string">"main"</span><span class="token keyword">:</span> <span class="token string">"1.js"</span>,
+  <span class="token string">"devDependencies"</span><span class="token keyword">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>,
+  <span class="token string">"type"</span><span class="token keyword">:</span> <span class="token string">"module"</span>,  // 我添加到这里
+  <span class="token string">"scripts"</span><span class="token keyword">:</span> <span class="token punctuation">{</span>
+    <span class="token string">"test"</span><span class="token keyword">:</span> <span class="token string">"echo \"Error: no test specified\" &amp;&amp; exit 1"</span>
+  <span class="token punctuation">}</span>,
+  <span class="token string">"author"</span><span class="token keyword">:</span> <span class="token string">""</span>,
+  <span class="token string">"license"</span><span class="token keyword">:</span> <span class="token string">"ISC"</span>,
+  <span class="token string">"keywords"</span><span class="token keyword">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>,
+  <span class="token string">"description"</span><span class="token keyword">:</span> <span class="token string">""</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h3 id="完美解决"><a href="#完美解决" class="headerlink" title="完美解决"></a>完美解决</h3>
                 
             </div>
             <hr/>
@@ -562,7 +577,7 @@ headers <span class="token operator">=</span> parse_curl.parse<span class="token
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://PunHui.github.io/2022/03073265.html">http://PunHui.github.io/2022/03073265.html</a>
+                    <a href="http://PunHui.github.io/2022/031014598.html">http://PunHui.github.io/2022/031014598.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -600,8 +615,8 @@ headers <span class="token operator">=</span> parse_curl.parse<span class="token
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E5%B7%A5%E5%85%B7/">
-                                    <span class="chip bg-color">工具</span>
+                                <a href="/tags/%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/">
+                                    <span class="chip bg-color">异常处理</span>
                                 </a>
                             
                         </div>
@@ -653,13 +668,13 @@ headers <span class="token operator">=</span> parse_curl.parse<span class="token
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2022/031014598.html">
+                <a href="/2022/031058193.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="AST 安装库异常处理">
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="猿人学 15 题">
                         
-                        <span class="card-title">AST 安装库异常处理</span>
+                        <span class="card-title">猿人学 15 题</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -687,8 +702,8 @@ headers <span class="token operator">=</span> parse_curl.parse<span class="token
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/">
-                        <span class="chip bg-color">异常处理</span>
+                    <a href="/tags/%E9%80%86%E5%90%91%E5%88%86%E6%9E%90/">
+                        <span class="chip bg-color">逆向分析</span>
                     </a>
                     
                 </div>
@@ -702,13 +717,13 @@ headers <span class="token operator">=</span> parse_curl.parse<span class="token
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/030363396.html">
+                <a href="/2022/03073265.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="某云音乐评论逆向思路">
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="parse_curl 模块">
                         
-                        <span class="card-title">某云音乐评论逆向思路</span>
+                        <span class="card-title">parse_curl 模块</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -719,14 +734,14 @@ headers <span class="token operator">=</span> parse_curl.parse<span class="token
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-03
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-07
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/JS%E9%80%86%E5%90%91/" class="post-category">
-                                    JS逆向
+                            <a href="/categories/%E5%B7%A5%E5%85%B7/" class="post-category">
+                                    工具
                                 </a>
                             
                             
@@ -736,8 +751,8 @@ headers <span class="token operator">=</span> parse_curl.parse<span class="token
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E9%80%86%E5%90%91%E5%88%86%E6%9E%90/">
-                        <span class="chip bg-color">逆向分析</span>
+                    <a href="/tags/%E5%B7%A5%E5%85%B7/">
+                        <span class="chip bg-color">工具</span>
                     </a>
                     
                 </div>
