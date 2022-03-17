@@ -461,8 +461,8 @@ npm install @babel/node
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/JS%E9%80%86%E5%90%91/" class="post-category">
-                                JS逆向
+                            <a href="/categories/%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/" class="post-category">
+                                异常处理
                             </a>
                         
                     </div>
@@ -551,7 +551,24 @@ SyntaxError: Cannot use <span class="token function">import</span> statement out
   <span class="token string">"description"</span><span class="token keyword">:</span> <span class="token string">""</span>
 <span class="token punctuation">}</span>
 </code></pre>
-<h3 id="完美解决"><a href="#完美解决" class="headerlink" title="完美解决"></a>完美解决</h3>
+<h3 id="完美解决"><a href="#完美解决" class="headerlink" title="完美解决"></a>完美解决</h3><h2 id="generate-is-not-a-function"><a href="#generate-is-not-a-function" class="headerlink" title="generate is not a function"></a>generate is not a function</h2><h3 id="报错代码"><a href="#报错代码" class="headerlink" title="报错代码"></a>报错代码</h3><pre class=" language-bash"><code class="language-bash">file:///d:/Visual%20Studio%20Code/ast/1/1.js:8
+const <span class="token punctuation">{</span> code: output <span class="token punctuation">}</span> <span class="token operator">=</span> generate<span class="token punctuation">(</span>ast<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                         ^
+
+TypeError: generate is not a <span class="token keyword">function</span>
+</code></pre>
+<h3 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h3><p>添加 default</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">import</span> <span class="token punctuation">{</span> parse <span class="token punctuation">}</span> from <span class="token string">"@babel/parser"</span><span class="token punctuation">;</span>
+<span class="token function">import</span> generate from <span class="token string">"@babel/generator"</span><span class="token punctuation">;</span>
+<span class="token function">import</span> fs from <span class="token string">"fs"</span><span class="token punctuation">;</span>
+
+
+const code <span class="token operator">=</span> fs.readFileSync<span class="token punctuation">(</span><span class="token string">"1/codes/1.js"</span>, <span class="token string">"utf-8"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> ast <span class="token operator">=</span> parse<span class="token punctuation">(</span>code<span class="token punctuation">)</span><span class="token punctuation">;</span>
+const <span class="token punctuation">{</span> code: output <span class="token punctuation">}</span> <span class="token operator">=</span> generate<span class="token punctuation">[</span><span class="token string">'default'</span><span class="token punctuation">]</span><span class="token punctuation">(</span>ast<span class="token punctuation">)</span><span class="token punctuation">;</span>
+console.log<span class="token punctuation">(</span>output<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h3 id="解决问题"><a href="#解决问题" class="headerlink" title="解决问题"></a>解决问题</h3>
                 
             </div>
             <hr/>
@@ -740,8 +757,8 @@ SyntaxError: Cannot use <span class="token function">import</span> statement out
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%B7%A5%E5%85%B7/" class="post-category">
-                                    工具
+                            <a href="/categories/%E6%A8%A1%E5%9D%97%E4%BD%BF%E7%94%A8/" class="post-category">
+                                    模块使用
                                 </a>
                             
                             
