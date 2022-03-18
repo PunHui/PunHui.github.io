@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>上传文件报错 443</title>
+      <link href="/2022/031865349.html"/>
+      <url>/2022/031865349.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="今天我上传不了文件"><a href="#今天我上传不了文件" class="headerlink" title="今天我上传不了文件"></a>今天我上传不了文件</h2><h2 id="我怀疑这个-SSH-密钥会过期"><a href="#我怀疑这个-SSH-密钥会过期" class="headerlink" title="我怀疑这个 SSH 密钥会过期"></a>我怀疑这个 SSH 密钥会过期</h2><p>虽然网上的答案告诉我不会过期，但是我通过重新添加密钥解决了异常</p><h2 id="先把以前的-SSH-文件删掉"><a href="#先把以前的-SSH-文件删掉" class="headerlink" title="先把以前的 SSH 文件删掉"></a>先把以前的 SSH 文件删掉</h2><p>一般路径会是以下</p><pre class=" language-bash"><code class="language-bash">C:\Users\辉\.ssh</code></pre><p>直接将整个文件夹删掉</p><h2 id="再把-GitHub-里的密钥删掉"><a href="#再把-GitHub-里的密钥删掉" class="headerlink" title="再把 GitHub 里的密钥删掉"></a>再把 GitHub 里的密钥删掉</h2><h2 id="添加密钥"><a href="#添加密钥" class="headerlink" title="添加密钥"></a>添加密钥</h2><p>在博客文件夹里右键选择 Git Bash Here 输入以下命令</p><pre class=" language-bash"><code class="language-bash">ssh-keygen -t rsa -C <span class="token string">"你的邮箱"</span></code></pre><blockquote><p>作用是生成ssh</p></blockquote><p>接下来回车四下，便会在原来的文件路径生成一个 .ssh 文件<br><strong>复制 id_rsa.pub 里的内容，全选，一个都不要动！</strong></p><h2 id="在-GitHub-里添加密钥"><a href="#在-GitHub-里添加密钥" class="headerlink" title="在 GitHub 里添加密钥"></a>在 GitHub 里添加密钥</h2><p><a href="https://www.bilibili.com/video/BV1mU4y1j72n?p=3">添加教程</a></p><h2 id="测试ssh是否绑定成功"><a href="#测试ssh是否绑定成功" class="headerlink" title="测试ssh是否绑定成功"></a>测试ssh是否绑定成功</h2><p>输入以下代码</p><pre class=" language-bash"><code class="language-bash"><span class="token function">ssh</span> -T git@github.com</code></pre><h3 id="如果没有数据的话可以关闭对话框重新打开"><a href="#如果没有数据的话可以关闭对话框重新打开" class="headerlink" title="如果没有数据的话可以关闭对话框重新打开"></a>如果没有数据的话可以关闭对话框重新打开</h3><h2 id="这样就-OK-了"><a href="#这样就-OK-了" class="headerlink" title="这样就 OK 了"></a>这样就 OK 了</h2>]]></content>
+      
+      
+      <categories>
+          
+          <category> 异常处理 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>客观思考：我们应该思考事件的本身</title>
       <link href="/2022/031734169.html"/>
       <url>/2022/031734169.html</url>
