@@ -4,9 +4,12 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="PyexecJS 的一些异常处理, Hui">
-    <meta name="description" content="GBK 编码问题解决办法打开 subprocess.py 文件，Ctrl + f 搜索 encoding 找到如下的格式的函数
-    def __init__(self, args, bufsize=-1, executable=None">
+    <meta name="keywords" content="AST 安装库异常处理, Hui">
+    <meta name="description" content="AST安装库异常处理安装教程1在 VS Code 终端里输入
+npm install @babel/node
+
+不按照书上全局安装，安装完后会在文件夹里添加三个文件
+我们不需要初始化！！！2在文件夹里创建一个 .babelrc 文件，内容如">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -18,7 +21,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>PyexecJS 的一些异常处理 | Hui</title>
+    <title>AST 安装库异常处理 | Hui</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -110,7 +113,7 @@
   
   <li class="hide-on-med-and-down nav-item">
     
-    <a href="/" class="waves-effect waves-light">
+    <a href="/hui" class="waves-effect waves-light">
       
       <i class="fas fa-server" style="zoom: 0.6;"></i>
       
@@ -200,7 +203,7 @@
         
         <li class="m-nav-item">
 	  
-		<a href="/" class="waves-effect waves-light">
+		<a href="/hui" class="waves-effect waves-light">
 			
 			    <i class="fa-fw fas fa-server"></i>
 			
@@ -301,12 +304,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/15.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">PyexecJS 的一些异常处理</h1>
+                    <h1 class="description center-align post-title">AST 安装库异常处理</h1>
                 </div>
             </div>
         </div>
@@ -447,7 +450,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-02-13
+                    2022-03-19
                 </div>
                 
 
@@ -473,29 +476,75 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="GBK-编码问题"><a href="#GBK-编码问题" class="headerlink" title="GBK 编码问题"></a>GBK 编码问题</h2><h3 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h3><p>打开 subprocess.py 文件，Ctrl + f 搜索 encoding 找到如下的格式的函数</p>
-<pre class=" language-bash"><code class="language-bash">    def __init__<span class="token punctuation">(</span>self, args, bufsize<span class="token operator">=</span>-1, executable<span class="token operator">=</span>None,
-                 stdin<span class="token operator">=</span>None, stdout<span class="token operator">=</span>None, stderr<span class="token operator">=</span>None,
-                 preexec_fn<span class="token operator">=</span>None, close_fds<span class="token operator">=</span>True,
-                 shell<span class="token operator">=</span>False, cwd<span class="token operator">=</span>None, env<span class="token operator">=</span>None, universal_newlines<span class="token operator">=</span>None,
-                 startupinfo<span class="token operator">=</span>None, creationflags<span class="token operator">=</span>0,
-                 restore_signals<span class="token operator">=</span>True, start_new_session<span class="token operator">=</span>False,
-                 pass_fds<span class="token operator">=</span><span class="token punctuation">(</span><span class="token punctuation">)</span>, *, encoding<span class="token operator">=</span>None, errors<span class="token operator">=</span>None, text<span class="token operator">=</span>None<span class="token punctuation">)</span>:
-        <span class="token string">""</span><span class="token string">"Create new Popen instance."</span><span class="token string">""</span>
-        _cleanup<span class="token punctuation">(</span><span class="token punctuation">)</span>
+                <h2 id="AST安装库异常处理"><a href="#AST安装库异常处理" class="headerlink" title="AST安装库异常处理"></a>AST安装库异常处理</h2><h2 id="安装教程"><a href="#安装教程" class="headerlink" title="安装教程"></a>安装教程</h2><h3 id="1"><a href="#1" class="headerlink" title="1"></a>1</h3><p>在 VS Code 终端里输入</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> @babel/node
 </code></pre>
-<p>将 encoding 的值修改成 utf-8 即可</p>
-<pre class=" language-bash"><code class="language-bash">    def __init__<span class="token punctuation">(</span>self, args, bufsize<span class="token operator">=</span>-1, executable<span class="token operator">=</span>None,
-                 stdin<span class="token operator">=</span>None, stdout<span class="token operator">=</span>None, stderr<span class="token operator">=</span>None,
-                 preexec_fn<span class="token operator">=</span>None, close_fds<span class="token operator">=</span>True,
-                 shell<span class="token operator">=</span>False, cwd<span class="token operator">=</span>None, env<span class="token operator">=</span>None, universal_newlines<span class="token operator">=</span>None,
-                 startupinfo<span class="token operator">=</span>None, creationflags<span class="token operator">=</span>0,
-                 restore_signals<span class="token operator">=</span>True, start_new_session<span class="token operator">=</span>False,
-                 pass_fds<span class="token operator">=</span><span class="token punctuation">(</span><span class="token punctuation">)</span>, *, encoding<span class="token operator">=</span><span class="token string">"utf-8"</span>, errors<span class="token operator">=</span>None, text<span class="token operator">=</span>None<span class="token punctuation">)</span>:
-        <span class="token string">""</span><span class="token string">"Create new Popen instance."</span><span class="token string">""</span>
-        _cleanup<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<p><strong>不按照书上全局安装，安装完后会在文件夹里添加三个文件</strong></p>
+<h3 id="我们不需要初始化！！！"><a href="#我们不需要初始化！！！" class="headerlink" title="我们不需要初始化！！！"></a>我们不需要初始化！！！</h3><h3 id="2"><a href="#2" class="headerlink" title="2"></a>2</h3><p>在文件夹里创建一个 .babelrc 文件，内容如下</p>
+<blockquote>
+<p>是根文件夹里创建，而不是在 node_modules 里创建</p>
+</blockquote>
+<pre class=" language-bash"><code class="language-bash"><span class="token punctuation">{</span>
+  <span class="token string">"presets"</span><span class="token keyword">:</span> <span class="token punctuation">[</span>
+    <span class="token string">"@babel/preset-env"</span>
+  <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
 </code></pre>
+<h2 id="import-导入库异常"><a href="#import-导入库异常" class="headerlink" title="import 导入库异常"></a>import 导入库异常</h2><pre class=" language-bash"><code class="language-bash"><span class="token punctuation">(</span>node:14028<span class="token punctuation">)</span> Warning: To load an ES module, <span class="token keyword">set</span> <span class="token string">"type"</span><span class="token keyword">:</span> <span class="token string">"module"</span> <span class="token keyword">in</span> the package.json or use the .mjs extension.
+<span class="token punctuation">(</span>Use <span class="token variable"><span class="token variable">`</span>node --trace-warnings <span class="token punctuation">..</span>.<span class="token variable">`</span></span> to show where the warning was created<span class="token punctuation">)</span>
+d:\Visual Studio Code\ast\1\1.js:1
+<span class="token function">import</span> <span class="token punctuation">{</span> parse <span class="token punctuation">}</span> from <span class="token string">"@babel/parser"</span><span class="token punctuation">;</span>
+^^^^^^
 
+SyntaxError: Cannot use <span class="token function">import</span> statement outside a module
+</code></pre>
+<h3 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h3><p> <a target="_blank" rel="noopener" href="https://blog.csdn.net/sinat_36521655/article/details/109863364">参考链接</a></p>
+<h4 id="1-初始化"><a href="#1-初始化" class="headerlink" title="1 初始化"></a>1 初始化</h4><p>在终端里输入</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">npm</span> init -y
+</code></pre>
+<h4 id="2-设置-package-json-文件"><a href="#2-设置-package-json-文件" class="headerlink" title="2 设置 package.json 文件"></a>2 设置 package.json 文件</h4><p>在 package.json 文件里添加以下代码</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token string">"type"</span><span class="token keyword">:</span> <span class="token string">"module"</span>
+</code></pre>
+<blockquote>
+<p>添加到 name 下面</p>
+</blockquote>
+<p>这是我的文件内容</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token punctuation">{</span>
+  <span class="token string">"dependencies"</span><span class="token keyword">:</span> <span class="token punctuation">{</span>
+    <span class="token string">"@babel/node"</span><span class="token keyword">:</span> <span class="token string">"^7.16.8"</span>
+  <span class="token punctuation">}</span>,
+  <span class="token string">"name"</span><span class="token keyword">:</span> <span class="token string">"ast"</span>,
+  <span class="token string">"version"</span><span class="token keyword">:</span> <span class="token string">"1.0.0"</span>,
+  <span class="token string">"main"</span><span class="token keyword">:</span> <span class="token string">"1.js"</span>,
+  <span class="token string">"devDependencies"</span><span class="token keyword">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>,
+  <span class="token string">"type"</span><span class="token keyword">:</span> <span class="token string">"module"</span>,  // 我添加到这里
+  <span class="token string">"scripts"</span><span class="token keyword">:</span> <span class="token punctuation">{</span>
+    <span class="token string">"test"</span><span class="token keyword">:</span> <span class="token string">"echo \"Error: no test specified\" &amp;&amp; exit 1"</span>
+  <span class="token punctuation">}</span>,
+  <span class="token string">"author"</span><span class="token keyword">:</span> <span class="token string">""</span>,
+  <span class="token string">"license"</span><span class="token keyword">:</span> <span class="token string">"ISC"</span>,
+  <span class="token string">"keywords"</span><span class="token keyword">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>,
+  <span class="token string">"description"</span><span class="token keyword">:</span> <span class="token string">""</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h3 id="完美解决"><a href="#完美解决" class="headerlink" title="完美解决"></a>完美解决</h3><h2 id="generate-is-not-a-function"><a href="#generate-is-not-a-function" class="headerlink" title="generate is not a function"></a>generate is not a function</h2><h3 id="报错代码"><a href="#报错代码" class="headerlink" title="报错代码"></a>报错代码</h3><pre class=" language-bash"><code class="language-bash">file:///d:/Visual%20Studio%20Code/ast/1/1.js:8
+const <span class="token punctuation">{</span> code: output <span class="token punctuation">}</span> <span class="token operator">=</span> generate<span class="token punctuation">(</span>ast<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                         ^
+
+TypeError: generate is not a <span class="token keyword">function</span>
+</code></pre>
+<h3 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h3><p>添加 default</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">import</span> <span class="token punctuation">{</span> parse <span class="token punctuation">}</span> from <span class="token string">"@babel/parser"</span><span class="token punctuation">;</span>
+<span class="token function">import</span> generate from <span class="token string">"@babel/generator"</span><span class="token punctuation">;</span>
+<span class="token function">import</span> fs from <span class="token string">"fs"</span><span class="token punctuation">;</span>
+
+
+const code <span class="token operator">=</span> fs.readFileSync<span class="token punctuation">(</span><span class="token string">"1/codes/1.js"</span>, <span class="token string">"utf-8"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> ast <span class="token operator">=</span> parse<span class="token punctuation">(</span>code<span class="token punctuation">)</span><span class="token punctuation">;</span>
+const <span class="token punctuation">{</span> code: output <span class="token punctuation">}</span> <span class="token operator">=</span> generate<span class="token punctuation">[</span><span class="token string">'default'</span><span class="token punctuation">]</span><span class="token punctuation">(</span>ast<span class="token punctuation">)</span><span class="token punctuation">;</span>
+console.log<span class="token punctuation">(</span>output<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h3 id="解决问题"><a href="#解决问题" class="headerlink" title="解决问题"></a>解决问题</h3>
                 
             </div>
             <hr/>
@@ -521,7 +570,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://PunHui.github.io/2022/021340749.html">http://PunHui.github.io/2022/021340749.html</a>
+                    <a href="http://PunHui.github.io/2022/031914598.html">http://PunHui.github.io/2022/031914598.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -612,13 +661,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2022/02131510.html">
+                <a href="/2022/031910060.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="NodeJS 的一些异常">
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="curl 转换工具">
                         
-                        <span class="card-title">NodeJS 的一些异常</span>
+                        <span class="card-title">curl 转换工具</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -629,14 +678,14 @@
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-02-13
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-03-19
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/" class="post-category">
-                                    异常处理
+                            <a href="/categories/JS%E9%80%86%E5%90%91/" class="post-category">
+                                    JS逆向
                                 </a>
                             
                             
@@ -646,8 +695,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/">
-                        <span class="chip bg-color">异常处理</span>
+                    <a href="/tags/%E5%B7%A5%E5%85%B7/">
+                        <span class="chip bg-color">工具</span>
                     </a>
                     
                 </div>
@@ -661,7 +710,7 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/021165054.html">
+                <a href="/2022/031965054.html">
                     <div class="card-image">
                         
                         
@@ -678,7 +727,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-02-11
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-19
                             </span>
                         <span class="publish-author">
                             

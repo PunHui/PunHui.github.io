@@ -4,9 +4,9 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="崔庆才案例网站 spa7 逆向, Hui">
-    <meta name="description" content="崔庆才案例网站spa7逆向介绍这个在书上已经说了，我这次研究出了新的方法
-新方法在书上 crypto-js-min.js 文件需要修改，我今天决定自己完成，不看书上的，结果在这里翻了车，最后看书操作，还是不行，跑不起来，我去复制崔庆才的源码">
+    <meta name="keywords" content="人大代表鼓励年轻人进厂？, Hui">
+    <meta name="description" content="人大代表鼓励年轻人进厂？人大代表 张兴海张兴海出生于1963年，重庆人，企业管理专业毕业，获工程师、经济师职称。
+现任全国人大代表，重庆市政协委员，重庆市工商联副主席；湖北省工商联副主席；重庆市优秀企业家、重庆市五一创新劳动奖章获得者、20">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -18,7 +18,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>崔庆才案例网站 spa7 逆向 | Hui</title>
+    <title>人大代表鼓励年轻人进厂？ | Hui</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -110,7 +110,7 @@
   
   <li class="hide-on-med-and-down nav-item">
     
-    <a href="/" class="waves-effect waves-light">
+    <a href="/hui" class="waves-effect waves-light">
       
       <i class="fas fa-server" style="zoom: 0.6;"></i>
       
@@ -200,7 +200,7 @@
         
         <li class="m-nav-item">
 	  
-		<a href="/" class="waves-effect waves-light">
+		<a href="/hui" class="waves-effect waves-light">
 			
 			    <i class="fa-fw fas fa-server"></i>
 			
@@ -301,12 +301,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/3.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">崔庆才案例网站 spa7 逆向</h1>
+                    <h1 class="description center-align post-title">人大代表鼓励年轻人进厂？</h1>
                 </div>
             </div>
         </div>
@@ -422,8 +422,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E9%80%86%E5%90%91%E5%88%86%E6%9E%90/">
-                                <span class="chip bg-color">逆向分析</span>
+                            <a href="/tags/%E7%AB%99%E7%9D%80%E8%AF%B4%E8%AF%9D%E8%85%B0%E4%B8%8D%E7%96%BC/">
+                                <span class="chip bg-color">站着说话腰不疼</span>
                             </a>
                         
                     </div>
@@ -434,8 +434,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/JS%E9%80%86%E5%90%91/" class="post-category">
-                                JS逆向
+                            <a href="/categories/%E6%96%B0%E9%97%BB/" class="post-category">
+                                新闻
                             </a>
                         
                     </div>
@@ -447,7 +447,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-02-20
+                    2022-03-19
                 </div>
                 
 
@@ -473,44 +473,15 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="崔庆才案例网站spa7逆向"><a href="#崔庆才案例网站spa7逆向" class="headerlink" title="崔庆才案例网站spa7逆向"></a>崔庆才案例网站spa7逆向</h2><h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>这个在书上已经说了，我这次研究出了新的方法</p>
-<h2 id="新方法"><a href="#新方法" class="headerlink" title="新方法"></a>新方法</h2><p>在书上 crypto-js-min.js 文件需要修改，我今天决定自己完成，不看书上的，结果在这里翻了车，最后看书操作，还是不行，跑不起来，我去复制崔庆才的源码，他的源码就可以跑起来，说明这里的修改不只是书上写的那些，还有一些需要修改</p>
-<p>而我这个人很懒，不想一个一个的去比较哪里不一样，所以决定用浏览器调用的方式来调用这个库</p>
-<h3 id="第一步"><a href="#第一步" class="headerlink" title="第一步"></a>第一步</h3><p>把 crypto-js-min.js 里的代码全部复制下来，不用做任何修改，创建一个文件，把它粘贴进去</p>
-<h3 id="第二步"><a href="#第二步" class="headerlink" title="第二步"></a>第二步</h3><p>把 main.js 的代码按书上的进行修改，在第一行加上一下代码</p>
-<pre class=" language-bash"><code class="language-bash">CryptoJS <span class="token operator">=</span> require<span class="token punctuation">(</span><span class="token string">'./crypto-js.min.js'</span><span class="token punctuation">)</span>
-</code></pre>
-<p>意思是把我们的 crypto-js.min.js 导入</p>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>这样比修改代码更简单，也更不容易出错</p>
-<h2 id="源码"><a href="#源码" class="headerlink" title="源码"></a>源码</h2><h3 id="crypto-js-min-js-自己复制，我就不写了"><a href="#crypto-js-min-js-自己复制，我就不写了" class="headerlink" title="crypto-js.min.js 自己复制，我就不写了"></a>crypto-js.min.js 自己复制，我就不写了</h3><h3 id="main-js"><a href="#main-js" class="headerlink" title="main.js"></a>main.js</h3><pre class=" language-bash"><code class="language-bash">CryptoJS <span class="token operator">=</span> require<span class="token punctuation">(</span><span class="token string">'./crypto-js.min.js'</span><span class="token punctuation">)</span>
-
-<span class="token keyword">function</span> getToken<span class="token punctuation">(</span>player<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">let</span> key <span class="token operator">=</span> CryptoJS.enc.Utf8.parse<span class="token punctuation">(</span><span class="token string">'fipFfVsZsTda94hJNKJfLoaqyqMZFFimwLt'</span><span class="token punctuation">)</span>
-    const <span class="token punctuation">{</span> name, birthday, height, weight <span class="token punctuation">}</span> <span class="token operator">=</span> player
-    <span class="token keyword">let</span> base64Name <span class="token operator">=</span> CryptoJS.enc.Base64.stringify<span class="token punctuation">(</span>CryptoJS.enc.Utf8.parse<span class="token punctuation">(</span>name<span class="token punctuation">))</span>
-    <span class="token keyword">let</span> encrypted <span class="token operator">=</span> CryptoJS.DES.encrypt<span class="token punctuation">(</span><span class="token variable"><span class="token variable">`</span>$<span class="token punctuation">{</span>base64Name<span class="token punctuation">}</span>$<span class="token punctuation">{</span>birthday<span class="token punctuation">}</span>$<span class="token punctuation">{</span>height<span class="token punctuation">}</span>$<span class="token punctuation">{</span>weight<span class="token punctuation">}</span><span class="token variable">`</span></span>, key, <span class="token punctuation">{</span>
-        mode: CryptoJS.mode.ECB,
-        padding: CryptoJS.pad.Pkcs7
-    <span class="token punctuation">}</span><span class="token punctuation">)</span>
-    <span class="token keyword">return</span> encrypted.toString<span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token punctuation">}</span>
-</code></pre>
-<h3 id="demo"><a href="#demo" class="headerlink" title="demo"></a>demo</h3><pre class=" language-bash"><code class="language-bash"><span class="token function">import</span> execjs
-
-player <span class="token operator">=</span> <span class="token punctuation">{</span>
-    <span class="token string">'name'</span><span class="token keyword">:</span> <span class="token string">'克里斯-保罗'</span>,
-    <span class="token string">'image'</span><span class="token keyword">:</span> <span class="token string">'paul.png'</span>,
-    <span class="token string">'birthday'</span><span class="token keyword">:</span> <span class="token string">'1985-05-06'</span>,
-    <span class="token string">'height'</span><span class="token keyword">:</span> <span class="token string">'185cm'</span>,
-    <span class="token string">'weight'</span><span class="token keyword">:</span> <span class="token string">'79.4KG'</span>
-<span class="token punctuation">}</span>
-
-with open<span class="token punctuation">(</span><span class="token string">'main.js'</span>, <span class="token string">'r'</span>, encoding<span class="token operator">=</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span> as f:
-    get <span class="token operator">=</span> execjs.compile<span class="token punctuation">(</span>f.read<span class="token punctuation">(</span><span class="token punctuation">))</span>
-    js <span class="token operator">=</span> <span class="token string">'getToken'</span>
-    demo <span class="token operator">=</span> get.call<span class="token punctuation">(</span>js, player<span class="token punctuation">)</span>
-    print<span class="token punctuation">(</span>demo<span class="token punctuation">)</span>
-</code></pre>
+                <h2 id="人大代表鼓励年轻人进厂？"><a href="#人大代表鼓励年轻人进厂？" class="headerlink" title="人大代表鼓励年轻人进厂？"></a>人大代表鼓励年轻人进厂？</h2><h2 id="人大代表-张兴海"><a href="#人大代表-张兴海" class="headerlink" title="人大代表 张兴海"></a>人大代表 张兴海</h2><p>张兴海出生于1963年，重庆人，企业管理专业毕业，获工程师、经济师职称。</p>
+<p>现任全国人大代表，重庆市政协委员，重庆市工商联副主席；湖北省工商联副主席；重庆市优秀企业家、重庆市五一创新劳动奖章获得者、2008振兴重庆争光贡献奖获得者、重庆市首届十大慈善人物；重庆小康汽车控股有限公司董事长、总裁。</p>
+<p>2019年7月24日，2019福布斯中国慈善榜发布，张兴海以2,335万元人民币的现金捐赠总额排名第86。 [1-2]  2019年10月10日，张兴海、颜敏夫妇以46亿元位列《2019年胡润百富榜》第902位。</p>
+<h2 id="重庆小康汽车控股有限公司董事长"><a href="#重庆小康汽车控股有限公司董事长" class="headerlink" title="重庆小康汽车控股有限公司董事长"></a>重庆小康汽车控股有限公司董事长</h2><p>重庆市优秀企业家，注意，我可没有说他是资本家哦！</p>
+<h2 id="人大代表怎么选举的"><a href="#人大代表怎么选举的" class="headerlink" title="人大代表怎么选举的"></a>人大代表怎么选举的</h2><p>站着说话腰不疼，谁给他投的票，反正我是没投，谁投了他也不知道，咱也不敢说，咱也不敢问啊</p>
+<p>人大应该代表人民说话，老百姓可没有说进厂比送外卖好</p>
+<h2 id="送外卖不比进厂好，那么为什么还有那么多人送外卖？"><a href="#送外卖不比进厂好，那么为什么还有那么多人送外卖？" class="headerlink" title="送外卖不比进厂好，那么为什么还有那么多人送外卖？"></a>送外卖不比进厂好，那么为什么还有那么多人送外卖？</h2><p>外卖好不好毋庸置疑</p>
+<h2 id="中国不赚全世界的钱，那么进厂就没有好日子"><a href="#中国不赚全世界的钱，那么进厂就没有好日子" class="headerlink" title="中国不赚全世界的钱，那么进厂就没有好日子"></a>中国不赚全世界的钱，那么进厂就没有好日子</h2><p>待到中国超越美国，赚全世界人的钱时，老百姓便能过上现在西方国家的日子</p>
+<p>然而这条路却并不容易</p>
 
                 
             </div>
@@ -537,7 +508,7 @@ with open<span class="token punctuation">(</span><span class="token string">'mai
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://PunHui.github.io/2022/022031293.html">http://PunHui.github.io/2022/022031293.html</a>
+                    <a href="http://PunHui.github.io/2022/031915165.html">http://PunHui.github.io/2022/031915165.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -575,8 +546,8 @@ with open<span class="token punctuation">(</span><span class="token string">'mai
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E9%80%86%E5%90%91%E5%88%86%E6%9E%90/">
-                                    <span class="chip bg-color">逆向分析</span>
+                                <a href="/tags/%E7%AB%99%E7%9D%80%E8%AF%B4%E8%AF%9D%E8%85%B0%E4%B8%8D%E7%96%BC/">
+                                    <span class="chip bg-color">站着说话腰不疼</span>
                                 </a>
                             
                         </div>
@@ -628,13 +599,13 @@ with open<span class="token punctuation">(</span><span class="token string">'mai
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2022/022051354.html">
+                <a href="/2022/031932651.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="PyExeJS 的使用">
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="崔庆才案例网站 spa6 逆向分析">
                         
-                        <span class="card-title">PyExeJS 的使用</span>
+                        <span class="card-title">崔庆才案例网站 spa6 逆向分析</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -645,57 +616,8 @@ with open<span class="token punctuation">(</span><span class="token string">'mai
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-02-20
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-03-19
                         </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E6%A8%A1%E5%9D%97%E4%BD%BF%E7%94%A8/" class="post-category">
-                                    模块使用
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E6%95%99%E7%A8%8B/">
-                        <span class="chip bg-color">教程</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2022/021910060.html">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="curl 转换工具">
-                        
-                        <span class="card-title">curl 转换工具</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-02-19
-                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -711,10 +633,51 @@ with open<span class="token punctuation">(</span><span class="token string">'mai
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%B7%A5%E5%85%B7/">
-                        <span class="chip bg-color">工具</span>
+                    <a href="/tags/%E9%80%86%E5%90%91%E5%88%86%E6%9E%90/">
+                        <span class="chip bg-color">逆向分析</span>
                     </a>
                     
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2022/031945833.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="与认知不在一个层面的人争辩是愚蠢的">
+                        
+                        <span class="card-title">与认知不在一个层面的人争辩是愚蠢的</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-19
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E8%AE%A4%E7%9F%A5/" class="post-category">
+                                    认知
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
                 </div>
                 
             </div>

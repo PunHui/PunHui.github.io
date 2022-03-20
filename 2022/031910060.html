@@ -4,17 +4,14 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="猿人学 15 题, Hui">
-    <meta name="description" content="猿人学15题
-这道题还是比较简单的
+    <meta name="keywords" content="curl 转换工具, Hui">
+    <meta name="description" content="源码import re
 
-下断点XHR 断点下面的 url
-ttps://match.yuanrenxue.com/api/match/15?
+def parse(name):
+    headers = {}
 
-
-在调用堆栈中找到 request
-
-分析 m 值fetch(&#39;/static/m">
+    demo = re.findall(&#34;-H\s&#39;(.*?):\s(.*?)&#39;&#34;, name, re.S)
+    for i in de">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -26,7 +23,7 @@ ttps://match.yuanrenxue.com/api/match/15?
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>猿人学 15 题 | Hui</title>
+    <title>curl 转换工具 | Hui</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -118,7 +115,7 @@ ttps://match.yuanrenxue.com/api/match/15?
   
   <li class="hide-on-med-and-down nav-item">
     
-    <a href="/" class="waves-effect waves-light">
+    <a href="/hui" class="waves-effect waves-light">
       
       <i class="fas fa-server" style="zoom: 0.6;"></i>
       
@@ -208,7 +205,7 @@ ttps://match.yuanrenxue.com/api/match/15?
         
         <li class="m-nav-item">
 	  
-		<a href="/" class="waves-effect waves-light">
+		<a href="/hui" class="waves-effect waves-light">
 			
 			    <i class="fa-fw fas fa-server"></i>
 			
@@ -309,12 +306,12 @@ ttps://match.yuanrenxue.com/api/match/15?
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">猿人学 15 题</h1>
+                    <h1 class="description center-align post-title">curl 转换工具</h1>
                 </div>
             </div>
         </div>
@@ -430,8 +427,8 @@ ttps://match.yuanrenxue.com/api/match/15?
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E9%80%86%E5%90%91%E5%88%86%E6%9E%90/">
-                                <span class="chip bg-color">逆向分析</span>
+                            <a href="/tags/%E5%B7%A5%E5%85%B7/">
+                                <span class="chip bg-color">工具</span>
                             </a>
                         
                     </div>
@@ -455,7 +452,7 @@ ttps://match.yuanrenxue.com/api/match/15?
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-03-10
+                    2022-03-19
                 </div>
                 
 
@@ -481,99 +478,45 @@ ttps://match.yuanrenxue.com/api/match/15?
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="猿人学15题"><a href="#猿人学15题" class="headerlink" title="猿人学15题"></a>猿人学15题</h2><blockquote>
-<p>这道题还是比较简单的</p>
-</blockquote>
-<h2 id="下断点"><a href="#下断点" class="headerlink" title="下断点"></a>下断点</h2><p>XHR 断点下面的 url</p>
-<pre class=" language-bash"><code class="language-bash">ttps://match.yuanrenxue.com/api/match/15?
+                <h2 id="源码"><a href="#源码" class="headerlink" title="源码"></a>源码</h2><pre class=" language-bash"><code class="language-bash"><span class="token function">import</span> re
+
+def parse<span class="token punctuation">(</span>name<span class="token punctuation">)</span>:
+    headers <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+
+    demo <span class="token operator">=</span> re.findall<span class="token punctuation">(</span><span class="token string">"-H\s'(.*?):\s(.*?)'"</span>, name, re.S<span class="token punctuation">)</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> demo:
+        headers<span class="token punctuation">[</span>f<span class="token string">'{i[0]}'</span><span class="token punctuation">]</span> <span class="token operator">=</span> i<span class="token punctuation">[</span>1<span class="token punctuation">]</span>
+
+    <span class="token keyword">return</span> headers
 </code></pre>
-<blockquote>
-<p>在调用堆栈中找到 request</p>
-</blockquote>
-<h2 id="分析-m-值"><a href="#分析-m-值" class="headerlink" title="分析 m 值"></a>分析 m 值</h2><pre class=" language-bash"><code class="language-bash">fetch<span class="token punctuation">(</span><span class="token string">'/static/match/match15/main.wasm'</span><span class="token punctuation">)</span>.then<span class="token punctuation">(</span>response <span class="token operator">=</span><span class="token operator">></span>
-    response.arrayBuffer<span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token punctuation">)</span>.then<span class="token punctuation">(</span>bytes <span class="token operator">=</span><span class="token operator">></span> WebAssembly.instantiate<span class="token punctuation">(</span>bytes<span class="token punctuation">))</span>.then<span class="token punctuation">(</span>results <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
-    instance <span class="token operator">=</span> results.instance<span class="token punctuation">;</span>
-    window.q <span class="token operator">=</span> instance.exports.encode<span class="token punctuation">;</span>
-    window.m <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-        t1 <span class="token operator">=</span> parseInt<span class="token punctuation">(</span>Date.parse<span class="token punctuation">(</span>new Date<span class="token punctuation">(</span><span class="token punctuation">))</span>/1000/2<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        t2 <span class="token operator">=</span> parseInt<span class="token punctuation">(</span>Date.parse<span class="token punctuation">(</span>new Date<span class="token punctuation">(</span><span class="token punctuation">))</span>/1000/2 - Math.floor<span class="token punctuation">(</span>Math.random<span class="token punctuation">(</span><span class="token punctuation">)</span> * <span class="token punctuation">(</span>50<span class="token punctuation">)</span> + 1<span class="token punctuation">))</span><span class="token punctuation">;</span>
-        <span class="token keyword">return</span> window.q<span class="token punctuation">(</span>t1, t2<span class="token punctuation">)</span>.toString<span class="token punctuation">(</span><span class="token punctuation">)</span> + <span class="token string">'|'</span> + t1 + <span class="token string">'|'</span> + t2<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span><span class="token punctuation">;</span>
-    window.url <span class="token operator">=</span> <span class="token string">'/api/match/15'</span><span class="token punctuation">;</span>
-    request <span class="token operator">=</span> function<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-        //    点击换页后的操作，先得到翻到了几页
-        var list <span class="token operator">=</span> <span class="token punctuation">{</span>
-            <span class="token string">"m"</span><span class="token keyword">:</span> window.m<span class="token punctuation">(</span><span class="token punctuation">)</span>,
-            <span class="token string">"page"</span><span class="token keyword">:</span> window.page,
+<p><strong>这个是模块，可以直接使用</strong></p>
+<h2 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h2><pre class=" language-bash"><code class="language-bash"><span class="token function">import</span> parse_curl
+
+demo <span class="token operator">=</span> <span class="token string">""</span><span class="token string">"
+curl '****' \
+  -H 'authority: ****' \
+  -H 'cache-control: max-age=0' \
+  -H 'sec-ch-ua: "</span> Not A<span class="token punctuation">;</span>Brand<span class="token string">";v="</span>99<span class="token string">", "</span>Chromium<span class="token string">";v="</span>98<span class="token string">", "</span>Microsoft Edge<span class="token string">";v="</span>98<span class="token string">"' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'sec-ch-ua-platform: "</span>Windows<span class="token string">"' \
+  -H 'upgrade-insecure-requests: 1' \
+  -H 'user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36 Edg/98.0.1108.55' \
+  -H 'accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9' \
+  -H 'sec-fetch-site: same-origin' \
+  -H 'sec-fetch-mode: navigate' \
+  -H 'sec-fetch-user: ?1' \
+  -H 'sec-fetch-dest: document' \
+  -H 'referer: ****' \
+  -H 'accept-language: zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6' \
+  -H 'cookie: ***' \
+  -H 'if-modified-since: Mon, 27 Dec 2021 07:45:03 GMT' \
+  --compressed
+"</span><span class="token string">""</span>
+
+headers <span class="token operator">=</span> parse_curl.parse<span class="token punctuation">(</span>demo<span class="token punctuation">)</span>
 </code></pre>
-<h2 id="t1-和-t2"><a href="#t1-和-t2" class="headerlink" title="t1 和 t2"></a>t1 和 t2</h2><pre class=" language-bash"><code class="language-bash">t1 <span class="token operator">=</span> 13位的时间戳 / 1000 /2
-t2 <span class="token operator">=</span> t1 - 5  <span class="token comment" spellcheck="true"># 由于是减去一个随机数，我们把它定死就行了</span>
-</code></pre>
-<h2 id="主要是-window-p"><a href="#主要是-window-p" class="headerlink" title="主要是 window.p"></a>主要是 window.p</h2><pre class=" language-bash"><code class="language-bash">fetch<span class="token punctuation">(</span><span class="token string">'/static/match/match15/main.wasm'</span><span class="token punctuation">)</span>.then<span class="token punctuation">(</span>response <span class="token operator">=</span><span class="token operator">></span>
-    response.arrayBuffer<span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token punctuation">)</span>.then<span class="token punctuation">(</span>bytes <span class="token operator">=</span><span class="token operator">></span> WebAssembly.instantiate<span class="token punctuation">(</span>bytes<span class="token punctuation">))</span>.then<span class="token punctuation">(</span>results <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
-    instance <span class="token operator">=</span> results.instance<span class="token punctuation">;</span>
-    window.q <span class="token operator">=</span> instance.exports.encode<span class="token punctuation">;</span>
-</code></pre>
-<blockquote>
-<p>fetch 有点类似于 Python 调用 js 的情况</p>
-</blockquote>
-<h2 id="直接下载-main-wasm-文件"><a href="#直接下载-main-wasm-文件" class="headerlink" title="直接下载 main.wasm 文件"></a>直接下载 main.wasm 文件</h2><p>url</p>
-<pre class=" language-bash"><code class="language-bash">https://match.yuanrenxue.com/static/match/match15/main.wasm
-</code></pre>
-<p><strong>最好下载到你的项目文件夹里</strong></p>
-<h2 id="文件看不懂没事，不影响正常使用"><a href="#文件看不懂没事，不影响正常使用" class="headerlink" title="文件看不懂没事，不影响正常使用"></a>文件看不懂没事，不影响正常使用</h2><h2 id="查看调用的函数"><a href="#查看调用的函数" class="headerlink" title="查看调用的函数"></a>查看调用的函数</h2><pre class=" language-bash"><code class="language-bash">window.q <span class="token operator">=</span> instance.exports.encode<span class="token punctuation">;</span>
-</code></pre>
-<p><strong>把鼠标放到 instance.exports.encode 上查看函数名</strong></p>
-<blockquote>
-<p>可以看到是 encode</p>
-</blockquote>
-<h2 id="加密过程也明白了，以下是源码"><a href="#加密过程也明白了，以下是源码" class="headerlink" title="加密过程也明白了，以下是源码"></a>加密过程也明白了，以下是源码</h2><h3 id="Python"><a href="#Python" class="headerlink" title="Python"></a>Python</h3><pre class=" language-bash"><code class="language-bash"><span class="token function">import</span> requests
-<span class="token function">import</span> pywasm
-<span class="token function">import</span> <span class="token function">time</span>
+<p><strong>可以直接返回字典</strong><br><strong>用这个模块就不用再去网站解析了</strong></p>
 
-
-def encryption<span class="token punctuation">(</span><span class="token punctuation">)</span>:
-    <span class="token string">""</span><span class="token string">"加密"</span><span class="token string">""</span>
-    <span class="token function">times</span> <span class="token operator">=</span> int<span class="token punctuation">(</span>time.time<span class="token punctuation">(</span><span class="token punctuation">))</span> * 1000
-    t1 <span class="token operator">=</span> int<span class="token punctuation">(</span>times / 1000 / 2<span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># 去除小数点</span>
-    t2 <span class="token operator">=</span> int<span class="token punctuation">(</span>t1 - 5<span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># 去除小数点</span>
-
-    runtime <span class="token operator">=</span> pywasm.load<span class="token punctuation">(</span><span class="token string">'./main.wasm'</span><span class="token punctuation">)</span>
-    result <span class="token operator">=</span> runtime.exec<span class="token punctuation">(</span><span class="token string">'encode'</span>, <span class="token punctuation">[</span>t1, t2<span class="token punctuation">]</span><span class="token punctuation">)</span>
-    m <span class="token operator">=</span> f<span class="token string">'{result}|{t1}|{t2}'</span>
-    <span class="token keyword">return</span> m
-
-
-def pa_json<span class="token punctuation">(</span><span class="token punctuation">)</span>:
-    <span class="token string">""</span><span class="token string">"爬取json数据"</span><span class="token string">""</span>
-    <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span>1, 6<span class="token punctuation">)</span>:
-        url <span class="token operator">=</span> f<span class="token string">'https://match.yuanrenxue.com/api/match/15?m={encryption()}&amp;page={i}'</span>
-
-        headers <span class="token operator">=</span> <span class="token punctuation">{</span>
-            <span class="token string">'Cookie'</span><span class="token keyword">:</span> <span class="token string">'你自己的 Cookie '</span>,
-            <span class="token string">"User-Agent"</span><span class="token keyword">:</span> <span class="token string">"yuanrenxue.project"</span>,
-        <span class="token punctuation">}</span>
-
-        r <span class="token operator">=</span> requests.get<span class="token punctuation">(</span>url, headers<span class="token operator">=</span>headers<span class="token punctuation">)</span>.json<span class="token punctuation">(</span><span class="token punctuation">)</span>
-        yield r<span class="token punctuation">[</span><span class="token string">'data'</span><span class="token punctuation">]</span>
-
-
-def parse<span class="token punctuation">(</span><span class="token punctuation">)</span>:
-    <span class="token string">""</span><span class="token string">"解析json数据"</span><span class="token string">""</span>
-    name <span class="token operator">=</span> 0
-    <span class="token keyword">for</span> i <span class="token keyword">in</span> pa_json<span class="token punctuation">(</span><span class="token punctuation">)</span>:
-        <span class="token keyword">for</span> k <span class="token keyword">in</span> i:
-            name +<span class="token operator">=</span> k<span class="token punctuation">[</span><span class="token string">'value'</span><span class="token punctuation">]</span>
-
-    print<span class="token punctuation">(</span>name<span class="token punctuation">)</span>
-
-
-<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token keyword">:</span>
-    parse<span class="token punctuation">(</span><span class="token punctuation">)</span>
-</code></pre>
-<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2>
                 
             </div>
             <hr/>
@@ -599,7 +542,7 @@ def parse<span class="token punctuation">(</span><span class="token punctuation"
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://PunHui.github.io/2022/031058193.html">http://PunHui.github.io/2022/031058193.html</a>
+                    <a href="http://PunHui.github.io/2022/031910060.html">http://PunHui.github.io/2022/031910060.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -637,8 +580,8 @@ def parse<span class="token punctuation">(</span><span class="token punctuation"
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E9%80%86%E5%90%91%E5%88%86%E6%9E%90/">
-                                    <span class="chip bg-color">逆向分析</span>
+                                <a href="/tags/%E5%B7%A5%E5%85%B7/">
+                                    <span class="chip bg-color">工具</span>
                                 </a>
                             
                         </div>
@@ -690,13 +633,13 @@ def parse<span class="token punctuation">(</span><span class="token punctuation"
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2022/0310384.html">
+                <a href="/2022/031916107.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="猿人学 1 题">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="Hello Word">
                         
-                        <span class="card-title">猿人学 1 题</span>
+                        <span class="card-title">Hello Word</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -707,16 +650,12 @@ def parse<span class="token punctuation">(</span><span class="token punctuation"
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-03-10
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-03-19
                         </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/JS%E9%80%86%E5%90%91/" class="post-category">
-                                    JS逆向
-                                </a>
-                            
+                            <i class="fas fa-user fa-fw"></i>
+                            Hui
                             
                         </span>
                     </div>
@@ -724,8 +663,8 @@ def parse<span class="token punctuation">(</span><span class="token punctuation"
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E9%80%86%E5%90%91%E5%88%86%E6%9E%90/">
-                        <span class="chip bg-color">逆向分析</span>
+                    <a href="/tags/Hello-Word/">
+                        <span class="chip bg-color">Hello Word</span>
                     </a>
                     
                 </div>
@@ -739,7 +678,7 @@ def parse<span class="token punctuation">(</span><span class="token punctuation"
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/031014598.html">
+                <a href="/2022/031914598.html">
                     <div class="card-image">
                         
                         
@@ -756,7 +695,7 @@ def parse<span class="token punctuation">(</span><span class="token punctuation"
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-10
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-19
                             </span>
                         <span class="publish-author">
                             
